@@ -1,0 +1,227 @@
+#container .destinations {
+  display: block;
+  width: 100%;
+  float: left;
+  overflow-x: auto;
+  color: #2D2D2D;
+  padding-bottom: 10px;
+}
+#container .destinations table {
+  width: 100%;
+}
+#container .destinations table,
+#container .destinations table tr,
+#container .destinations table tr td {
+  border-collapse: collapse;
+}
+#container .destinations table tr {
+  border-bottom: 1px solid rgb(135,135,135,0.5);
+}
+#container .destinations table tr td {
+  padding: 5px;
+  position: relative;
+}
+#container .destinations table tr td span.price {
+  width: auto;
+  height: auto;
+  padding: 3px;
+  padding-left: 5px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  color: #2196F3;
+  font-size: 15px;
+  font-weight: bold;
+}
+#container .destinations table tr td img {
+  width: 240px;
+  height: 120px;
+  object-fit: cover;
+  display: inline-block;
+  float: left;
+  border-radius: 2px;
+  transition: all 0.7s ease;
+}
+#container .destinations table tr td div {
+  display: inline-block;
+  float: left;
+  width: calc(100% - 255px);
+  margin-left: 15px;
+  height: 120px;
+  padding: 0 5px;
+  overflow: hidden;
+  text-align: justify;
+}
+#container .destinations table tr td div span {
+  display: block;
+  width: 100%;
+  float: left;
+  font-size: 14px;
+  position: relative;
+  top: 0;
+}
+#container .destinations table tr td div h4 {
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: justify;
+  position: relative;
+  top: -5px;
+  transition: all 0.7s ease;
+}
+#container .destinations table tr:hover td div h4 {
+  color: #2196F3;
+}
+#container .destinations table tr:hover td img {
+  filter: brightness(70%);
+}
+
+#container .destinations .txtAbout {
+  text-align: center;
+  padding-top: 4px;
+}
+#container .destinations .txtAbout ul,
+#container .destinations .txtAbout ol {
+  margin-left: 15px;
+}
+#container .destinations .txtAbout div.divpic {
+  width: 48%;
+  height: auto;
+  margin: 0 5px;
+  display: inline-block;
+}
+#container .destinations .txtAbout div.divpic img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  float: left;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+#container .destinations .txtAbout div.divpic img:hover {
+  filter: brightness(80%);
+}
+#container .destinations .txtAbout div.divpic span,
+#container .destinations #viewerImg span {
+  display: block;
+  width: 100%;
+  margin: 0;
+  float: left;
+  color: #3C3C3C;
+  text-align: center;
+  border: 1px solid rgb(60,60,60,0.2);
+  border-top: none;
+}
+#container .destinations .txtAbout div.divText {
+  padding: 5px 10px;
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: justify;
+  font-size: 14px;
+  border: 1px solid rgb(60,60,60,0.2);
+  border-top: none;
+}
+
+#container .destinations .btns {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 0 0 10px 10px;
+  position: fixed;
+  z-index: 6;
+  top: auto;
+  right: 40px;
+  bottom: 35px;
+}
+#container .destinations .btns button {
+  background-color: #28A745;
+}
+#container .destinations .btns button:hover {
+  background-color: #158b30;
+}
+
+/*-----------  CUSTOM BREAKPOINTS FOR RESPONSIVENESS ----------*/
+@media (max-width: 768px) {
+  #container .destinations table tr td img {
+    width: 200px;
+  }
+  #container .destinations table tr td div {
+    width: calc(100% - 215px);
+    margin-left: 5px;
+  }
+  #container .destinations table tr td div h4 {
+    font-size: 20px;
+  }
+  #container .destinations .about .img {
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 650px) {
+  #container .destinations .txtAbout div.divpic {
+    width: 95%;
+  }
+}
+@media (max-width: 599px) {
+  #container .destinations .txtAbout div.divpic {
+    width: 100%;
+    margin: 0 0;
+    padding: 2px 7px;
+  }
+}
+
+@media (max-width: 568px) {
+  #container .destinations table tr td img {
+    width: 150px;
+    height: 95px;
+  }
+  #container .destinations table tr td div {
+    width: calc(100% - 155px);
+    height: 95px;
+  }
+  #container .destinations table tr td div span {
+    font-size: 13.5px;
+  }
+  #container .destinations .about {
+    padding: 5px;
+  }
+  #container .destinations .about .img {
+    max-height: 220px;
+  }
+  #container .destinations .about p:first-of-type {
+    font-size: 15px;
+  }
+}
+@media (max-width: 499px) {
+  #container .destinations table tr td img {
+    width: 100%;
+    height: 200px;
+    display: block;
+    float: none;
+    margin: auto;
+  }
+  #container .destinations table tr td div {
+    width: 100%;
+    height: 110px;
+    margin: 0;
+  }
+  #container .destinations .about .img {
+    max-height: 200px;
+  }
+  #container .destinations .about ul,
+  #container .destinations .about ol {
+    padding: 0 0 0 15px;
+  }
+  #container .destinations table tr td div h4 {
+    top: 0;
+  }
+}
+@media (max-width: 375px) {
+  #container .destinations .about .img {
+    max-height: 150px;
+  }
+}

@@ -1,0 +1,871 @@
+#container .main-block,
+#container .main-block .columns,
+#container .main-block .socialmedia {
+  display: block;
+  float: left;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+#container .main-block .columns .box {
+  display: inline-block;
+  width: calc(95% / 3);
+  height: 350px;
+  margin: 8px 2.5% 8px 0;
+  border-radius: 5px;
+  float: left;
+  padding: 10px 20px;
+  color: #2D2D2D;
+  position: relative;
+  background-color: #FFFFFF;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+#container .main-block .columns .x1:hover {
+  opacity: 0.8;
+}
+#container .main-block .columns .box span.price {
+  width: auto;
+  height: auto;
+  padding: 3px;
+  padding-left: 5px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  color: #2196F3;
+  font-size: 15px;
+  font-weight: bold;
+}
+#container .main-block .columns .box .clickToOpen {
+  display: block;
+  width: 100%;
+  height: 0;
+  //background-color: #2196F3;
+  background-color: rgba(33,150,243,0.8);
+  //background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: -8px;
+  cursor: pointer;
+  //opacity: 0.6;
+  transition: all 0.3s ease-out;
+}
+#container .main-block .columns .box:hover .clickToOpen {
+height: 39%;
+}
+#container .main-block .columns .box .readmore {
+  display: block;
+  width: 100%;
+  height: 0;
+  background-color: #2196F3;
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+#container .main-block .columns .box:hover .readmore {
+height: 18%;
+}
+#container .main-block .columns .box .clickToOpen span,
+#container .main-block .columns .box .readmore span {
+  display: inline-block;
+  float: none;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  white-space: nowrap;
+}
+#container .main-block .columns .box .clickToOpen span {
+  font-size: 18px;
+  font-weight: bold;
+}
+#container .main-block .col .box {
+  background-color: transparent;
+  height: 210px;
+  text-align: justify;
+}
+#container .main-block .columns .box a {
+  color: #1976D2;
+}
+#container .main-block .col img {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+#container .main-block .columns .box:nth-child(3),
+#container .main-block .columns .box:nth-child(6),
+#container .main-block .columns .box:nth-child(9),
+#container .main-block .contact .box:nth-child(2) {
+  margin-right: 0;
+}
+#container .main-block .columns .box div,
+#container .main-block .columns .box h3 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+#container .main-block .columns .box div {
+  height: auto;
+  color: #2196F3;
+  font-size: 120px;
+  padding: 0;
+}
+#container .main-block .columns .box h3 {
+  padding: 2px 0;
+  line-height: 30px;
+}
+#container .main-block .col .box h3 {
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 24px;
+}
+#container .main-block .columns .box p {
+  text-align: justify;
+  border: 0.1px solid transparent;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+#container .main-block .col .box p {
+  position: relative;
+  top: -16px;
+}
+#container .main-block .contact .box {
+  padding: 0;
+  width: 40%;
+  height: auto;
+  margin: 8px 5% 8px 5%;
+  cursor: default;
+}
+#container .main-block .contact .box div {
+  height: auto;
+  color: #FFFFFF;
+  background-color: #2196F3;
+  font-size: 15px;
+  padding: 5px 0;
+  text-align: center;
+}
+
+#container .main-block .contact .box:first-child div {
+  padding: 50px 0;
+}
+#container .main-block .contact .box table .pad1 {
+  padding-top: 60px;
+}
+#container .main-block .contact .box table .pad2 {
+  padding-bottom: 60px;
+}
+#container .main-block .contact .box:nth-child(2) form textarea {
+  height: 155px;
+}
+
+#container .main-block .contact .box div span {
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: justify;
+  padding-left: 25px;
+}
+#container .main-block .contact .box form {
+  padding: 1px 8px;
+}
+#container .main-block .contact .box form input,
+#container .main-block .contact .box form textarea {
+  width: 100%;
+  height: 42px;
+  color: #2D2D2D;
+  display: block;
+  float: left;
+  border: none;
+  border-bottom: 1px solid rgb(60,60,60,0.4);
+  padding-left: 5px;
+  transition: all 0.7s ease-in;
+}
+#container .main-block .contact .box form input:focus {
+  border-bottom: 1.5px solid green;
+}
+#container .main-block .contact .box form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+#container .main-block .contact .box form input[type=number] {
+  -moz-appearance:textfield;
+}
+#container .main-block .contact .box form textarea {
+  height: 200px;
+  border: 1px solid rgb(60,60,60,0.4);
+  resize: vertical;
+  border-radius: 3px;
+  font-family: consolas;
+}
+#container .main-block .contact .box form textarea:focus {
+  border: 1.5px solid green;
+  border-top: 1px solid rgb(60,60,60,0.4);
+  border-right: 1px solid rgb(60,60,60,0.4);
+}
+#container .main-block .contact .box form button {
+  display: inline-block;
+  float: left;
+  padding: 10px 8px;
+  margin: 5px 0 10px 0;
+  color: #FFFFFF;
+  background-color: #2196F3;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border-radius: 3px;
+}
+#container .main-block .contact .box form button:hover {
+  background-color: #1976D2;
+}
+#container .main-block .contact .box form .sms,
+#container .main-block .contact .box form .smsMob {
+  display: block;
+  width: 100%;
+  float: left;
+  padding: 3px 0;
+  text-align: justify;
+  color: green;
+  font-size: 13px;
+  border-bottom: 1px solid green;
+  padding-left: 5px;
+}
+#container .main-block .socialmedia {
+  margin: 8px 0;
+  background-color: #1976D2;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 12px 0;
+  font-size: 17px;
+  border-radius: 4px;
+}
+#container .main-block .socialmedia .fab {
+  display: inline-block;
+  font-size: 50px;
+  position: relative;
+  top: -5px;
+  margin-right: 4px;
+}
+#container .main-block .socialmedia .fab:last-child() {
+  margin-right: 0;
+}
+#container .main-block .gallery .box {
+  display: inline-block;
+  padding: 0;
+  width: 170px;
+  height: 130px;
+  margin: 10px 0 10px 5px;
+  position: relative;
+  float: none;
+  min-height: inherit;
+  cursor: pointer;
+}
+#container .main-block .gallery .box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+#container .main-block .gallery .box .caption,
+#container .main-block .gallery .box .last {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #FFFFFF;
+  border-radius: 5px;
+  background-color: rgb(0,0,0,0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 30px 0 0 2px;
+  transition: all 1s ease-out;
+}
+#container .main-block .gallery .box:hover .caption {
+  opacity: 1;
+}
+#container .main-block .gallery .box .last {
+  opacity: 1;
+  background-color: #2196F3;
+  font-size: 15px;
+  padding: 50px 0 0 10px;
+  text-align: left;
+  transition: all 0.8s ease-out;
+}
+#container .main-block .gallery .box .last:hover {
+  padding-left: 70px;
+}
+
+#container .main-block .popular h3 div.pay {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  padding: 0 3px;
+  margin: 0;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+#container .main-block .popular h3 div.pay span.sp1 {
+  color: blue;
+}
+#container .main-block .popular h3 div.pay span.sp2 {
+  color: #a71e23;
+}
+#container .main-block .cards .box {
+  display: inline-block;
+  border-bottom: 1px solid rgba(33,150,243,0.3);
+  padding: 0;
+  width: 100px;
+  height: 80px;
+  margin: 10px 5px;
+  position: relative;
+  float: none;
+  min-height: inherit;
+  cursor: pointer;
+}
+#container .main-block .cards .box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+  object-position: center;
+}
+/*
+#container .main-block .cards .box .caption {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: #FFFFFF;
+  border-radius: 5px;
+  background-color: rgb(0,0,0,0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 30px 0 0 2px;
+  transition: all 1s ease-out;
+}
+#container .main-block .cards .box:hover .caption {
+  opacity: 1;
+}*/
+
+#container .main-block .testimonial {
+  height: auto;
+  max-height: 330px;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #FFFFFF;
+  color: #2D2D2D;
+}
+#container .main-block .testimonial .test {
+  display: block;
+  width: 100%;
+  float: left;
+  border: 1px solid #ccc;
+  text-align: justify;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 7px 0
+}
+#container .main-block .testimonial .test::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+#container .main-block .testimonial .test img {
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+#container .main-block .testimonial .test span {
+  font-size: 20px;
+  margin-right: 15px;
+  color: #2196F3;
+}
+#container .main-block .fdback {
+  text-align: center;
+  border-radius: 3px;
+  padding-left: 2px;
+  padding-right: 5px;
+  position: relative;
+}
+#container .main-block .fdback h3 {
+  font-size: 21px;
+  display: inline-block;
+  float: left;
+  margin-top: 1px;
+}
+#container .main-block .fdback button {
+  border: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 23px;
+}
+#container .main-block .fdback button.trip {
+  float: right;
+  margin-top: 3px;
+}
+#container .main-block .fdback button .fab,
+#container .main-block .fdback button .fas {
+  position: relative;
+  top: 2px;
+  font-size: 20px;
+  margin-right: 5px;
+}
+#container .main-block .fdback button span {
+  display: inline-block;
+  width: auto;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+#container .main-block .modal form .formhead,
+#container .main-block .modal form .formsms1,
+#container .main-block .modal form .formsms2,
+#container .main-block .modal form .inpGroup,
+#container .main-block .modal form .inpGroup label,
+#container .main-block .modal form .inpGroup input,
+#container .main-block .modal form .inpGroup select,
+#container .main-block .modal form .inpGroup textarea,
+#container .main-block .modal form .inpGroup span {
+  display: block;
+  float: left;
+  width: 100%;
+  color: #2D2D2D;
+}
+#container .main-block .modal form .formhead {
+  background-color: #2196F3;
+  color: #FFFFFF;
+  padding: 13px 0 13px 10px;
+  font-size: 15px;
+  text-align: left;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+#container .main-block .modal form .formhead .fas {
+  display: inline-block;
+  position: relative;
+  top: auto;
+  bottom: -2px;
+  font-size: 22px;
+}
+#container .main-block .modal form .formsms1,
+#container .main-block .modal form .formsms2 {
+  background-color: rgb(12,147,21,0.1);
+  font-size: 14px;
+  padding: 4px 0 4px 4px;
+  color: green;
+}
+#container .main-block .modal form .formsms2 {
+  background-color: rgb(223,29,29,0.1);
+  color: #DF1D1D;
+}
+#container .main-block .modal form .inpGroup {
+  margin-top: 3px;
+  font-size: 15px;
+  font-weight: normal;
+}
+#container .main-block .modal form .inpGroup input,
+#container .main-block .modal form .inpGroup select,
+#container .main-block .modal form .inpGroup textarea {
+  height: 36px;
+  border: 1px solid rgb(33,150,243,0.5);
+  padding-left: 5px;
+  border-radius: 3px;
+  color: #2D2D2D;
+}
+#container .main-block .modal form .inpGroup textarea {
+  height: 150px;
+  resize: vertical;
+}
+#container .main-block .modal form button {
+  display: inline-block;
+  margin: 8px 10px 0 0;
+  padding: 6px;
+  background-color: #28A745;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-weight: normal;
+}
+#container .main-block .modal form button:hover {
+  background-color: #158b30;
+}
+#container .main-block .modal form .btnCancel {
+  background-color: #F44336;
+}
+#container .main-block .modal form .btnCancel:hover {
+  background-color: #E02517;
+}
+#container .main-block .modal form .load {
+  background-color: #787878;
+  color: #FFFFFF;
+  cursor: not-allowed;
+  display: none;
+}
+#container .main-block .modal form .load:hover {
+  background-color: #787878;
+}
+
+@media (max-width: 500px) {
+  #container .main-block .testimonial .test {
+      text-align: center;
+  }
+  #container .main-block .testimonial .test img {
+      margin: auto;
+      float: none;
+      display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+/*-----------  CUSTOM BREAKPOINTS FOR RESPONSIVENESS (index page excluding master elements)  ----------*/
+@media (max-width: 999px) {
+  /* First row of columns (our services) */
+  #container .main-block .columns .box {
+    padding: 10px;
+    height: 320px;
+  }
+  #container .main-block .columns .box h3 {
+    font-size: 22px;
+  }
+  #container .main-block .columns .box div {
+    font-size: 90px;
+  }
+  #container .main-block .cards .box {
+    padding: 0;
+    height: 80px;
+  }
+  #container .main-block .columns .box:hover .clickToOpen {
+  height: 47%;
+  }
+  /*------------------------------------------*/
+
+  /* Second row of columns (popular places & destinations) */
+  #container .main-block .col .box {
+    height: 210px;
+  }
+  #container .main-block .col .box h3 {
+    font-size: 18px;
+  }
+  /*-----------------------------------*/
+
+  /* Third row of columns (JadeVine-travel gallery) */
+  #container .main-block .gallery .box {
+    width: 170px;
+    height: 130px;
+    padding: 0;
+    float: none;
+  }
+  /*-----------------------------------*/
+
+/* Fourth row of columns (contact us) */
+  #container .main-block .contact .box {
+    padding: 0;
+    width: 48%;
+    height: auto;
+    margin: 5px 1% 5px 1%;
+  }
+  #container .main-block .contact .box div {
+    font-size: 15px;
+    padding: 0;
+  }
+
+  #container .main-block .fdback button.trip {
+    margin-top: 2px;
+  }
+}
+@media (max-width: 768px) {
+   /* First row of columns (our services) */
+   #container .main-block .columns .box {
+     height: 292px;
+   }
+   #container .main-block .columns .box div {
+     font-size: 80px;
+   }
+   #container .main-block .cards .box {
+     padding: 0;
+     width: 90px;
+     height: 70px;
+   }
+   /*------------------------------------------*/
+
+   #container .main-block .col .box {
+     height: 210px;
+   }
+
+   /* Third row of columns (JadeVine-travel gallery) */
+   #container .main-block .gallery .box {
+     width: 170px;
+     height: 130px;
+     padding: 0;
+     float: none;
+   }
+   /*-----------------------------------*/
+
+   /* Fourth row of columns (contact us) */
+     #container .main-block .contact .box {
+       padding: 0;
+       width: 48%;
+       height: auto;
+       margin: 5px 1% 5px 1%;
+     }
+     #container .main-block .contact .box div {
+       font-size: 15px;
+       padding: 0;
+     }
+     #container .main-block .contact .box div span {
+       padding-left: 2px;
+     }
+ }
+
+ @media (max-width: 634px) {
+   /* First row of columns (our services) */
+   #container .main-block .columns .box {
+     padding: 15px 50px;
+     height: 300px;
+     width: 94%;
+     margin: 8px 3%;
+     float: none;
+   }
+   #container .main-block .columns .box:hover .clickToOpen {
+   height: 41%;
+   }
+   #container .main-block .columns .box .clickToOpen span {
+     font-size: 20px;
+   }
+   #container .main-block .columns .box div {
+     font-size: 90px;
+   }
+   #container .main-block .columns .box h3 {
+     font-size: 24px;
+   }
+   #container .main-block .cards .box {
+     display: inline-block;
+     padding: 0;
+     width: 60px;
+     height: 40px;
+     margin: 5px 2px;
+   }
+   #container .main-block .cards .box img {
+     border-radius: 3px;
+   }
+   /*------------------------------------------*/
+
+   /* Second row of columns (popular places & destinations) */
+   #container .main-block .col .box {
+     width: 46%;
+     margin: 8px 2%;
+     height: 200px;
+     float: left;
+     padding: 5px;
+   }
+   #container .main-block .col .box h3 {
+     font-size: 18px;
+   }
+   /*-----------------------------------*/
+
+   #container .main-block .columns .box:nth-child(3) {
+     margin-right: 3%;
+   }
+   #container .main-block .col .box:nth-child(3) {
+     margin-right: 2%;
+   }
+   #container .main-block .contact .box:nth-child(2) {
+     margin-right: 4%;
+   }
+
+   /* Fourth row of columns (contact us) */
+     #container .main-block .contact .box {
+       padding: 0;
+       width: 94%;
+       height: auto;
+       margin: 5px 4%;
+     }
+     #container .main-block .contact .box div {
+       font-size: 15px;
+     }
+
+     #container .main-block .contact .box:first-child div {
+       padding: 5px 0;
+     }
+     #container .main-block .contact .box table .pad1 {
+       padding-top: 0;
+     }
+     #container .main-block .contact .box table .pad2 {
+       padding-bottom: 0;
+     }
+     #container .main-block .contact .box:nth-child(2) form textarea {
+       height: 155px;
+     }
+
+     #container .main-block .gallery .box {
+       height: 120px;
+       padding: 0;
+       width: 30%;
+       margin: 5px 1% 5px 0;
+       float: none;
+     }
+     #container .main-block .gallery .box:nth-child(3),
+     #container .main-block .gallery .box:nth-child(6) {
+       margin-right: 1%;
+     }
+     #container .main-block .gallery .box .caption,
+     #container .main-block .gallery .box .last {
+       padding: 25px 0 0 2px;
+     }
+     #container .main-block .gallery .box .last {
+       padding: 50px 0 0 2px;
+     }
+
+     #container .main-block .socialmedia {
+       font-size: 15px;
+     }
+     #container .main-block .socialmedia .fab {
+       font-size: 40px;
+       top: auto;
+       margin-right: 5px;
+     }
+ }
+ @media (max-width: 494px) {
+   #container .main-block .col .box:nth-child(3),
+   #container .main-block .col .box:nth-child(6) {
+     margin-right: 3%;
+   }
+   /*-----------------------------------*/
+
+   #container .main-block .columns .box {
+     padding: 10px;
+     height: 265px;
+     width: 94%;
+     margin: 8px 3%;
+     float: none;
+   }
+   #container .main-block .columns .box:hover .clickToOpen {
+   height: 46%;
+   }
+   #container .main-block .columns .box div {
+     font-size: 70px;
+   }
+   #container .main-block .columns .box h3 {
+     font-size: 22px;
+   }
+
+   #container .main-block .cards .box {
+     display: inline-block;
+     padding: 0;
+     width: 50px;
+     height: 30px;
+     margin: 5px 2px;
+   }
+
+   #container .main-block .col .box {
+     width: 94%;
+     margin: 5px 3%;
+     height: 192px;
+     float: none;
+     padding: 5px;
+   }
+   #container .main-block .col .box h3 {
+     font-size: 18px;
+   }
+
+   #container .main-block .gallery .box {
+     height: 120px;
+     padding: 0;
+     width: 45%;
+     margin: 5px 1% 5px 0;
+     float: none;
+   }
+   #container .main-block .gallery .box:nth-child(3),
+   #container .main-block .gallery .box:nth-child(6) {
+     margin-right: 1%;
+   }
+   #container .main-block .gallery .box .caption,
+   #container .main-block .gallery .box .last {
+     padding: 25px 0 0 2px;
+   }
+   #container .main-block .gallery .box .last {
+     padding: 50px 0 0 2px;
+   }
+
+   #container .main-block .contact .box {
+     height: auto;
+     padding: 0;
+   }
+   #container .main-block .contact .box div {
+     font-size: 14px;
+   }
+
+   #container .main-block .fdback h3 {
+     font-size: 20px;
+     margin-top: 3px;
+   }
+   #container .main-block .fdback button {
+     font-size: 18px;
+   }
+   #container .main-block .fdback button.btnMd {
+     position: relative;
+     top: -2px;
+   }
+   #container .main-block .fdback button.trip {
+     margin-top: 6px;
+   }
+ }
+
+ @media (max-width: 375px) {
+   #container .main-block .socialmedia {
+     font-size: 13px;
+     padding: 0;
+     padding-top: 5px;
+   }
+   #container .main-block .socialmedia .fab {
+     font-size: 38px;
+     top: auto;
+     margin-right: 5px;
+     margin-bottom: 10px;
+   }
+ }

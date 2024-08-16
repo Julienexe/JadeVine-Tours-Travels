@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>JadeVine Travel & Tours </title>
+    <link rel="shortcat icon" href="{% static 'pictures/logo.png'%}">
+    <link href="{% static 'fonts.googleapis.com/css.css'%}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
+    <link rel="stylesheet" href="{% static 'fontawesome-web-5.10.1/css/all.css'%} ">
+    <link rel="stylesheet" href="{% static 'css/w3styles.css'%}">
+    <link rel="stylesheet" href="{% static 'css/master.css'%}">
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" href="{% static 'css/slide.css'%}">
+    <script src="{% static 'jQuery/jquery-3.4.0.min.js'%}"></script>
+    <script src="{% static 'he-master/he.js'%}"></script>
+    <link href="{% static 'vanilla-calendar.min.css'%}" rel="stylesheet">
+    <script src="{% static 'vanilla-calendar.min.js'%}" defer></script>
+    <link rel="stylesheet" href="{% static 'unpkg.com/leaflet/dist/leaflet.css'%}" />
+    <!-- Leaflet JavaScript -->
+    <script src="{% static 'unpkg.com/leaflet/dist/leaflet.js'%}"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("myForm").style.display = "none";
+        };
+        function toggleForm() {
+            var form = document.getElementById("myForm");
+            if (form.style.display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+
+    </script>
+
+    <style>
+        #map {
+            height: 50%;
+            width: 100%;
+        }
+
+        .styled-button {
+            margin-top: 20px;
+            background-color: #2196F3;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .styled-button:hover {
+            background-color: #2F65B3;
+            /* Darker shade for hover effect */
+        }
+
+        nav ul li .lin-home {
+            background-color: rgb(45, 45, 45, 0.2);
+        }
+
+        .menu ul li .lin-home {
+            background-color: #2196F3;
+            color: #FFFFFF;
+        }
+
+        .parent-container {
+            display: flex;
+            justify-content: center;
+            /* Horizontal centering */
+            align-items: center;
+            /* Vertical centering */
+            height: 100vh;
+            /* Adjust this if necessary */
+        }
+
+        .centered-div {
+            /* Add your styles for the centered div here */
+
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            select,
+            input[type="date"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                /* Include padding and border in element's total width */
+            }
+
+            input[type="submit"] {
+                width: 100%;
+                padding: 10px;
+                background-color: #387ADF;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+
+
+        .container2 {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select {
+            width: 40%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the button */
+        .book-now-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #FFA500;
+            /* Change this color to your preferred background color */
+            border-radius: 5px;
+        }
+
+        /* Hover effect to make it more interactive */
+        .book-now-button:hover {
+            background-color: #2980b9;
+            /* Change this color to your preferred hover color */
+        }
+    </style>
+</head>
+
+<body class="w3-animate-opacity">
+    {%block content%}
+    {%endblock%}
+</body>
+<script src="{% static 'jQuery/jq.js'%}" charset="utf-8"></script>
+<script src="{% static 'jQuery/searching.js'%}" charset="utf-8"></script>
+
+</html>
