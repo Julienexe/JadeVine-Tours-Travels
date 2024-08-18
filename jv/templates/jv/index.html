@@ -1,40 +1,44 @@
 {% extends "jv/base.html" %}
 {% load static %}
 {% block content %}
-    <div id="map"></div>
-            <script>
-  // JavaScript to initialize the map
-  var map = L.map('map').setView([-6.1652, 39.2026], 13); // Coordinates for Zanzibar
+<div id="map"></div>
+<script>
+    // JavaScript to initialize the map
+    var map = L.map('map').setView([-6.1652, 39.2026], 13); // Coordinates for Zanzibar
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-  // Marker for Amani - Welezo Street, Zanzibar
-  L.marker([-6.1652, 39.2026]).addTo(map)
-      .bindPopup('Amani - Welezo Street, Zanzibar')
-      .openPopup();
-</script> 
-   
-   <style type="text/css">
- .container {
-      display: flex;
-      justify-content: space-between;
-  }
-  .column {
-      flex: 1;
-  }
-  .column.left {
-      text-align: left;
-  }
-  .column.right {
-      text-align: right;
-  }
-   .acenter {
-      text-align: center;
-  }
+    // Marker for Amani - Welezo Street, Zanzibar
+    L.marker([-6.1652, 39.2026]).addTo(map)
+        .bindPopup('Amani - Welezo Street, Zanzibar')
+        .openPopup();
+</script>
 
-/* .fixed-con {
+<style type="text/css">
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .column {
+        flex: 1;
+    }
+
+    .column.left {
+        text-align: left;
+    }
+
+    .column.right {
+        text-align: right;
+    }
+
+    .acenter {
+        text-align: center;
+    }
+
+    /* .fixed-con {
   z-index: 9724790009779558!important;
   background-color: #f7f8fc;
   position: fixed;
@@ -57,315 +61,283 @@
   width:80px;
   height:80px;
 }*/
-.fixed-con {
-z-index: 9724790009779558!important;
-background-color:#FFA500; /* Matching background color */
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-overflow-y: auto;
-}
+    .fixed-con {
+        z-index: 9724790009779558 !important;
+        background-color: #FFA500;
+        /* Matching background color */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+    }
 
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
-z-index: 9724790009779!important;
-top: 0;
-left: unset;
-right: -5px;
-display: none!important;
-border-radius: 10%;
-border: 1px solid #FFA500; /* Matching border color */
-}
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+        z-index: 9724790009779 !important;
+        top: 0;
+        left: unset;
+        right: -5px;
+        display: none !important;
+        border-radius: 10%;
+        border: 1px solid #FFA500;
+        /* Matching border color */
+    }
 
-.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
-width: 80px;
-height: 80px;
-}
+    .VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+        width: 80px;
+        height: 80px;
+    }
 
-/*hide google translate link | logo | banner-frame */
-.goog-logo-link,.gskiptranslate,.goog-te-gadget span,.goog-te-banner-frame,#goog-gt-tt, .goog-te-balloon-frame,div#goog-gt-{
-  display: none!important;
-}
-.goog-te-gadget {
-  color: transparent!important;
-  font-size:0px;
-}
+    /*hide google translate link | logo | banner-frame */
+    .goog-logo-link,
+    .gskiptranslate,
+    .goog-te-gadget span,
+    .goog-te-banner-frame,
+    #goog-gt-tt,
+    .goog-te-balloon-frame,
+    div#goog-gt- {
+        display: none !important;
+    }
 
-.goog-text-highlight {
-  background: none !important;
-  box-shadow: none !important;
-}
- 
-/*google translate Dropdown */
+    .goog-te-gadget {
+        color: transparent !important;
+        font-size: 0px;
+    }
 
-#google_translate_element select{
-/*background:#f6edfd;*/
-color:#387ADF;
-border: none;
-border-radius:3px;
-padding:6px 8px;
-}
-.goog-te-banner-frame{
-display:none !important;
+    .goog-text-highlight {
+        background: none !important;
+        box-shadow: none !important;
+    }
 
-}
-.goog-te-banner-frame {
-  margin-bottom: 20px; /* Adjust the margin as needed */
-}
-.div-left {
-  float:right;
-}
-.goog-te-combo {
-  width: 30%; /* Adjust the width as needed */
-}
-.goog-te-combo option[value="lang"] {
-  /* Style the "lang" option as desired */
-  font-weight: bold; /* Example style */
-  /* Add any other desired styles */
-}
-</style> 
+    /*google translate Dropdown */
+
+    #google_translate_element select {
+        /*background:#f6edfd;*/
+        color: #387ADF;
+        border: none;
+        border-radius: 3px;
+        padding: 6px 8px;
+    }
+
+    .goog-te-banner-frame {
+        display: none !important;
+
+    }
+
+    .goog-te-banner-frame {
+        margin-bottom: 20px;
+        /* Adjust the margin as needed */
+    }
+
+    .div-left {
+        float: right;
+    }
+
+    .goog-te-combo {
+        width: 30%;
+        /* Adjust the width as needed */
+    }
+
+    .goog-te-combo option[value="lang"] {
+        /* Style the "lang" option as desired */
+        font-weight: bold;
+        /* Example style */
+        /* Add any other desired styles */
+    }
+</style>
 
 <script type="text/javascript">
-function googleTranslateElementInit() {
+    function googleTranslateElementInit() {
 
-new google.translate.TranslateElement({
+        new google.translate.TranslateElement({
 
-pageLanguage: 'en',
+            pageLanguage: 'en',
 
-autoDisplay: 'true',
-includedLanguages:'it,fr,da,de,es,sw',
+            autoDisplay: 'true',
+            includedLanguages: 'it,fr,da,de,es,sw',
 
-layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
 
-}, 'google_translate_element');
+        }, 'google_translate_element');
 
-}
+    }
 </script>
 
-<script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>    
-<header class="w3-card-4"
->
-   
-<div class="wrapper">
-     
-  <a href="index.htm">
-    <img src="{% static 'pictures/logo.png'%}" alt="logo" id="logo">
-    <div class="headname">
-      Jadevine Travel & Tours
+<script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>
+
+{%include "jv/navbar.html"%}
+
+
+<div id="container">
+    <div class="slideshow" style="margin-top:5px;">
+        <button type="button" id="left"><svg viewBox="0 0 24 24" height="24" width="24" fill="#ffffff"
+                xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </g>
+            </svg></button>
+        <button type="button" id="right"><svg viewBox="0 0 24 24" height="24" width="24" fill="#ffffff"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </g>
+            </svg></button>
+
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/14.jpg">
+
+            <span>
+
+                <p class="head1">We Work With All Budget
+
+                    Groups &amp; Individual Getaways </p>
+                <p class="p1">VISIT THE TOP BEST ISLAND IN AFRICA </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/22.jpg">
+
+            <span>
+
+                <p class="head1">BEST BEACHES </p>
+                <p class="p1">ZANZIBAR`S FINEST BEACH </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/30.jpg">
+
+            <span>
+
+                <p class="head1">LUXURY HOTELS</p>
+                <p class="p1">ZANZIBAR ISLAND </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/31.jpg">
+
+            <span>
+
+                <p class="head1">ZANZIBAR MICE</p>
+                <p class="p1">. </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/32.jpg">
+
+            <span>
+
+                <p class="head1">PROPOSAL &amp; WEDDING</p>
+                <p class="p1">ZANZIBAR </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/33.jpg">
+
+            <span>
+
+                <p class="head1">HONEYMOON &amp; ANNIVERSARY</p>
+                <p class="p1">ZANZIBAR </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/34.jpg">
+
+            <span>
+
+                <p class="head1">SWIM WITH DOLPHIN </p>
+                <p class="p1">ZANZIBAR </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/35.jpg">
+
+            <span>
+
+                <p class="head1">SNORKELING &amp; DIVINING </p>
+                <p class="p1">ZANZIBAR`S BEST ACTIVITY </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/36.jpg">
+
+            <span>
+
+                <p class="head1">SAFARI NATIONAL PARKS </p>
+                <p class="p1">TANZANIA, KENYA, UGANDA &amp; RWANDA </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/38.jpg">
+
+            <span>
+
+                <p class="head1">SAFARI ACCOMMODATION</p>
+                <p class="p1">TANZANIA </p>
+
+
+
+            </span>
+
+        </div>
+        <div>
+            <img src="https://jadevinetravel.com/pictures/imgslider/39.jpg">
+
+            <span>
+
+                <p class="head1">SAFARI TRANSPORTATION</p>
+                <p class="p1">AIR &amp; GROUND </p>
+
+
+
+            </span>
+
+        </div>
     </div>
-  </a>
-
-  <i class="fas fa-bars" id="menubars"></i>
-  
-  <nav>
-     
-    <ul>
-      <li><a href="index.htm" class="lin-home">Home</a></li>
-      <li><a href="services.htm" class="lin-services">Services</a></li>
-      <li><a href="popular_places_89.htm" class="lin-popular">Popular places</a></li>
-      <li><a href="gallery.htm" class="lin-gallery">Tours & Excursion</a></li>
-      <li><a href="popular_places_89.htm#search" class="lin-search">Search</a></li>
-      <li><a href="about.htm" class="lin-about">About</a></li>
-      <li><a href="contact.htm" class="lin-contact">Contact</a></li>
-     
-    </ul>
-  </nav>
-</div>
-</header>
-
-<div class="menu w3-card-2" id="navbar">
-  
-<div class="h-devider"></div>
-<ul>
-  <li><a href="index.htm" class="lin-home">Home</a></li>
-  <li><a href="services.htm" class="lin-services">Services</a></li>
-  <li><a href="popular_places_89.htm" class="lin-popular">Popular places</a></li>
-  <li><a href="gallery.htm" class="lin-gallery">Tours & Excursion</a></li>
-  <li><a href="popular_places_89.htm#search" class="lin-search">Search</a></li>
-  <li><a href="about.htm" class="lin-about">About</a></li>
-  <li><a href="contact.htm" class="lin-contact">Contact</a></li>
-</ul>
-</div>
-
-<div class="h-devider"></div>
-
-      <div class="box x1 w3-card-2" id="google_translate_element" style="color:#387ADF; font-weight: bold;margin-TOP:-19px;margin-BOTTOM:-19px;">
-          
-           <p style="color:#387ADF;margin-left: 10px; width:30%" >Change language</p>
-           <span><div class="socialmedia div-left" style="margin-bottom: -3px; margin-top -13px; font-size:x-large;">
-        <a href="tel:+255-683956372"><i class="fas fa-phone"></i> </a>
-        <a href="{% static 'api.whatsapp.com/send.htm'%}" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="index.htm" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="index.htm" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="index.htm" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="skype:?call" target="_blank"><i class="fab fa-skype"></i></a>
-          
-      </div></span>
-          
-          </div>
-          
-          
-      
-     
-
- 
-  
-
-
-  <div id="container">
-            <div class="slideshow" style="margin-top:5px;">
-        <button type="button" id="left"><i class="fas fa-arrow-left"></i></button>
-<button type="button" id="right"><i class="fas fa-arrow-right"></i></button>
-
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/14.jpg">
-  
-<span>
-  
-  <p class="head1">We Work With All Budget
-
-Groups &amp; Individual Getaways </p>
-  <p class="p1">VISIT THE TOP BEST ISLAND IN AFRICA  </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/22.jpg">
-  
-<span>
-  
-  <p class="head1">BEST BEACHES </p>
-  <p class="p1">ZANZIBAR`S FINEST BEACH  </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/30.jpg">
-  
-<span>
-  
-  <p class="head1">LUXURY HOTELS</p>
-  <p class="p1">ZANZIBAR ISLAND   </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/31.jpg">
-  
-<span>
-  
-  <p class="head1">ZANZIBAR MICE</p>
-  <p class="p1">.  </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/32.jpg">
-  
-<span>
-  
-  <p class="head1">PROPOSAL &amp; WEDDING</p>
-  <p class="p1">ZANZIBAR  </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/33.jpg">
-  
-<span>
-  
-  <p class="head1">HONEYMOON &amp; ANNIVERSARY</p>
-  <p class="p1">ZANZIBAR  </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/34.jpg">
-  
-<span>
-  
-  <p class="head1">SWIM WITH DOLPHIN </p>
-  <p class="p1">ZANZIBAR   </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/35.jpg">
-  
-<span>
-  
-  <p class="head1">SNORKELING &amp; DIVINING </p>
-  <p class="p1">ZANZIBAR`S BEST ACTIVITY  </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/36.jpg">
-  
-<span>
-  
-  <p class="head1">SAFARI NATIONAL PARKS </p>
-  <p class="p1">TANZANIA, KENYA, UGANDA &amp; RWANDA   </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/38.jpg">
-  
-<span>
-  
-  <p class="head1">SAFARI ACCOMMODATION</p>
-  <p class="p1">TANZANIA  </p>
-  
- 
- 
-</span>
-
-</div>
-<div>
-<img src="https://jadevinetravel.com/pictures/imgslider/39.jpg">
-  
-<span>
-  
-  <p class="head1">SAFARI TRANSPORTATION</p>
-  <p class="p1">AIR &amp; GROUND   </p>
-  
- 
- 
-</span>
-
-</div>
-      </div>
-          <div class="main-block">
-      <!--<div class="search w3-card-2">
+    <div class="main-block">
+        <!--<div class="search w3-card-2">
         <form class="" action="" method="post">
           <h3>Search places & destinations</h3>
           <div>
@@ -374,190 +346,248 @@ Groups &amp; Individual Getaways </p>
           </div>
         </form>
       </div>-->
-      <div class="popular">
-        <h3>Our Services</h3>
-      </div>
-      <div class="columns">
-                  <div class="box x1 w3-card-2" title="" onclick="openLink('popular_places.php?categ=2')">
-          <div class=""><i class='fas fa-bed'></i></div>
-          <h3>HOTELS, LODGES & VILLAS</h3>
-          <p>Book for your accommodation with us. There's a wealth of Hotels, Lodges and Villas in Zanzibar with fine hospitality to suit a range of budgets. Most Hotels occupy historical or restored buildings with a short walking distance of the main attractions, And all have the mod cons. Many have indoors/outdoor pools and an Ocean view. Most Hotels are dotted along the archipelago's coastline especially in the north and east side of the island of Zanzibar. Many are part of the luxury beach Hotels, Lodges and villas offering everything any one need to have such as a Serene and indulgent environment to stay.</p>
-          <span class="clickToOpen">
-            <span>Click here for hotels</span>
-          </span>
+        <div class="popular">
+            <h3>Our Services</h3>
         </div>
-                  <div class="box x1 w3-card-2" title="" onclick="openLink('popular_places.php?categ=9')">
-          <div class=""><i class='fas fa-car-side'></i></div>
-          <h3>TOURS & TRANSFER SHUTTLES</h3>
-          <p>All pickups, are done on the spot to take you to every corner in Zanzibar island by buses, VIP saloon Vehicles and more others tour trucks on the ground. All shuttles are subjected to strong quality customer services. We provide for both individual and group any time and any where all with the help of our professional and ethical drivers to transport our clients to their destinations in both  Tanzania and Zanzibar during the safaris and to hotels and from airports with an excellent performance records,  traveling with comfort is our goal. We care about your experience every where you go.</p>
-          <span class="clickToOpen">
-            <span>Click here for tours</span>
-          </span>
+        <div class="columns">
+            <div class="box x1 w3-card-2" title="" onclick="openLink('popular_places.php?categ=2')">
+                <div class=""><svg fill="#387ADF" height="90" width="113" viewBox="0 0 50 50"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M3 9C1.3545455 9 0 10.354545 0 12L0 42L6 42L6 37L44 37L44 42L50 42L50 28L50 23C50 20.254545 47.745455 18 45 18L19 18 A 1.0001 1.0001 0 0 0 18 19L18 28L12 28L6 28L6 12C6 10.354545 4.6454545 9 3 9 z M 12 28C14.749579 28 17 25.749579 17 23C17 20.250421 14.749579 18 12 18C9.2504209 18 7 20.250421 7 23C7 25.749579 9.2504209 28 12 28 z M 12 20C13.668699 20 15 21.331301 15 23C15 24.668699 13.668699 26 12 26C10.331301 26 9 24.668699 9 23C9 21.331301 10.331301 20 12 20 z M 20 20L45 20C46.654545 20 48 21.345455 48 23L48 28L20 28L20 20 z">
+                            </path>
+                        </g>
+                    </svg></div>
+                <h3>HOTELS, LODGES & VILLAS</h3>
+                <p>Book for your accommodation with us. There's a wealth of Hotels, Lodges and Villas in Zanzibar with
+                    fine hospitality to suit a range of budgets. Most Hotels occupy historical or restored buildings
+                    with a short walking distance of the main attractions, And all have the mod cons. Many have
+                    indoors/outdoor pools and an Ocean view. Most Hotels are dotted along the archipelago's coastline
+                    especially in the north and east side of the island of Zanzibar. Many are part of the luxury beach
+                    Hotels, Lodges and villas offering everything any one need to have such as a Serene and indulgent
+                    environment to stay.</p>
+                <span class="clickToOpen">
+                    <span>Click here for hotels</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" title="" onclick="openLink('popular_places.php?categ=9')">
+                <div class=""><svg viewBox="0 0 24 24" height="90" width="113" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M8 17H16M8 17C8 18.1046 7.10457 19 6 19C4.89543 19 4 18.1046 4 17M8 17C8 15.8954 7.10457 15 6 15C4.89543 15 4 15.8954 4 17M16 17C16 18.1046 16.8954 19 18 19C19.1046 19 20 18.1046 20 17M16 17C16 15.8954 16.8954 15 18 15C19.1046 15 20 15.8954 20 17M10 5V11M4 11L4.33152 9.01088C4.56901 7.58593 4.68776 6.87345 5.0433 6.3388C5.35671 5.8675 5.79705 5.49447 6.31346 5.26281C6.8993 5 7.6216 5 9.06621 5H12.4311C13.3703 5 13.8399 5 14.2662 5.12945C14.6436 5.24406 14.9946 5.43194 15.2993 5.68236C15.6435 5.96523 15.904 6.35597 16.425 7.13744L19 11M4 17H3.6C3.03995 17 2.75992 17 2.54601 16.891C2.35785 16.7951 2.20487 16.6422 2.10899 16.454C2 16.2401 2 15.9601 2 15.4V14.2C2 13.0799 2 12.5198 2.21799 12.092C2.40973 11.7157 2.71569 11.4097 3.09202 11.218C3.51984 11 4.0799 11 5.2 11H17.2C17.9432 11 18.3148 11 18.6257 11.0492C20.3373 11.3203 21.6797 12.6627 21.9508 14.3743C22 14.6852 22 15.0568 22 15.8C22 15.9858 22 16.0787 21.9877 16.1564C21.9199 16.5843 21.5843 16.9199 21.1564 16.9877C21.0787 17 20.9858 17 20.8 17H20"
+                                stroke="#387ADF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg></div>
+                <h3>TOURS & TRANSFER SHUTTLES</h3>
+                <p>All pickups, are done on the spot to take you to every corner in Zanzibar island by buses, VIP saloon
+                    Vehicles and more others tour trucks on the ground. All shuttles are subjected to strong quality
+                    customer services. We provide for both individual and group any time and any where all with the help
+                    of our professional and ethical drivers to transport our clients to their destinations in both
+                    Tanzania and Zanzibar during the safaris and to hotels and from airports with an excellent
+                    performance records, traveling with comfort is our goal. We care about your experience every where
+                    you go.</p>
+                <span class="clickToOpen">
+                    <span>Click here for tours</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" title="" onclick="openLink('popular_places.php?categ=4')">
+                <div class=""><svg fill="#387ADF" height="90" width="113" viewBox="0 -0.5 25 25"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="m24.794 16.522-.281-2.748-10.191-5.131s.091-1.742 0-4.31c-.109-1.68-.786-3.184-1.839-4.339l.005.006h-.182c-1.048 1.15-1.726 2.653-1.834 4.312l-.001.021c-.091 2.567 0 4.31 0 4.31l-10.19 5.131-.281 2.748 6.889-2.074 3.491-.582c-.02.361-.031.783-.031 1.208 0 2.051.266 4.041.764 5.935l-.036-.162-2.728 1.095v1.798l3.52-.8c.155.312.3.566.456.812l-.021-.035v.282c.032-.046.062-.096.093-.143.032.046.061.096.094.143v-.282c.135-.21.28-.464.412-.726l.023-.051 3.52.8v-1.798l-2.728-1.095c.463-1.733.728-3.723.728-5.774 0-.425-.011-.847-.034-1.266l.003.058 3.492.582 6.888 2.074z">
+                            </path>
+                        </g>
+                    </svg></div>
+                <h3>FLIGHTS & SAFARIS</h3>
+                <p>Book an air ticket with us for all fast and domestic safari park Tours in Tanzania. Take a flight
+                    from Zanzibar Island to Serengeti, Selous and Ruaha National parks to do a Safari. The most commonly
+                    done Tours and incorporating flights, you can rely on to do a combination of Parks like Serengeti
+                    National park, Ngorongoro National park, Selous Game Reserve, Mikumi National park and Ruaha
+                    National park in the southern part of Tanzania all Combined together in a nick of time.</p>
+                <span class="clickToOpen">
+                    <span>Click here for safaris</span>
+                </span>
+            </div>
         </div>
-                  <div class="box x1 w3-card-2" title="" onclick="openLink('popular_places.php?categ=4')">
-          <div class=""><i class='fas fa-plane' style='transform:rotate(270deg)'></i></div>
-          <h3>FLIGHTS & SAFARIS</h3>
-          <p>Book an air ticket with us for all fast and domestic safari park Tours in Tanzania. Take a flight from Zanzibar Island to Serengeti, Selous and Ruaha National parks to do a Safari. The most commonly done Tours and incorporating flights, you can rely on to do a combination of Parks like Serengeti National park, Ngorongoro National park, Selous Game Reserve, Mikumi National park and Ruaha National park in the southern part of Tanzania all Combined together in a nick of time.</p>
-          <span class="clickToOpen">
-            <span>Click here for safaris</span>
-          </span>
+
+        <!-- popular places and destinations -->
+        <div class="popular">
+            <h3>Popular Places</h3>
         </div>
+        <div class="columns col">
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=28')">
+                <img src="{% static 'pictures/places/28.jpg'%}" alt="BARAZA RESORT & SPA  ">
+                <h3>BARAZA RESORT & SPA </h3>
+                <!--<p></p>-->
+                <span class="price">$700</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=17')">
+                <img src="{% static 'pictures/places/17.jpg'%}" alt="SERENGETI NATIONAL PARK">
+                <h3>SERENGETI NATIONAL PARK</h3>
+                <!--<p></p>-->
+                <span class="price">$1050</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=34')">
+                <img src="{% static 'pictures/places/34.jpg'%}" alt="TUI BLUE BAHARI ZANZIBAR">
+                <h3>TUI BLUE BAHARI ZANZIBAR</h3>
+                <!--<p></p>-->
+                <span class="price">$344</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=78')">
+                <img src="{% static 'pictures/places/78.jpg'%}" alt=" NUNGWI BEACH RESORT">
+                <h3> NUNGWI BEACH RESORT</h3>
+                <!--<p></p>-->
+                <span class="price">$281</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=38')">
+                <img src="{% static 'pictures/places/38.jpeg'%}" alt="NGAMBA ISLAND CHIMPANZEE SANCTUARY">
+                <h3>NGAMBA ISLAND CHIMPANZEE SANCTUARY</h3>
+                <!--<p></p>-->
+                <span class="price">$850</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=79')">
+                <img src="{% static 'pictures/places/79.jpg'%}" alt="GOLD ZANZIBAR BEACH HOUSE & SPA">
+                <h3>GOLD ZANZIBAR BEACH HOUSE & SPA</h3>
+                <!--<p></p>-->
+                <span class="price">$500</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=35')">
+                <img src="{% static 'pictures/places/35.jpeg'%}" alt="XANADU VILLAS & RETREAT">
+                <h3>XANADU VILLAS & RETREAT</h3>
+                <!--<p></p>-->
+                <span class="price">$800</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=33')">
+                <img src="{% static 'pictures/places/33.jpg'%}" alt="ZANZIBAR WHITE SAND LUXURY VILLAS & SPA">
+                <h3>ZANZIBAR WHITE SAND LUXURY VILLAS & SPA</h3>
+                <!--<p></p>-->
+                <span class="price">$650</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=29')">
+                <img src="{% static 'pictures/places/29.jpg'%}" alt="THE RESIDENCE ZANZIBAR">
+                <h3>THE RESIDENCE ZANZIBAR</h3>
+                <!--<p></p>-->
+                <span class="price">$507</span>
+                <span class="readmore">
+                    <span>Read more</span>
+                </span>
+            </div>
+        </div>
+        <!-- End of popular places and destinations -->
+
+
+        <!-- Gallery -->
+        <div class="popular">
+            <h3><span><a href="gallery.htm">Tours & Excursion</a></span> Gallery</h3>
+        </div>
+
+        <div class="columns gallery">
+            <div class="box"
+                onclick="imageViewer('viewerImg','pictures/gallery/20.jpg','Sunset cruise is perfect to watch the worlds famous sunset of Zanzibar&amp;rsquo;s West Coast from Stone town where guests can enjoy the best view of the capital from the water. Snacks and drinks are provided on the traditional wooden dhow. ','Sunset Cruise Tour')">
+                <img src="https://jadevinetravel.com/pictures/gallery/20.jpg">
+                <span class="caption">Sunset Cruise Tour</span>
+            </div>
+            <div class="box"
+                onclick="imageViewer('viewerImg','pictures/gallery/22.jpg','Jozani forest is famous for rare red Columbus monkeys and even harder to spot Zanzibar Sykes&amp;rsquo; monkey, a very rare monkey species unique to Zanzibar. Along with Red Columbus Monkeys you can expect to see Bush baby.','Jozani Forest Tour ')">
+                <img src="https://jadevinetravel.com/pictures/gallery/22.jpg">
+                <span class="caption">Jozani Forest Tour </span>
+            </div>
+            <div class="box"
+                onclick="imageViewer('viewerImg','pictures/gallery/23.jpg','Dolphin is a very interesting tour to do as you get the whole chance to get and swim closer with dolphins in their free and wildlife. Dolphins are friendly marine mammals and not harmful to human life.','Dolphin Tour ')">
+                <img src="https://jadevinetravel.com/pictures/gallery/23.jpg">
+                <span class="caption">Dolphin Tour </span>
+            </div>
+            <div class="box"
+                onclick="imageViewer('viewerImg','pictures/gallery/36.jpg','Stone town  is an outstanding private guided walking tour, we can arrange the pickup from your hotel and return.','Stone Town City Tour ')">
+                <img src="https://jadevinetravel.com/pictures/gallery/36.jpg">
+                <span class="caption">Stone Town City Tour </span>
+            </div>
+            <div class="box"
+                onclick="imageViewer('viewerImg','pictures/gallery/37.jpg','Prison island is half day private guided tour with snorkeling at (Changuu Island). visiting giant tortoises and discover the ancient history.','Prison Island Tour')">
+                <img src="https://jadevinetravel.com/pictures/gallery/37.jpg">
+                <span class="caption">Prison Island Tour</span>
+            </div>
+            <a href="gallery.htm">
+                <div class="box w3-card-2">
+                    <img src="index.htm" alt="" style="opacity:0">
+                    <span class="last">View more <svg viewBox="0 0 24 24" height="24" width="24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg></span>
                 </div>
+            </a>
+        </div>
 
-      <!-- popular places and destinations -->
-      <div class="popular">
-        <h3>Popular Places</h3>
-      </div>
-      <div class="columns col">
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=28')">
-          <img src="{% static 'pictures/places/28.jpg'%}" alt="BARAZA RESORT & SPA  ">
-          <h3>BARAZA RESORT & SPA  </h3>
-          <!--<p></p>-->
-          <span class="price">$700</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
+        <!-- Contact Us -->
+        <div class="popular">
+            <h3>Contact Us</h3>
         </div>
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=17')">
-          <img src="{% static 'pictures/places/17.jpg'%}" alt="SERENGETI NATIONAL PARK">
-          <h3>SERENGETI NATIONAL PARK</h3>
-          <!--<p></p>-->
-          <span class="price">$1050</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
-        </div>
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=34')">
-          <img src="{% static 'pictures/places/34.jpg'%}" alt="TUI BLUE BAHARI ZANZIBAR">
-          <h3>TUI BLUE BAHARI ZANZIBAR</h3>
-          <!--<p></p>-->
-          <span class="price">$344</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
-        </div>
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=78')">
-          <img src="{% static 'pictures/places/78.jpg'%}" alt=" NUNGWI BEACH RESORT">
-          <h3> NUNGWI BEACH RESORT</h3>
-          <!--<p></p>-->
-          <span class="price">$281</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
-        </div>
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=38')">
-          <img src="{% static 'pictures/places/38.jpeg'%}" alt="NGAMBA ISLAND CHIMPANZEE SANCTUARY">
-          <h3>NGAMBA ISLAND CHIMPANZEE SANCTUARY</h3>
-          <!--<p></p>-->
-          <span class="price">$850</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
-        </div>
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=79')">
-          <img src="{% static 'pictures/places/79.jpg'%}" alt="GOLD ZANZIBAR BEACH HOUSE & SPA">
-          <h3>GOLD ZANZIBAR BEACH HOUSE & SPA</h3>
-          <!--<p></p>-->
-          <span class="price">$500</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
-        </div>
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=35')">
-          <img src="{% static 'pictures/places/35.jpeg'%}" alt="XANADU VILLAS & RETREAT">
-          <h3>XANADU VILLAS & RETREAT</h3>
-          <!--<p></p>-->
-          <span class="price">$800</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
-        </div>
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=33')">
-          <img src="{% static 'pictures/places/33.jpg'%}" alt="ZANZIBAR WHITE SAND LUXURY VILLAS & SPA">
-          <h3>ZANZIBAR WHITE SAND LUXURY VILLAS & SPA</h3>
-          <!--<p></p>-->
-          <span class="price">$650</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
-        </div>
-                  <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=29')">
-          <img src="{% static 'pictures/places/29.jpg'%}" alt="THE RESIDENCE ZANZIBAR">
-          <h3>THE RESIDENCE ZANZIBAR</h3>
-          <!--<p></p>-->
-          <span class="price">$507</span>
-          <span class="readmore">
-            <span>Read more</span>
-          </span>
-        </div>
+        <div class="columns contact" id="contactus_box">
+
+            <div class="box w3-card">
+                <div class="w3-card-2">
+                    <h4>Contact Us For Booking</h4>
+                    <span>Call us on: +255-683956372</span>
+                    <span>Email us at: jadevinetravels@gmail.com</span>
                 </div>
-      <!-- End of popular places and destinations -->
+                <table class="w3-table" style="font-size:14px">
+                    <tr>
+                        <th class="pad1">Zanzibar, Tanzania :</th>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom:1px solid rgb(45,45,45,0.3)" class="pad2">
+                            &nbsp; P.O.Box: 3973<br>
+                            &nbsp; Amani - Welezo Street, Zanzibar<br>
+                            &nbsp; Tel: +255-683956372<br>
+                            &nbsp; Mail: jadevinetravels@gmail.com<br>
+                            &nbsp; www.jadevinetravel.com<br><br>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <div class="w3-card-2">
 
-
-      <!-- Gallery -->
-      <div class="popular">
-        <h3><span><a href="gallery.htm">Tours & Excursion</a></span> Gallery</h3>
-      </div>
-      
-      <div class="columns gallery">
-                  <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/20.jpg','Sunset cruise is perfect to watch the worlds famous sunset of Zanzibar&amp;rsquo;s West Coast from Stone town where guests can enjoy the best view of the capital from the water. Snacks and drinks are provided on the traditional wooden dhow. ','Sunset Cruise Tour')">
-          <img src="https://jadevinetravel.com/pictures/gallery/20.jpg">
-          <span class="caption">Sunset Cruise Tour</span>
-        </div>
-                  <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/22.jpg','Jozani forest is famous for rare red Columbus monkeys and even harder to spot Zanzibar Sykes&amp;rsquo; monkey, a very rare monkey species unique to Zanzibar. Along with Red Columbus Monkeys you can expect to see Bush baby.','Jozani Forest Tour ')">
-          <img src="https://jadevinetravel.com/pictures/gallery/22.jpg">
-          <span class="caption">Jozani Forest Tour </span>
-        </div>
-                  <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/23.jpg','Dolphin is a very interesting tour to do as you get the whole chance to get and swim closer with dolphins in their free and wildlife. Dolphins are friendly marine mammals and not harmful to human life.','Dolphin Tour ')">
-          <img src="https://jadevinetravel.com/pictures/gallery/23.jpg">
-          <span class="caption">Dolphin Tour </span>
-        </div>
-                  <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/36.jpg','Stone town  is an outstanding private guided walking tour, we can arrange the pickup from your hotel and return.','Stone Town City Tour ')">
-          <img src="https://jadevinetravel.com/pictures/gallery/36.jpg">
-          <span class="caption">Stone Town City Tour </span>
-        </div>
-                  <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/37.jpg','Prison island is half day private guided tour with snorkeling at (Changuu Island). visiting giant tortoises and discover the ancient history.','Prison Island Tour')">
-          <img src="https://jadevinetravel.com/pictures/gallery/37.jpg">
-          <span class="caption">Prison Island Tour</span>
-        </div>
-                  <a href="gallery.htm"><div class="box w3-card-2">
-          <img src="index.htm" alt="" style="opacity:0">
-          <span class="last">View more <i class="fas fa-arrow-right"></i></span>
-        </div></a>
-      </div>
-
-      <!-- Contact Us -->
-      <div class="popular">
-        <h3>Contact Us</h3>
-      </div>
-              <div class="columns contact" id="contactus_box">
-         
-        <div class="box w3-card">
-          <div class="w3-card-2">
-            <h4>Contact Us For Booking</h4>
-            <span>Call us on: +255-683956372</span>
-            <span>Email us at: jadevinetravels@gmail.com</span>
-          </div>
-          <table class="w3-table" style="font-size:14px">
-            <tr>
-              <th class="pad1">Zanzibar, Tanzania :</th>
-            </tr>
-            <tr>
-              <td style="border-bottom:1px solid rgb(45,45,45,0.3)" class="pad2">
-                &nbsp; P.O.Box: 3973<br>
-                &nbsp; Amani - Welezo Street, Zanzibar<br>
-                &nbsp; Tel: +255-683956372<br>
-                &nbsp; Mail: jadevinetravels@gmail.com<br>
-                &nbsp; www.jadevinetravel.com<br><br>
-              </td>
-            </tr>
-                        </table>
-        </div>
-        <div>
-          <div class="w3-card-2">
-         
-          </div>
-          <!--<form action="https://formsubmit.co/jadevinetravels@gmail.com" method="post" id="">
+                </div>
+                <!--<form action="https://formsubmit.co/jadevinetravels@gmail.com" method="post" id="">
             <span class="sms" style="display:none;"></span>
             <input type="text" name="name" placeholder="Full name" required>
             <input list="countryFrom" placeholder="Your country" name="country" required>
@@ -819,469 +849,623 @@ Groups &amp; Individual Getaways </p>
             <button type="submit" class="subBtn"><i class="fas fa-paper-plane"></i> SEND</button>
             <button type="button" class="loading w3-grey w3-text-white" style="display:none"><i class="fas fa-spinner fa-pulse"></i> Sending..</button>
           </form>-->
-            
+
+            </div>
         </div>
-      </div>
-     
-     
-
-      <!--//////////////////////////// Picture viewer -------------------->
-      <div class="modal" id="viewerImg">
-        <span class="close" onclick="closeForm('viewerImg')">&times;</span>
-        <form class="modal-content">
-          <div class="formhead"><i class="fas fa-camera"></i> [JDVT] Take Your Dream Vacation</div>
-          <img src="index.htm" id="imgView">
-          <span id="vTitle"></span>
-          <span id="vCaption"></span>
-          <button type="button" class="btnHide" onclick="closeForm('viewerImg')"><i class="fas fa-times-circle"></i> CLOSE</button>
-        </form>
-      </div>
 
 
-      <!--//////////////////////////// Testimonial form -------------------->
-      <div class="modal" id="testimonialForm">
-        <span class="close" onclick="closeForm('testimonialForm')">&times;</span>
-        <form class="modal-content" method="post" enctype="multipart/form-data" id="saveTest">
-          <div class="formhead"><i class="fas fa-comments"></i> Testimonial form.</div>
-          <div class="formsms1" style="display:none"></div>
-          <div class="formsms2" style="display:none"></div>
-          <div class="inpGroup">
-            <label>Attach your picture (jpg, jpeg or png)</label>
-            <input type="file" name="yourpic" value="" id="yourpic" required>
-          </div>
-          <div class="inpGroup">
-            <label>Enter your names</label>
-            <input type="text" name="yrNames" placeholder="Your names" required>
-          </div>
-          <div class="inpGroup">
-            <label>Your country</label>
-            <input list="fromCountry" placeholder="Your country" name="yourCountry" required>
-            <datalist id="fromCountry">
-              <option value="Afganistan">Afghanistan</option>
-               <option value="Albania">Albania</option>
-               <option value="Algeria">Algeria</option>
-               <option value="American Samoa">American Samoa</option>
-               <option value="Andorra">Andorra</option>
-               <option value="Angola">Angola</option>
-               <option value="Anguilla">Anguilla</option>
-               <option value="Antigua & Barbuda">Antigua & Barbuda</option>
-               <option value="Argentina">Argentina</option>
-               <option value="Armenia">Armenia</option>
-               <option value="Aruba">Aruba</option>
-               <option value="Australia">Australia</option>
-               <option value="Austria">Austria</option>
-               <option value="Azerbaijan">Azerbaijan</option>
-               <option value="Bahamas">Bahamas</option>
-               <option value="Bahrain">Bahrain</option>
-               <option value="Bangladesh">Bangladesh</option>
-               <option value="Barbados">Barbados</option>
-               <option value="Belarus">Belarus</option>
-               <option value="Belgium">Belgium</option>
-               <option value="Belize">Belize</option>
-               <option value="Benin">Benin</option>
-               <option value="Bermuda">Bermuda</option>
-               <option value="Bhutan">Bhutan</option>
-               <option value="Bolivia">Bolivia</option>
-               <option value="Bonaire">Bonaire</option>
-               <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
-               <option value="Botswana">Botswana</option>
-               <option value="Brazil">Brazil</option>
-               <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
-               <option value="Brunei">Brunei</option>
-               <option value="Bulgaria">Bulgaria</option>
-               <option value="Burkina Faso">Burkina Faso</option>
-               <option value="Burundi">Burundi</option>
-               <option value="Cambodia">Cambodia</option>
-               <option value="Cameroon">Cameroon</option>
-               <option value="Canada">Canada</option>
-               <option value="Canary Islands">Canary Islands</option>
-               <option value="Cape Verde">Cape Verde</option>
-               <option value="Cayman Islands">Cayman Islands</option>
-               <option value="Central African Republic">Central African Republic</option>
-               <option value="Chad">Chad</option>
-               <option value="Channel Islands">Channel Islands</option>
-               <option value="Chile">Chile</option>
-               <option value="China">China</option>
-               <option value="Christmas Island">Christmas Island</option>
-               <option value="Cocos Island">Cocos Island</option>
-               <option value="Colombia">Colombia</option>
-               <option value="Comoros">Comoros</option>
-               <option value="Congo">Congo</option>
-               <option value="Cook Islands">Cook Islands</option>
-               <option value="Costa Rica">Costa Rica</option>
-               <option value="Cote DIvoire">Cote DIvoire</option>
-               <option value="Croatia">Croatia</option>
-               <option value="Cuba">Cuba</option>
-               <option value="Curaco">Curacao</option>
-               <option value="Cyprus">Cyprus</option>
-               <option value="Czech Republic">Czech Republic</option>
-               <option value="Denmark">Denmark</option>
-               <option value="Djibouti">Djibouti</option>
-               <option value="Dominica">Dominica</option>
-               <option value="Dominican Republic">Dominican Republic</option>
-               <option value="East Timor">East Timor</option>
-               <option value="Ecuador">Ecuador</option>
-               <option value="Egypt">Egypt</option>
-               <option value="El Salvador">El Salvador</option>
-               <option value="Equatorial Guinea">Equatorial Guinea</option>
-               <option value="Eritrea">Eritrea</option>
-               <option value="Estonia">Estonia</option>
-               <option value="Ethiopia">Ethiopia</option>
-               <option value="Falkland Islands">Falkland Islands</option>
-               <option value="Faroe Islands">Faroe Islands</option>
-               <option value="Fiji">Fiji</option>
-               <option value="Finland">Finland</option>
-               <option value="France">France</option>
-               <option value="French Guiana">French Guiana</option>
-               <option value="French Polynesia">French Polynesia</option>
-               <option value="French Southern Ter">French Southern Ter</option>
-               <option value="Gabon">Gabon</option>
-               <option value="Gambia">Gambia</option>
-               <option value="Georgia">Georgia</option>
-               <option value="Germany">Germany</option>
-               <option value="Ghana">Ghana</option>
-               <option value="Gibraltar">Gibraltar</option>
-               <option value="Great Britain">Great Britain</option>
-               <option value="Greece">Greece</option>
-               <option value="Greenland">Greenland</option>
-               <option value="Grenada">Grenada</option>
-               <option value="Guadeloupe">Guadeloupe</option>
-               <option value="Guam">Guam</option>
-               <option value="Guatemala">Guatemala</option>
-               <option value="Guinea">Guinea</option>
-               <option value="Guyana">Guyana</option>
-               <option value="Haiti">Haiti</option>
-               <option value="Hawaii">Hawaii</option>
-               <option value="Honduras">Honduras</option>
-               <option value="Hong Kong">Hong Kong</option>
-               <option value="Hungary">Hungary</option>
-               <option value="Iceland">Iceland</option>
-               <option value="Indonesia">Indonesia</option>
-               <option value="India">India</option>
-               <option value="Iran">Iran</option>
-               <option value="Iraq">Iraq</option>
-               <option value="Ireland">Ireland</option>
-               <option value="Isle of Man">Isle of Man</option>
-               <option value="Israel">Israel</option>
-               <option value="Italy">Italy</option>
-               <option value="Jamaica">Jamaica</option>
-               <option value="Japan">Japan</option>
-               <option value="Jordan">Jordan</option>
-               <option value="Kazakhstan">Kazakhstan</option>
-               <option value="Kenya">Kenya</option>
-               <option value="Kiribati">Kiribati</option>
-               <option value="Korea North">Korea North</option>
-               <option value="Korea Sout">Korea South</option>
-               <option value="Kuwait">Kuwait</option>
-               <option value="Kyrgyzstan">Kyrgyzstan</option>
-               <option value="Laos">Laos</option>
-               <option value="Latvia">Latvia</option>
-               <option value="Lebanon">Lebanon</option>
-               <option value="Lesotho">Lesotho</option>
-               <option value="Liberia">Liberia</option>
-               <option value="Libya">Libya</option>
-               <option value="Liechtenstein">Liechtenstein</option>
-               <option value="Lithuania">Lithuania</option>
-               <option value="Luxembourg">Luxembourg</option>
-               <option value="Macau">Macau</option>
-               <option value="Macedonia">Macedonia</option>
-               <option value="Madagascar">Madagascar</option>
-               <option value="Malaysia">Malaysia</option>
-               <option value="Malawi">Malawi</option>
-               <option value="Maldives">Maldives</option>
-               <option value="Mali">Mali</option>
-               <option value="Malta">Malta</option>
-               <option value="Marshall Islands">Marshall Islands</option>
-               <option value="Martinique">Martinique</option>
-               <option value="Mauritania">Mauritania</option>
-               <option value="Mauritius">Mauritius</option>
-               <option value="Mayotte">Mayotte</option>
-               <option value="Mexico">Mexico</option>
-               <option value="Midway Islands">Midway Islands</option>
-               <option value="Moldova">Moldova</option>
-               <option value="Monaco">Monaco</option>
-               <option value="Mongolia">Mongolia</option>
-               <option value="Montserrat">Montserrat</option>
-               <option value="Morocco">Morocco</option>
-               <option value="Mozambique">Mozambique</option>
-               <option value="Myanmar">Myanmar</option>
-               <option value="Nambia">Nambia</option>
-               <option value="Nauru">Nauru</option>
-               <option value="Nepal">Nepal</option>
-               <option value="Netherland Antilles">Netherland Antilles</option>
-               <option value="Netherlands">Netherlands (Holland, Europe)</option>
-               <option value="Nevis">Nevis</option>
-               <option value="New Caledonia">New Caledonia</option>
-               <option value="New Zealand">New Zealand</option>
-               <option value="Nicaragua">Nicaragua</option>
-               <option value="Niger">Niger</option>
-               <option value="Nigeria">Nigeria</option>
-               <option value="Niue">Niue</option>
-               <option value="Norfolk Island">Norfolk Island</option>
-               <option value="Norway">Norway</option>
-               <option value="Oman">Oman</option>
-               <option value="Pakistan">Pakistan</option>
-               <option value="Palau Island">Palau Island</option>
-               <option value="Palestine">Palestine</option>
-               <option value="Panama">Panama</option>
-               <option value="Papua New Guinea">Papua New Guinea</option>
-               <option value="Paraguay">Paraguay</option>
-               <option value="Peru">Peru</option>
-               <option value="Phillipines">Philippines</option>
-               <option value="Pitcairn Island">Pitcairn Island</option>
-               <option value="Poland">Poland</option>
-               <option value="Portugal">Portugal</option>
-               <option value="Puerto Rico">Puerto Rico</option>
-               <option value="Qatar">Qatar</option>
-               <option value="Republic of Montenegro">Republic of Montenegro</option>
-               <option value="Republic of Serbia">Republic of Serbia</option>
-               <option value="Reunion">Reunion</option>
-               <option value="Romania">Romania</option>
-               <option value="Russia">Russia</option>
-               <option value="Rwanda">Rwanda</option>
-               <option value="St Barthelemy">St Barthelemy</option>
-               <option value="St Eustatius">St Eustatius</option>
-               <option value="St Helena">St Helena</option>
-               <option value="St Kitts-Nevis">St Kitts-Nevis</option>
-               <option value="St Lucia">St Lucia</option>
-               <option value="St Maarten">St Maarten</option>
-               <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
-               <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
-               <option value="Saipan">Saipan</option>
-               <option value="Samoa">Samoa</option>
-               <option value="Samoa American">Samoa American</option>
-               <option value="San Marino">San Marino</option>
-               <option value="Sao Tome & Principe">Sao Tome & Principe</option>
-               <option value="Saudi Arabia">Saudi Arabia</option>
-               <option value="Senegal">Senegal</option>
-               <option value="Seychelles">Seychelles</option>
-               <option value="Sierra Leone">Sierra Leone</option>
-               <option value="Singapore">Singapore</option>
-               <option value="Slovakia">Slovakia</option>
-               <option value="Slovenia">Slovenia</option>
-               <option value="Solomon Islands">Solomon Islands</option>
-               <option value="Somalia">Somalia</option>
-               <option value="South Africa">South Africa</option>
-               <option value="Spain">Spain</option>
-               <option value="Sri Lanka">Sri Lanka</option>
-               <option value="Sudan">Sudan</option>
-               <option value="Suriname">Suriname</option>
-               <option value="Swaziland">Swaziland</option>
-               <option value="Sweden">Sweden</option>
-               <option value="Switzerland">Switzerland</option>
-               <option value="Syria">Syria</option>
-               <option value="Tahiti">Tahiti</option>
-               <option value="Taiwan">Taiwan</option>
-               <option value="Tajikistan">Tajikistan</option>
-               <option value="Tanzania">Tanzania</option>
-               <option value="Thailand">Thailand</option>
-               <option value="Togo">Togo</option>
-               <option value="Tokelau">Tokelau</option>
-               <option value="Tonga">Tonga</option>
-               <option value="Trinidad & Tobago">Trinidad & Tobago</option>
-               <option value="Tunisia">Tunisia</option>
-               <option value="Turkey">Turkey</option>
-               <option value="Turkmenistan">Turkmenistan</option>
-               <option value="Turks & Caicos Is">Turks & Caicos Is</option>
-               <option value="Tuvalu">Tuvalu</option>
-               <option value="Uganda">Uganda</option>
-               <option value="United Kingdom">United Kingdom</option>
-               <option value="Ukraine">Ukraine</option>
-               <option value="United Arab Erimates">United Arab Emirates</option>
-               <option value="United States of America">United States of America</option>
-               <option value="Uraguay">Uruguay</option>
-               <option value="Uzbekistan">Uzbekistan</option>
-               <option value="Vanuatu">Vanuatu</option>
-               <option value="Vatican City State">Vatican City State</option>
-               <option value="Venezuela">Venezuela</option>
-               <option value="Vietnam">Vietnam</option>
-               <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
-               <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
-               <option value="Wake Island">Wake Island</option>
-               <option value="Wallis & Futana Is">Wallis & Futana Is</option>
-               <option value="Yemen">Yemen</option>
-               <option value="Zaire">Zaire</option>
-               <option value="Zambia">Zambia</option>
-               <option value="Zimbabwe">Zimbabwe</option>
-            </datalist>
-          </div>
-          <div class="inpGroup">
-            <label>Enter your title/occupation</label>
-            <input type="text" name="title" placeholder="Your title or occupation" required>
-          </div>
-          <div class="inpGroup">
-            <label>Select your gender</label>
-            <select class="" name="gender" form="saveTest" required>
-              <option value="">Click to select</option>
-              <option value="F">Female</option>
-              <option value="M">Male</option>
-            </select>
-          </div>
-          <div class="inpGroup">
-            <label>Enter your testimony</label>
-            <textarea name="description" placeholder="Testimonial.." required></textarea>
-          </div>
-          <input type="hidden" name="testM" value="newTestimonial">
-          <button type="button" class="load"> <i class="fas fa-spinner fa-pulse"></i> Please wait</button>
-          <button type="submit" class="subBtn"><i class="fas fa-check-circle"></i> SUBMIT</button>
-          <button type="button" class="btnCancel" onclick="closeForm('testimonialForm')"><i class="fas fa-times-circle"></i> CLOSE</button>
-        </form>
-      </div>
-<div class="popular">
-        <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
-        <h3>Travel Inquiry Form</h3>
 
-      </div>
-<div class="columns cards centered-div">
-
-  
-  <button onclick="toggleForm()" class="styled-button"> <i class="fas fa-envelope"></i>  Make An Inqury</button>
-  <div class="container2 " id="myForm">
-      
-  <form action="index.htm" method="post" >
-
-  <input type="text" id="full_name_form1" name="full_name_form1" required placeholder="Your Full Name:">
-  
-  <input type="email" id="email_form1" name="email_form1" required placeholder="Email:"  required>
-
-  <label for="type_form1">Type:</label>
-  <select id="type_form1" name="type_form1" required>
-    <option value="General">General</option>
-    <option value="Booking">Booking</option>
-    <option value="Feedback">Feedback</option>
-    <option value="Other">Other</option>
-  </select>
-  <input type="text" id="other_form1" name="other_form1" placeholder="Other (if applicable):" >
-
- 
-<label for="return_date_form1">Departure Date:</label>
-  <input type="date" id="departure_date_form1" name="departure_date_form1" placeholder="Return Date:" required>
-
-  <label for="return_date_form1">Return Date:</label>
-  <input type="date" id="return_date_form1" name="return_date_form1"   placeholder="Return Date:"  required>
-   <input type="text" id="destination_form1" name="destination_form1" required placeholder="Destination:"> 
-
-  <input type="number" id="adults_form1" name="adults_form1"  placeholder="No. of Adults:" required>
-
-  <input type="number" id="children_form1" name="children_form1" placeholder="No. of Children:" required>
-<br>
-  <input type="submit" value="Submit">
-</form>
-</div>
-
-      <!-- Testimonials -->
-      <div class="popular fdback">
-        <h3>Testimonials</h3>
-        <button type="button" class="btnMd" onclick="imageViewer('testimonialForm','','')"><i class="fas fa-plus-circle"></i><span>Add yours</span></button>
-        <a href="https://www.tripadvisor.com/UserReviewEdit-g488129-d19961135-Jadevine_Travel-Stone_Town_Zanzibar_City_Zanzibar_Island_Zanzibar_Archipelago.html" target="_blank"><button type="button" class="trip"><i class="fab fa-tripadvisor"></i><span>Trip Advisor</span></button></a>
-      </div>
-      <div class="columns testimonial">
-                  <div class="test">
-          <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
-          <p><span>Anitah K</span> Business Woman - Canada</p>
-          <p>Fabulous drive experience  from the Jadevine driver, Excellently he knew well, all the road hampers and corners,..we went to the rock restaurant to have lunch and it was so nice, The food was delicious and the restaurant is on the ocean,.. so beautiful and we had a good view of the sunset at paje beach,.. we enjoyed the holiday in Zanzibar.</p>
+        <!--//////////////////////////// Picture viewer -------------------->
+        <div class="modal" id="viewerImg">
+            <span class="close" onclick="closeForm('viewerImg')">&times;</span>
+            <form class="modal-content">
+                <div class="formhead"><i class="fas fa-camera"></i> [JDVT] Take Your Dream Vacation</div>
+                <img src="index.htm" id="imgView">
+                <span id="vTitle"></span>
+                <span id="vCaption"></span>
+                <button type="button" class="btnHide" onclick="closeForm('viewerImg')"><i
+                        class="fas fa-times-circle"></i> CLOSE</button>
+            </form>
         </div>
+
+
+        <!--//////////////////////////// Testimonial form -------------------->
+        <div class="modal" id="testimonialForm">
+            <span class="close" onclick="closeForm('testimonialForm')">&times;</span>
+            <form class="modal-content" method="post" enctype="multipart/form-data" id="saveTest">
+                <div class="formhead"><i class="fas fa-comments"></i> Testimonial form.</div>
+                <div class="formsms1" style="display:none"></div>
+                <div class="formsms2" style="display:none"></div>
+                <div class="inpGroup">
+                    <label>Attach your picture (jpg, jpeg or png)</label>
+                    <input type="file" name="yourpic" value="" id="yourpic" required>
+                </div>
+                <div class="inpGroup">
+                    <label>Enter your names</label>
+                    <input type="text" name="yrNames" placeholder="Your names" required>
+                </div>
+                <div class="inpGroup">
+                    <label>Your country</label>
+                    <input list="fromCountry" placeholder="Your country" name="yourCountry" required>
+                    <datalist id="fromCountry">
+                        <option value="Afganistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="American Samoa">American Samoa</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Anguilla">Anguilla</option>
+                        <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Aruba">Aruba</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Barbados">Barbados</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bermuda">Bermuda</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bonaire">Bonaire</option>
+                        <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                        <option value="Brunei">Brunei</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Canary Islands">Canary Islands</option>
+                        <option value="Cape Verde">Cape Verde</option>
+                        <option value="Cayman Islands">Cayman Islands</option>
+                        <option value="Central African Republic">Central African Republic</option>
+                        <option value="Chad">Chad</option>
+                        <option value="Channel Islands">Channel Islands</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Christmas Island">Christmas Island</option>
+                        <option value="Cocos Island">Cocos Island</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Comoros">Comoros</option>
+                        <option value="Congo">Congo</option>
+                        <option value="Cook Islands">Cook Islands</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Cote DIvoire">Cote DIvoire</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Curaco">Curacao</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Djibouti">Djibouti</option>
+                        <option value="Dominica">Dominica</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="East Timor">East Timor</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                        <option value="Eritrea">Eritrea</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Falkland Islands">Falkland Islands</option>
+                        <option value="Faroe Islands">Faroe Islands</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="French Guiana">French Guiana</option>
+                        <option value="French Polynesia">French Polynesia</option>
+                        <option value="French Southern Ter">French Southern Ter</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Gibraltar">Gibraltar</option>
+                        <option value="Great Britain">Great Britain</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Greenland">Greenland</option>
+                        <option value="Grenada">Grenada</option>
+                        <option value="Guadeloupe">Guadeloupe</option>
+                        <option value="Guam">Guam</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Guinea">Guinea</option>
+                        <option value="Guyana">Guyana</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hong Kong">Hong Kong</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="India">India</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Isle of Man">Isle of Man</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jamaica">Jamaica</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kiribati">Kiribati</option>
+                        <option value="Korea North">Korea North</option>
+                        <option value="Korea Sout">Korea South</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Kyrgyzstan">Kyrgyzstan</option>
+                        <option value="Laos">Laos</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Lesotho">Lesotho</option>
+                        <option value="Liberia">Liberia</option>
+                        <option value="Libya">Libya</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Macau">Macau</option>
+                        <option value="Macedonia">Macedonia</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Malawi">Malawi</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Marshall Islands">Marshall Islands</option>
+                        <option value="Martinique">Martinique</option>
+                        <option value="Mauritania">Mauritania</option>
+                        <option value="Mauritius">Mauritius</option>
+                        <option value="Mayotte">Mayotte</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Midway Islands">Midway Islands</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Mongolia">Mongolia</option>
+                        <option value="Montserrat">Montserrat</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Mozambique">Mozambique</option>
+                        <option value="Myanmar">Myanmar</option>
+                        <option value="Nambia">Nambia</option>
+                        <option value="Nauru">Nauru</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Netherland Antilles">Netherland Antilles</option>
+                        <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                        <option value="Nevis">Nevis</option>
+                        <option value="New Caledonia">New Caledonia</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Niue">Niue</option>
+                        <option value="Norfolk Island">Norfolk Island</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Palau Island">Palau Island</option>
+                        <option value="Palestine">Palestine</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Papua New Guinea">Papua New Guinea</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Phillipines">Philippines</option>
+                        <option value="Pitcairn Island">Pitcairn Island</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Republic of Montenegro">Republic of Montenegro</option>
+                        <option value="Republic of Serbia">Republic of Serbia</option>
+                        <option value="Reunion">Reunion</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="St Barthelemy">St Barthelemy</option>
+                        <option value="St Eustatius">St Eustatius</option>
+                        <option value="St Helena">St Helena</option>
+                        <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                        <option value="St Lucia">St Lucia</option>
+                        <option value="St Maarten">St Maarten</option>
+                        <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                        <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                        <option value="Saipan">Saipan</option>
+                        <option value="Samoa">Samoa</option>
+                        <option value="Samoa American">Samoa American</option>
+                        <option value="San Marino">San Marino</option>
+                        <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Seychelles">Seychelles</option>
+                        <option value="Sierra Leone">Sierra Leone</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Solomon Islands">Solomon Islands</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Suriname">Suriname</option>
+                        <option value="Swaziland">Swaziland</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Tahiti">Tahiti</option>
+                        <option value="Taiwan">Taiwan</option>
+                        <option value="Tajikistan">Tajikistan</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Togo">Togo</option>
+                        <option value="Tokelau">Tokelau</option>
+                        <option value="Tonga">Tonga</option>
+                        <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                        <option value="Tunisia">Tunisia</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Turkmenistan">Turkmenistan</option>
+                        <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                        <option value="Tuvalu">Tuvalu</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="United Arab Erimates">United Arab Emirates</option>
+                        <option value="United States of America">United States of America</option>
+                        <option value="Uraguay">Uruguay</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Vanuatu">Vanuatu</option>
+                        <option value="Vatican City State">Vatican City State</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                        <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                        <option value="Wake Island">Wake Island</option>
+                        <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zaire">Zaire</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                    </datalist>
+                </div>
+                <div class="inpGroup">
+                    <label>Enter your title/occupation</label>
+                    <input type="text" name="title" placeholder="Your title or occupation" required>
+                </div>
+                <div class="inpGroup">
+                    <label>Select your gender</label>
+                    <select class="" name="gender" form="saveTest" required>
+                        <option value="">Click to select</option>
+                        <option value="F">Female</option>
+                        <option value="M">Male</option>
+                    </select>
+                </div>
+                <div class="inpGroup">
+                    <label>Enter your testimony</label>
+                    <textarea name="description" placeholder="Testimonial.." required></textarea>
+                </div>
+                <input type="hidden" name="testM" value="newTestimonial">
+                <button type="button" class="load"> <i class="fas fa-spinner fa-pulse"></i> Please wait</button>
+                <button type="submit" class="subBtn"><i class="fas fa-check-circle"></i> SUBMIT</button>
+                <button type="button" class="btnCancel" onclick="closeForm('testimonialForm')"><i
+                        class="fas fa-times-circle"></i> CLOSE</button>
+            </form>
+        </div>
+        <div class="popular">
+            <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
+            <h3>Travel Inquiry Form</h3>
+
+        </div>
+        <div class="columns cards centered-div">
+
+
+            <button onclick="toggleForm()" class="styled-button"> <svg height="20" width="20" version="1.0" id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"
+                    enable-background="new 0 0 64 64" xml:space="preserve" fill="#387ADF">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <path fill="#ffffff"
+                                d="M43.416,35.812c-0.448-0.322-0.55-0.947-0.228-1.396c0.321-0.448,0.947-0.55,1.396-0.228L64,48.168V15.475 L32.597,38.803C32.419,38.935,32.21,39,32,39s-0.419-0.065-0.597-0.197L0,15.475v32.693l19.416-13.979 c0.449-0.321,1.073-0.22,1.396,0.228c0.322,0.448,0.221,1.073-0.228,1.396L0,50.632V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4 v-1.368L43.416,35.812z">
+                            </path>
+                            <path fill="#ffffff"
+                                d="M32,36.754l32-23.771V12c0-2.211-1.789-4-4-4H4c-2.211,0-4,1.789-4,4v0.982L32,36.754z">
+                            </path>
+                        </g>
+                    </g>
+                </svg> Make An
+                Inqury</button>
+            <div class="container2 " id="myForm">
+
+                <form action="index.htm" method="post">
+
+                    <input type="text" id="full_name_form1" name="full_name_form1" required
+                        placeholder="Your Full Name:">
+
+                    <input type="email" id="email_form1" name="email_form1" required placeholder="Email:" required>
+
+                    <label for="type_form1">Type:</label>
+                    <select id="type_form1" name="type_form1" required>
+                        <option value="General">General</option>
+                        <option value="Booking">Booking</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="text" id="other_form1" name="other_form1" placeholder="Other (if applicable):">
+
+
+                    <label for="return_date_form1">Departure Date:</label>
+                    <input type="date" id="departure_date_form1" name="departure_date_form1" placeholder="Return Date:"
+                        required>
+
+                    <label for="return_date_form1">Return Date:</label>
+                    <input type="date" id="return_date_form1" name="return_date_form1" placeholder="Return Date:"
+                        required>
+                    <input type="text" id="destination_form1" name="destination_form1" required
+                        placeholder="Destination:">
+
+                    <input type="number" id="adults_form1" name="adults_form1" placeholder="No. of Adults:" required>
+
+                    <input type="number" id="children_form1" name="children_form1" placeholder="No. of Children:"
+                        required>
+                    <br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="popular fdback">
+                <h3>Testimonials</h3>
+                <button type="button" class="btnMd" onclick="imageViewer('testimonialForm','','')"><svg height="20"
+                        width="20" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title>plus-circle</title>
+                            <desc>Created with Sketch Beta.</desc>
+                            <defs> </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                sketch:type="MSPage">
+                                <g id="Icon-Set-Filled" sketch:type="MSLayerGroup"
+                                    transform="translate(-466.000000, -1089.000000)" fill="#ffffff">
+                                    <path
+                                        d="M488,1106 L483,1106 L483,1111 C483,1111.55 482.553,1112 482,1112 C481.447,1112 481,1111.55 481,1111 L481,1106 L476,1106 C475.447,1106 475,1105.55 475,1105 C475,1104.45 475.447,1104 476,1104 L481,1104 L481,1099 C481,1098.45 481.447,1098 482,1098 C482.553,1098 483,1098.45 483,1099 L483,1104 L488,1104 C488.553,1104 489,1104.45 489,1105 C489,1105.55 488.553,1106 488,1106 L488,1106 Z M482,1089 C473.163,1089 466,1096.16 466,1105 C466,1113.84 473.163,1121 482,1121 C490.837,1121 498,1113.84 498,1105 C498,1096.16 490.837,1089 482,1089 L482,1089 Z"
+                                        id="plus-circle" sketch:type="MSShapeGroup"> </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg><span>Add yours</span></button>
+                <a href="https://www.tripadvisor.com/UserReviewEdit-g488129-d19961135-Jadevine_Travel-Stone_Town_Zanzibar_City_Zanzibar_Island_Zanzibar_Archipelago.html"
+                    target="_blank"><button type="button" class="trip"><svg fill="#ffffff" viewBox="0 0 24 24"
+                            height="20" width="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xml:space="preserve" stroke="#ffffff">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M8.311 10.278a2.496 2.496 0 1 0 0 4.992 2.496 2.496 0 0 0 0-4.992zm1.309 2.497a1.309 1.309 0 1 1-1.309-1.309c.723 0 1.309.586 1.309 1.309zm6.069-2.497a2.496 2.496 0 1 0 2.496 2.496 2.497 2.497 0 0 0-2.496-2.496zm1.308 2.497a1.309 1.309 0 1 1-1.309-1.309c.724 0 1.309.586 1.309 1.309z">
+                                </path>
+                                <path
+                                    d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.689 14.464a3.678 3.678 0 0 1-2.506-.982l-1.182 1.286-1.183-1.287-.006.006a3.69 3.69 0 0 1-4.986-5.439L4.618 8.735h2.683a8.36 8.36 0 0 1 9.406 0h2.676l-1.207 1.313a3.69 3.69 0 0 1-2.487 6.416z">
+                                </path>
+                                <path
+                                    d="M9.23 9.048c1.576.603 2.771 2.012 2.771 3.655 0-1.643 1.195-3.052 2.77-3.655a7.202 7.202 0 0 0-5.541 0z">
+                                </path>
+                            </g>
+                        </svg><span>Trip
+                            Advisor</span></button></a>
+            </div>
+            <div class="columns testimonial">
                 <div class="test">
-          <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
-          <p><span>Mohammad Al-Ahmed</span> Freelancer - Egypt</p>
-          <p>This is the best company I can recommend a member of family/friend to use in case of tours in Africa specifically through east African countries (Uganda and Tanzania/Zanzibar) travel & tours because they give the basic and oriented 
-and quality customer services with Complicity driven by passion. Thanks Jadevinetravelteam because I enjoyed the safaris in Serengeti National park where I later travelled to Zanzibar for the Dolphin swim.</p>
-        </div>
+                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
+                    <p><span>Anitah K</span> Business Woman - Canada</p>
+                    <p>Fabulous drive experience from the Jadevine driver, Excellently he knew well, all the road
+                        hampers and corners,..we went to the rock restaurant to have lunch and it was so nice, The food
+                        was delicious and the restaurant is on the ocean,.. so beautiful and we had a good view of the
+                        sunset at paje beach,.. we enjoyed the holiday in Zanzibar.</p>
+                </div>
                 <div class="test">
-          <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
-          <p><span>Nicolas</span> Declarant - France</p>
-          <p>Vraiment avec jadevine on m'a fait un bon service et j'ai decouvert tant de choses ,comme.. La plongee avec  le dolphin , la couche du soleil a kendwa , the rock restaurant ( c'est un beau restaurant ui se dans un ile qui se trouve a Zanzibar , j'ai fait aussi le tour de la ville historique de la place qu'on appel STONE TOWN, j'ai fait aussi jozan et forest ( ici on vois le petit singe et on joue avec eux en leurs donnant de banane ) vraiment je nous invite a tout le monde qui irons a Zanzibar de consulter jadevine travel !!! Vraiment j'ai passée une bonne vacance grace a jadevine travel !! Je ne vous oublierais jamais....!!!!! </p>
-        </div>
-              </div>
+                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
+                    <p><span>Mohammad Al-Ahmed</span> Freelancer - Egypt</p>
+                    <p>This is the best company I can recommend a member of family/friend to use in case of tours in
+                        Africa specifically through east African countries (Uganda and Tanzania/Zanzibar) travel & tours
+                        because they give the basic and oriented
+                        and quality customer services with Complicity driven by passion. Thanks Jadevinetravelteam
+                        because I enjoyed the safaris in Serengeti National park where I later travelled to Zanzibar for
+                        the Dolphin swim.</p>
+                </div>
+                <div class="test">
+                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
+                    <p><span>Nicolas</span> Declarant - France</p>
+                    <p>Vraiment avec jadevine on m'a fait un bon service et j'ai decouvert tant de choses ,comme.. La
+                        plongee avec le dolphin , la couche du soleil a kendwa , the rock restaurant ( c'est un beau
+                        restaurant ui se dans un ile qui se trouve a Zanzibar , j'ai fait aussi le tour de la ville
+                        historique de la place qu'on appel STONE TOWN, j'ai fait aussi jozan et forest ( ici on vois le
+                        petit singe et on joue avec eux en leurs donnant de banane ) vraiment je nous invite a tout le
+                        monde qui irons a Zanzibar de consulter jadevine travel !!! Vraiment j'ai passée une bonne
+                        vacance grace a jadevine travel !! Je ne vous oublierais jamais....!!!!! </p>
+                </div>
+            </div>
 
-      <!-- Our partners -->
-      <div class="popular">
-        <h3>Proud Member Of </h3>
-      </div>
-      <div class="columns gallery">
-          <div class="box">
-          <img src="https://jadevinetravel.com/pictures/partiners/WhatsApp%20Image%202024-01-29%20at%2010.24.25.jpeg" alt="ZATI" style="width:100%;height:100%;object-position:center">
-          <span class="caption" style="padding-top:70px">ZATI</span>
-        </div>
-        <div class="box">
-          <img src="https://jadevinetravel.com/pictures/partiners/WhatsApp%20Image%202024-01-29%20at%2010.24.26%20(1).jpeg" alt="ZATO" style="width:100%;height:100%;object-position:center">
-          <span class="caption" style="padding-top:70px">ZATO</span>
-        </div>
-        
-      </div>
+            <!-- Our partners -->
+            <div class="popular">
+                <h3>Proud Member Of </h3>
+            </div>
+            <div class="columns gallery">
+                <div class="box">
+                    <img src="https://jadevinetravel.com/pictures/partiners/WhatsApp%20Image%202024-01-29%20at%2010.24.25.jpeg"
+                        alt="ZATI" style="width:100%;height:100%;object-position:center">
+                    <span class="caption" style="padding-top:70px">ZATI</span>
+                </div>
+                <div class="box">
+                    <img src="https://jadevinetravel.com/pictures/partiners/WhatsApp%20Image%202024-01-29%20at%2010.24.26%20(1).jpeg"
+                        alt="ZATO" style="width:100%;height:100%;object-position:center">
+                    <span class="caption" style="padding-top:70px">ZATO</span>
+                </div>
 
-      <!-- payment -->
-      <div class="popular">
-        <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
-        <h3>Book Your Adventure with Ease: Secure Payment and Reservations Await! <span style="color:#FFA500; font-weight: bold; ">Click below to begin your journey</span></h3>
+            </div>
 
-      </div>
-      <div class="columns cards">
-        <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-          <img src="https://jadevinetravel.com/pictures/mastercard.png" alt="Master card">
-          <!--<span class="caption">Master card</span>-->
-        </div>
-        <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-          <img src="https://jadevinetravel.com/pictures/visa.jpg" alt="Visa card">
-        </div>
-        <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-          <img src="https://jadevinetravel.com/pictures/amex.png" alt="Amex card">
-        </div>
-      </div>
-       <!-- Social media links -->
-              <div class="socialmedia">
-        <p>Follow us on social media for latest updates & offers</p>
-          <a href="https://www.facebook.com/Jadevine-TravelTours-110647714759139/" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="https://instagram.com/jadevine_travel" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/jadevine_travel/status/1576432222399528962?s=20" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="skype:https://join.skype.com/BqmV3fkcFD5F?call" target="_blank"><i class="fab fa-skype"></i></a>
-          <a href="https://api.whatsapp.com/send?phone=+255683956372" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-      <!-- End of social media -->
-       
-  <!--  <div id="calendar"></div>
+            <!-- payment -->
+            <div class="popular">
+                <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
+                <h3>Book Your Adventure with Ease: Secure Payment and Reservations Await! <span
+                        style="color:#FFA500; font-weight: bold; ">Click below to begin your journey</span></h3>
+
+            </div>
+            <div class="columns cards">
+                <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                    <img src="https://jadevinetravel.com/pictures/mastercard.png" alt="Master card">
+                    <!--<span class="caption">Master card</span>-->
+                </div>
+                <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                    <img src="https://jadevinetravel.com/pictures/visa.jpg" alt="Visa card">
+                </div>
+                <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                    <img src="https://jadevinetravel.com/pictures/amex.png" alt="Amex card">
+                </div>
+            </div>
+            <!-- Social media links -->
+            <div class="socialmedia">
+                <p>Follow us on social media for latest updates & offers</p>
+                <a href="https://www.facebook.com/Jadevine-TravelTours-110647714759139/" target="_blank"><svg
+                        height="50"
+                        width="50"
+                        fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z">
+                            </path>
+                        </g>
+                    </svg></a>
+                <a href="https://instagram.com/jadevine_travel" target="_blank"><svg viewBox="0 0 24 24" height="50"
+                        width="50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                fill="#ffffff"></path>
+                            <path
+                                d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                                fill="#ffffff"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+                                fill="#ffffff"></path>
+                        </g>
+                    </svg></a>
+                <a href="https://twitter.com/jadevine_travel/status/1576432222399528962?s=20" target="_blank"><svg
+                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256"
+                        style="fill:#ffffff;">
+                        <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                            font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                            style="mix-blend-mode: normal">
+                            <g transform="scale(5.12,5.12)">
+                                <path
+                                    d="M5.91992,6l14.66211,21.375l-14.35156,16.625h3.17969l12.57617,-14.57812l10,14.57813h12.01367l-15.31836,-22.33008l13.51758,-15.66992h-3.16992l-11.75391,13.61719l-9.3418,-13.61719zM9.7168,8h7.16406l23.32227,34h-7.16406z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg></a>
+                <a href="skype:https://join.skype.com/BqmV3fkcFD5F?call" target="_blank"><svg height="50" width="50"
+                        viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title>skype [#ffffff]</title>
+                            <desc>Created with Sketch.</desc>
+                            <defs> </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Dribbble-Light-Preview" transform="translate(-220.000000, -7439.000000)"
+                                    fill="#ffffff">
+                                    <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <path
+                                            d="M175.89681,7295.36998 C179.825962,7294.55179 180.342823,7290.96907 178.817578,7289.31175 C178.086879,7288.50353 176.992351,7288.05506 174.390821,7287.42722 C173.204069,7287.15116 170.957247,7286.63394 171.78929,7285.40814 C172.062922,7284.95868 172.748016,7284.6896 173.660122,7284.64476 C176.803849,7284.43249 176.146119,7287.84777 178.315919,7286.84322 C179.319236,7286.34991 179.228026,7284.73445 178.132485,7283.79168 C175.732631,7281.84237 168.868523,7281.86529 168.868523,7286.12568 C168.868523,7290.27146 174.829645,7289.35062 176.352863,7291.01691 C177.141329,7291.98459 176.298137,7293.54623 173.796938,7293.4406 C170.95522,7293.23331 171.709228,7290.56845 169.964064,7290.56845 C168.640496,7290.56845 168.184443,7291.64575 168.868523,7293.03698 C170.052234,7295.45369 173.381423,7295.90116 175.942415,7295.36998 L175.89681,7295.36998 L175.89681,7295.36998 Z M177.129167,7298.82513 C175.778236,7298.38365 175.845124,7298.41155 174.618848,7298.46636 C169.787723,7298.69159 166.054167,7295.66497 164.853227,7291.55606 C164.353595,7289.71437 164.918088,7288.08994 164.351568,7286.30506 C162.607418,7281.63408 167.70812,7277.50225 171.834896,7279.5283 C172.200752,7279.70868 172.428778,7279.75253 173.843557,7279.75253 C175.12152,7279.75253 175.623178,7279.79738 176.261653,7279.97776 C179.136815,7280.6953 181.464714,7282.53499 182.696058,7285.09322 C183.472362,7286.66383 183.745993,7288.28029 183.563572,7290.11899 C183.472362,7291.1076 183.472362,7291.19729 183.700388,7291.78029 C185.124288,7295.89418 181.228579,7299.88948 177.173759,7298.82613 L177.129167,7298.82613 L177.129167,7298.82513 Z"
+                                            id="skype-[#ffffff]"> </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </svg></a>
+                <a href="https://api.whatsapp.com/send?phone=+255683956372" target="_blank"><svg height="50" width="50"
+                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+                                fill="#ffffff"></path>
+                        </g>
+                    </svg></a>
+            </div>
+            <!-- End of social media -->
+
+            <!--  <div id="calendar"></div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const calendar = new VanillaCalendar('#calendar');
       calendar.init();
     });
   </script>-->
-  
-  </div>
+
+        </div>
     </div>
-  </div>
+</div>
 <footer>
-Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
-<button><i class="fas fa-arrow-up"></i></button>
+    Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
+    <button><svg viewBox="0 0 24 24" height="13" width="13" fill="none" xmlns="http://www.w3.org/2000/svg"
+            stroke="#ffffff">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 3C12.2652 3 12.5196 3.10536 12.7071 3.29289L19.7071 10.2929C20.0976 10.6834 20.0976 11.3166 19.7071 11.7071C19.3166 12.0976 18.6834 12.0976 18.2929 11.7071L13 6.41421V20C13 20.5523 12.5523 21 12 21C11.4477 21 11 20.5523 11 20V6.41421L5.70711 11.7071C5.31658 12.0976 4.68342 12.0976 4.29289 11.7071C3.90237 11.3166 3.90237 10.6834 4.29289 10.2929L11.2929 3.29289C11.4804 3.10536 11.7348 3 12 3Z"
+                    fill="#ffffff"></path>
+            </g>
+        </svg></button>
 </footer>
 <script type="text/javascript">
-//Image viewer
-function imageViewer(a,b,c,d) {
-$("#"+a).fadeIn('fast');
-$("#imgView").attr("src",b);
-$("#vTitle").html("<b>"+he.decode(d)+"</b>");
-$("#vCaption").text(he.decode(c));
-}
-//Close modal box/image viewer
-function closeForm(modal) {
-$("#"+modal).fadeOut(500);
-}
+    //Image viewer
+    function imageViewer(a, b, c, d) {
+        $("#" + a).fadeIn('fast');
+        $("#imgView").attr("src", b);
+        $("#vTitle").html("<b>" + he.decode(d) + "</b>");
+        $("#vCaption").text(he.decode(c));
+    }
+    //Close modal box/image viewer
+    function closeForm(modal) {
+        $("#" + modal).fadeOut(500);
+    }
 
-//Open clicked link
-function openLink(link) {
-window.location.href = link;
-}
+    //Open clicked link
+    function openLink(link) {
+        window.location.href = link;
+    }
 
-//Start of Tawk.to Script
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5dea894ed96992700fcb1f3f/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-//End of Tawk.to Script
+    //Start of Tawk.to Script
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5dea894ed96992700fcb1f3f/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+    //End of Tawk.to Script
 </script>
 {% endblock %}
