@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.core.files import File as DjangoFile
 
 from .forms import TestimonialForm
 from .models import *
@@ -25,6 +26,7 @@ def create_testimonial(request):
         title = request.POST.get('title')
         gender = request.POST.get('gender')
         test = request.POST.get('description')
+        img = DjangoFile(request.FILES['photo'], name=request.FILES['photo'].name)    
         
         try:
             Testimonial.objects.create(
@@ -33,7 +35,7 @@ def create_testimonial(request):
                 title = title,
                 gender = gender,
                 testimonial = test,
-                image = request.FILES
+                image = img
             )
            
             response_data = {
