@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
 
 load_dotenv()
 
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
     #myapps
     'jv',
+    'django_archive',
 ]
 
 MIDDLEWARE = [
@@ -80,15 +82,13 @@ WSGI_APPLICATION = 'jadeVine.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'zvhsgxwynozoymygnzspattt',
-        'USER': 'wywmiwtohyvkjsge',
-        'PASSWORD': os.environ.get("DATABASE_PASSWORD"),
-        'HOST': '102.134.147.233',
-        'PORT': '32761'
-    }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default=os.environ.get("DB_URL"),
+        conn_max_age=600
+    )
 }
 
 # Password validation
@@ -136,3 +136,7 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+MEDIA_URL = "/media/"
