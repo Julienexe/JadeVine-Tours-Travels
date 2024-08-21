@@ -20,3 +20,19 @@ class Place(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+class Testimonial(models.Model):
+    class Gender(models.TextChoices):
+        MALE = "male","male"
+        FEMALE = "female","female"
+
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="testimonials")
+    country = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    gender= models.CharField(max_length=10,choices=Gender.choices)
+
+    testimonial = models.TextField()
+
+    def __str__(self) -> str:
+        return self.name
