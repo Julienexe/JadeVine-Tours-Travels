@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Image Gallery - JadeVine Travel Tours & Safari</title>
+    <link rel="shortcat icon" href="pictures/logo.png">
+    <link href="fonts.googleapis.com/css.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="fontawesome-web-5.10.1/css/all.css">
+    <link rel="stylesheet" href="css/w3styles.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <script src="jQuery/jquery-3.4.0.min.js"></script>
+    <script src="he-master/he.js"></script>
+    <style>
+      nav ul li .lin-gallery {
+        background-color: rgb(45,45,45,0.2);
+      }
+      .menu ul li .lin-gallery {
+        background-color: #2196F3;
+        color: #FFFFFF;
+      }
+      body footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+      }
+      #container .main-block .gallery {
+        padding-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body class="w3-animate-opacity">
+     <style type="text/css">
+   .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .column {
+        flex: 1;
+    }
+    .column.left {
+        text-align: left;
+    }
+    .column.right {
+        text-align: right;
+    }
+     .acenter {
+        text-align: center;
+    }
+ 
+  /* .fixed-con {
+    z-index: 9724790009779558!important;
+    background-color: #f7f8fc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+  }
+  .VIpgJd-ZVi9od-aZ2wEe-wOHMyf{
+   z-index: 9724790009779!important;
+   top:0;
+   left:unset;
+   right:-5px;
+   display:none!important;
+   border-radius:50%;
+   border:2px solid gold;
+  }
+  .VIpgJd-ZVi9od-aZ2wEe-OiiCO{
+    width:80px;
+    height:80px;
+  }*/
+  .fixed-con {
+  z-index: 9724790009779558!important;
+  background-color:#FFA500; /* Matching background color */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+  z-index: 9724790009779!important;
+  top: 0;
+  left: unset;
+  right: -5px;
+  display: none!important;
+  border-radius: 10%;
+  border: 1px solid #FFA500; /* Matching border color */
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+  width: 80px;
+  height: 80px;
+}
+
+  /*hide google translate link | logo | banner-frame */
+  .goog-logo-link,.gskiptranslate,.goog-te-gadget span,.goog-te-banner-frame,#goog-gt-tt, .goog-te-balloon-frame,div#goog-gt-{
+    display: none!important;
+  }
+  .goog-te-gadget {
+    color: transparent!important;
+    font-size:0px;
+  }
+
+  .goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+  }
+   
+ /*google translate Dropdown */
+ 
+ #google_translate_element select{
+ /*background:#f6edfd;*/
+ color:#387ADF;
+ border: none;
+ border-radius:3px;
+ padding:6px 8px;
+ }
+  .goog-te-banner-frame{
+ display:none !important;
+
+ }
+ .goog-te-banner-frame {
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+.div-left {
+    float:right;
+}
+.goog-te-combo {
+    width: 30%; /* Adjust the width as needed */
+}
+.goog-te-combo option[value="lang"] {
+    /* Style the "lang" option as desired */
+    font-weight: bold; /* Example style */
+    /* Add any other desired styles */
+}
+ </style> 
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+
+new google.translate.TranslateElement({
+
+pageLanguage: 'en',
+
+autoDisplay: 'true',
+ includedLanguages:'it,fr,da,de,es,sw',
+
+layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+
+}, 'google_translate_element');
+
+}
+</script>
+
+<script type="text/javascript" src="translate.google.com/translate_a/element.js"></script>    
+<header class="w3-card-4"
+>
+     
+  <div class="wrapper">
+       
+    <a href="index.htm">
+      <img src="pictures/logo.png" alt="logo" id="logo">
+      <div class="headname">
+        Jadevine Travel & Tours
+      </div>
+    </a>
+
+    <i class="fas fa-bars" id="menubars"></i>
+    
+    <nav>
+       
+      <ul>
+        <li><a href="index.htm" class="lin-home">Home</a></li>
+        <li><a href="services.htm" class="lin-services">Services</a></li>
+        <li><a href="popular_places_89.htm" class="lin-popular">Popular places</a></li>
+        <li><a href="gallery.htm" class="lin-gallery">Tours & Excursion</a></li>
+        <li><a href="popular_places_89.htm#search" class="lin-search">Search</a></li>
+        <li><a href="about.htm" class="lin-about">About</a></li>
+        <li><a href="contact.htm" class="lin-contact">Contact</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="menu w3-card-2" id="navbar">
+    
+  <div class="h-devider"></div>
+  <ul>
+    <li><a href="index.htm" class="lin-home">Home</a></li>
+    <li><a href="services.htm" class="lin-services">Services</a></li>
+    <li><a href="popular_places_89.htm" class="lin-popular">Popular places</a></li>
+    <li><a href="gallery.htm" class="lin-gallery">Tours & Excursion</a></li>
+    <li><a href="popular_places_89.htm#search" class="lin-search">Search</a></li>
+    <li><a href="about.htm" class="lin-about">About</a></li>
+    <li><a href="contact.htm" class="lin-contact">Contact</a></li>
+  </ul>
+</div>
+
+<div class="h-devider"></div>
+
+        <div class="box x1 w3-card-2" id="google_translate_element" style="color:#387ADF; font-weight: bold;margin-TOP:-19px;margin-BOTTOM:-19px;">
+            
+             <p style="color:#387ADF;margin-left: 10px; width:30%" >Change language</p>
+             <span><div class="socialmedia div-left" style="margin-bottom: -3px; margin-top -13px; font-size:x-large;">
+          <a href="tel:+255-683956372"><i class="fas fa-phone"></i> </a>
+          <a href="api.whatsapp.com/send.htm" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="gallery.htm" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="gallery.htm" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="gallery.htm" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="skype:?call" target="_blank"><i class="fab fa-skype"></i></a>
+            
+        </div></span>
+            
+            </div>
+            
+            
+        
+       
+ 
+   
+    
+
+
+    <div id="container">
+      <div class="main-block">
+        <div class="search w3-card-2">
+          <form id="gallSearch" action="gallery.htm" method="post">
+            <h3>Search gallery..</h3>
+            <div class="form">
+              <input type="search" id="searchGall" value="" placeholder="Search..." autofocus>
+              <button type="submit" class="btnSub"><i class="fas fa-search"></i></button>
+              <button type="button" class="loading"><i class="fas fa-spinner fa-pulse"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="columns gallery">
+          <span id="wrapGallery">
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/20.jpg','Sunset cruise is perfect to watch the worlds famous sunset of Zanzibar&amp;rsquo;s West Coast from Stone town where guests can enjoy the best view of the capital from the water. Snacks and drinks are provided on the traditional wooden dhow. ','Sunset Cruise Tour')">
+            <img src="https://jadevinetravel.com/pictures/gallery/20.jpg">
+            <span class="caption">Sunset Cruise Tour</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/22.jpg','Jozani forest is famous for rare red Columbus monkeys and even harder to spot Zanzibar Sykes&amp;rsquo; monkey, a very rare monkey species unique to Zanzibar. Along with Red Columbus Monkeys you can expect to see Bush baby.','Jozani Forest Tour ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/22.jpg">
+            <span class="caption">Jozani Forest Tour </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/23.jpg','Dolphin is a very interesting tour to do as you get the whole chance to get and swim closer with dolphins in their free and wildlife. Dolphins are friendly marine mammals and not harmful to human life.','Dolphin Tour ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/23.jpg">
+            <span class="caption">Dolphin Tour </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/36.jpg','Stone town  is an outstanding private guided walking tour, we can arrange the pickup from your hotel and return.','Stone Town City Tour ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/36.jpg">
+            <span class="caption">Stone Town City Tour </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/37.jpg','Prison island is half day private guided tour with snorkeling at (Changuu Island). visiting giant tortoises and discover the ancient history.','Prison Island Tour')">
+            <img src="https://jadevinetravel.com/pictures/gallery/37.jpg">
+            <span class="caption">Prison Island Tour</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/34.jpeg','Relax at the White-sand beach at Zanzibar spend an entire day on the beachside and just take in all the serene and peaceful views by the sea! for the honeymoon, business trip, event or any occasion.','Beach Tour')">
+            <img src="https://jadevinetravel.com/pictures/gallery/34.jpeg">
+            <span class="caption">Beach Tour</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/33.jpg','Experience the lifestyle of Zanzibar peoples during the night time on a 5-hour local Stone Town, Jambiani-Paje and Nungwi nightclub tour of Zanzibar. Dress to impress and spend the evening visiting elegant venues with a knowledgeable guide.','Nightlife/Nightclub')">
+            <img src="https://jadevinetravel.com/pictures/gallery/33.jpg">
+            <span class="caption">Nightlife/Nightclub</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/19.jpeg','This full day excursion includes something for everyone. From relaxing on the white sands of the Pange Sandbank to snorkeling for tropical fish and devouring a BBQ Seafood Buffet - guests are in for a treat!','Nakupenda Sandbank Picnic')">
+            <img src="https://jadevinetravel.com/pictures/gallery/19.jpeg">
+            <span class="caption">Nakupenda Sandbank Picnic</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/21.jpg','Spice tour is one of the most interesting and educating tours about Zanzibari spices, flavors and fruits. Spices have played an important role in Zanzibari culture and history.','Spice Tour')">
+            <img src="https://jadevinetravel.com/pictures/gallery/21.jpg">
+            <span class="caption">Spice Tour</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/24.jpg','Enjoy lunch and dinner on a world-famous restaurant, known not only for its extraordinary location, but also its fabulous food inspired by the natural resources, a twist of Zanzibar, and Italian love.','The Rock Restaurant ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/24.jpg">
+            <span class="caption">The Rock Restaurant </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/25.jpg','Zanzibar is known the world over for its prime deep sea fishing locations where big game fish abound. The channel that lies between Zanzibar and Pemba offers many year-round deep sea angling opportunities.','Deep Sea Fishing ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/25.jpg">
+            <span class="caption">Deep Sea Fishing </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/26.jpg','Snorkeling or diving excursion is a great day out, not to be missed. It includes world class snorkeling and diving at the famous Mnemba Atoll, a marine conservation area, followed by a scrumptious seafood on the idyllic Muyuni beach.','Snorkeling &amp;amp; Scuba Diving ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/26.jpg">
+            <span class="caption">Snorkeling &amp; Scuba Diving </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/27.jpg','Safari blue excursion operating from Fumba village and exploring the Menai Bay Conservation Area by traditional hand-built wooden dhows. Includes guided snorkelling with quality kit, ngalawa sailing, swimming in a mangrove lagoon, a delicious seafood.','Safari Blue ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/27.jpg">
+            <span class="caption">Safari Blue </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/28.jpg','Village tour is special requested day tour, we may organise this village tour after listening your expectation, the main reason is we do have three main options Jambian-Paje village, Nungwi village and Kizimkazi village.','Village Tour')">
+            <img src="https://jadevinetravel.com/pictures/gallery/28.jpg">
+            <span class="caption">Village Tour</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/29.jpeg','Drive your own off-road quad on the island of Zanzibar and discover its rich wild nature and beautiful landscapes. Experience the true Zanzibar and its culture.','Quad Biking ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/29.jpeg">
+            <span class="caption">Quad Biking </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/30.jpeg','Spa in Zanzibar offer high quality services using pure and organic materials. Like everywhere else in the world, the wellness phenomenon has taken over the island of Zanzibar.','Spa Massage ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/30.jpeg">
+            <span class="caption">Spa Massage </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/31.jpg','If you are looking for fun water sports and enjoy the amazing views of our island then fly with Parasailing, guided Jet Ski Tours, Water skiing, Wakeboarding, Flyfish, Ringos and the ever popular Banana Boat.','Water Sport Activities ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/31.jpg">
+            <span class="caption">Water Sport Activities </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/32.jpg','Horse ride with a qualified teaching and riding instructor. Riders of all levels are welcome to experience the opportunity of spectacular sunset beach rides as well as a beautiful scenic trail around and over the golf course to the beach.','Horse Ride ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/32.jpg">
+            <span class="caption">Horse Ride </span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/38.jpeg','Cheetah&amp;rsquo;s rock  in Zanzibar is a unique place where people and animals interact directly&amp;ndash;face to face, eye to eye, fur to skin.','Cheetah&amp;rsquo;s Rock')">
+            <img src="https://jadevinetravel.com/pictures/gallery/38.jpeg">
+            <span class="caption">Cheetah&rsquo;s Rock</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/39.jpeg','Golf Course. Seacliff has the only golf course on the island of Zanzibar. Golfers will enjoy 9-hole and two of the last holes are played along the Indian Ocean. ','Golf Game')">
+            <img src="https://jadevinetravel.com/pictures/gallery/39.jpeg">
+            <span class="caption">Golf Game</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/40.jpg','Zanzibar butterfly centre is an interactive butterfly exhibit near to Jozani-Chawka Bay National Park on Unguja island, though outside the park boundaries. The exhibit consists of a netted tropical garden with usually hundreds of butterflies.','Butterfly Centre')">
+            <img src="https://jadevinetravel.com/pictures/gallery/40.jpg">
+            <span class="caption">Butterfly Centre</span>
+          </div>
+          <div class="box" onclick="imageViewer('viewerImg','pictures/gallery/41.jpeg','The Sea Turtle lagoon is a natural lagoon separated from the Indian Ocean by a few meters of old reef rocks&amp;hellip; but the tide within the lagoon is a clear indication that the connection with the Ocean is open.','Mnarani Aquarium ')">
+            <img src="https://jadevinetravel.com/pictures/gallery/41.jpeg">
+            <span class="caption">Mnarani Aquarium </span>
+          </div>
+                    </span>
+          <!--<div class="pagination">
+            <a href="#first"><button type="button" name="button"><i class="fas fa-arrow-left"></i></button></a>
+            <a href="#next"><button type="button" name="button" class="act">4</button></a>
+            <a href="#last"><button type="button" name="button">5</button></a>
+            <a href="#last"><button type="button" name="button">6</button></a>
+            <a href="#first"><button type="button" name="button"><i class="fas fa-arrow-right"></i></button></a>
+          </div>-->
+        </div>
+        <!--//////////////////////////// Picture viewer -------------------->
+        <div class="modal" id="viewerImg">
+          <span class="close" onclick="closeForm('viewerImg')">&times;</span>
+          <form class="modal-content">
+            <div class="formhead"><i class="fas fa-camera"></i> [JDVT] Take Your Dream Vacation</div>
+            <img src="gallery.htm" id="imgView">
+            <span id="vTitle"></span>
+            <span id="vCaption"></span>
+            <button type="button" class="btnHide" onclick="closeForm('viewerImg')"><i class="fas fa-times-circle"></i> CLOSE</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+  Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
+  <button><i class="fas fa-arrow-up"></i></button>
+</footer>
+  </body>
+  <script type="text/javascript">
+  //Image viewer
+  function imageViewer(a,b,c,d) {
+    $("#"+a).fadeIn('fast');
+    $("#imgView").attr("src",b);
+    $("#vTitle").html("<b>"+he.decode(d)+"</b>");
+    $("#vCaption").text(he.decode(c));
+  }
+  //Close modal box/image viewer
+  function closeForm(modal) {
+    $("#"+modal).fadeOut(500);
+  }
+
+  //Start of Tawk.to Script
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/5dea894ed96992700fcb1f3f/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  //End of Tawk.to Script
+  </script>
+  <script src="jQuery/jq.js" charset="utf-8"></script>
+  <script src="jQuery/searching.js" charset="utf-8"></script>
+</html>
