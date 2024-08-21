@@ -1,35 +1,6 @@
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Contact Us - JadeVine Travel Tours & Safari</title>
-    <link rel="shortcat icon" href="pictures/logo.png">
-    <link href="fonts.googleapis.com/css.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="fontawesome-web-5.10.1/css/all.css">
-    <link rel="stylesheet" href="css/w3styles.css">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="jQuery/jquery-3.4.0.min.js"></script>
-    <style>
-      nav ul li .lin-contact {
-        background-color: rgb(45,45,45,0.2);
-      }
-      .menu ul li .lin-contact {
-        background-color: #2196F3;
-        color: #FFFFFF;
-      }
-      body footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-      }
-      #container .main-block .contact {
-        padding-bottom: 50px;
-      }
-    </style>
-  </head>
+{% extends "jv/base.html" %}
+{% load static %}
+{% block content %}
   <body class="w3-animate-opacity">
      <style type="text/css">
    .container {
@@ -157,73 +128,9 @@ layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
 
 }
 </script>
-
-<script type="text/javascript" src="translate.google.com/translate_a/element.js"></script>    
-<header class="w3-card-4"
->
-     
-  <div class="wrapper">
+<script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>
        
-    <a href="index.htm">
-      <img src="pictures/logo.png" alt="logo" id="logo">
-      <div class="headname">
-        Jadevine Travel & Tours
-      </div>
-    </a>
-
-    <i class="fas fa-bars" id="menubars"></i>
-    
-    <nav>
-       
-      <ul>
-        <li><a href="index.htm" class="lin-home">Home</a></li>
-        <li><a href="services.htm" class="lin-services">Services</a></li>
-        <li><a href="popular_places_89.htm" class="lin-popular">Popular places</a></li>
-        <li><a href="gallery.htm" class="lin-gallery">Tours & Excursion</a></li>
-        <li><a href="popular_places_89.htm#search" class="lin-search">Search</a></li>
-        <li><a href="about.htm" class="lin-about">About</a></li>
-        <li><a href="contact.htm" class="lin-contact">Contact</a></li>
-       
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<div class="menu w3-card-2" id="navbar">
-    
-  <div class="h-devider"></div>
-  <ul>
-    <li><a href="index.htm" class="lin-home">Home</a></li>
-    <li><a href="services.htm" class="lin-services">Services</a></li>
-    <li><a href="popular_places_89.htm" class="lin-popular">Popular places</a></li>
-    <li><a href="gallery.htm" class="lin-gallery">Tours & Excursion</a></li>
-    <li><a href="popular_places_89.htm#search" class="lin-search">Search</a></li>
-    <li><a href="about.htm" class="lin-about">About</a></li>
-    <li><a href="contact.htm" class="lin-contact">Contact</a></li>
-  </ul>
-</div>
-
-<div class="h-devider"></div>
-
-        <div class="box x1 w3-card-2" id="google_translate_element" style="color:#387ADF; font-weight: bold;margin-TOP:-19px;margin-BOTTOM:-19px;">
-            
-             <p style="color:#387ADF;margin-left: 10px; width:30%" >Change language</p>
-             <span><div class="socialmedia div-left" style="margin-bottom: -3px; margin-top:-13px; font-size:x-large;">
-          <a href="tel:+255-683956372"><i class="fas fa-phone"></i> </a>
-          <a href="api.whatsapp.com/send.htm" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="contact.htm" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="contact.htm" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="contact.htm" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="skype:?call" target="_blank"><i class="fab fa-skype"></i></a>
-            
-        </div></span>
-            
-            </div>
-            
-            
-        
-       
- 
+{%include "jv/navbar.html"%}
    
     
 
@@ -545,3 +452,4 @@ layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
   </body>
   <script src="jQuery/jq.js" charset="utf-8"></script>
 </html>
+{%endblock%}
