@@ -64,11 +64,13 @@ $("#searchGall").keyup(function(){
 //Submit testimonials to the database
 $("#saveTest").submit(function(e) {
   e.preventDefault();
+  var formData = new FormData(this);
+  formData.append('photo', $('#photo')[0].files[0]);
+
   $.ajax({
     type: 'POST',
-    url: 'search.php',
-    data: new FormData(this),
-    dataType: 'json',
+    url: '/createTestimonial/',
+    data: formData,
     contentType: false,
     cache: false,
     processData: false,
