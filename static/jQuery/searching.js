@@ -88,6 +88,15 @@ $("#saveTest").submit(function(e) {
         $('#saveTest')[0].reset();
         $('#saveTest .formsms1').text(response.message).fadeIn('fast').delay(5000).fadeOut('slow');
         $("#testimonialForm").animate({ scrollTop:0 }, "slow");
+        //add testimonial to the list
+        var container = document.querySelector('.columns testimonial');
+        var testi = '<div class="test">';
+        testi += '<img src="'+response.photo+'" alt="'+response.name+'">';
+        testi += '<p><span>'+response.name+'</span>' +response.title+'-'+response.country+'</p>';
+        testi += '<p>'+response.testimonial+'</p>';
+        testi += '</div>';
+        container.innerHTML += testi;
+        
       } else {
         $('#saveTest .formsms2').text(response.message).fadeIn('fast').delay(5000).fadeOut('slow');
         $("#testimonialForm").animate({ scrollTop:0 }, "slow");
