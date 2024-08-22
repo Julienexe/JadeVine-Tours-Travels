@@ -9,9 +9,11 @@ from .models import *
 def home(request):
     categories = Category.objects.all().exclude(name='Stone Town City Tour')
     places = Place.objects.all()[:9]
+    testimonials = Testimonial.objects.all()
     context = {
         'categories': categories,
-        'places': places
+        'places': places,
+        'testimonials': testimonials
     }
     return render(request,"jv/index.html",context)
 
@@ -29,7 +31,7 @@ def create_testimonial(request):
         img = DjangoFile(request.FILES['photo'], name=request.FILES['photo'].name)    
         
         try:
-            Testimonial.objects.create(
+            test = Testimonial.objects.create(
                 name = name,
                 country = country,
                 title = title,
@@ -41,6 +43,11 @@ def create_testimonial(request):
             response_data = {
                 'status': 1,
                 'message': 'Testimonial submitted successfully!',
+                "name": test.name,
+                'country': test.country,
+                'title': test.title,
+                'testimonial': test.testimonial,
+                'photo': test.image.url
             }
         except:
             
@@ -53,4 +60,32 @@ def create_testimonial(request):
         # If the request is not a POST request, return a bad request response
         return JsonResponse({'status': 0, 'message': 'Invalid request method.'})
 
+def create_inquiry(request):
+    if request.method =="POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        type = request.POST.get("type")
+        other = request.POST.get("other")
+        departure_date = request.POST.get("departure_date")
+        return_date = request.POST.get("return_date")
+        destination = request.POST.get("destination")
+        no_of_adults = request.POST.get("adults")
+        no_of_children = request.POST.get("children")
+
+       
+        inquiry = Inquiry.objects.create(
+            name = name,
+            email = email,
+            type = type,
+            other = other if other else None,
+            departure_date = departure_date,
+            return_date = return_date,
+            destination = destination,
+            no_of_adults = no_of_adults,
+            no_of_children = no_of_children
+        )
+    
+        
+    return home(request)
+    
 
