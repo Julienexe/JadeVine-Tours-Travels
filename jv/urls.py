@@ -7,4 +7,5 @@ urlpatterns = [
     # Add your URL patterns here
     path('', views.home, name='home'),
     path('createTestimonial/', views.create_testimonial, name='createTestimonial'),
+    path('createInquiry/', views.create_inquiry, name='inquiry'),
 ]
