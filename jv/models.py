@@ -36,3 +36,17 @@ class Testimonial(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
+class Inquiry(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    type = models.CharField(max_length=100)
+    other = models.TextField(null=True)
+    departure_date = models.DateField()
+    return_date = models.DateField()
+    destination = models.CharField(max_length=100)
+    no_of_adults = models.IntegerField()
+    no_of_children = models.IntegerField()
+
+    def __str__(self) -> str:
+        return self.name
