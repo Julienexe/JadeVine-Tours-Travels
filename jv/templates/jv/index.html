@@ -861,36 +861,36 @@
             </button>
             <div class="container2 " id="myForm">
 
-                <form action="index.htm" method="post">
-
-                    <input type="text" id="full_name_form1" name="full_name_form1" required
+                <form action="{% url 'jv:inquiry' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" id="full_name_form1" name="name" required
                         placeholder="Your Full Name:">
 
-                    <input type="email" id="email_form1" name="email_form1" required placeholder="Email:" required>
+                    <input type="email" id="email_form1" name="email" required placeholder="Email:" required>
 
                     <label for="type_form1">Type:</label>
-                    <select id="type_form1" name="type_form1" required>
+                    <select id="type_form1" name="type" required>
                         <option value="General">General</option>
                         <option value="Booking">Booking</option>
                         <option value="Feedback">Feedback</option>
                         <option value="Other">Other</option>
                     </select>
-                    <input type="text" id="other_form1" name="other_form1" placeholder="Other (if applicable):">
+                    <input type="text" id="other_form1" name="other" placeholder="Other (if applicable):">
 
 
                     <label for="return_date_form1">Departure Date:</label>
-                    <input type="date" id="departure_date_form1" name="departure_date_form1" placeholder="Return Date:"
+                    <input type="date" id="departure_date_form1" name="departure_date" placeholder="Return Date:"
                         required>
 
                     <label for="return_date_form1">Return Date:</label>
-                    <input type="date" id="return_date_form1" name="return_date_form1" placeholder="Return Date:"
+                    <input type="date" id="return_date_form1" name="return_date" placeholder="Return Date:"
                         required>
-                    <input type="text" id="destination_form1" name="destination_form1" required
+                    <input type="text" id="destination_form1" name="destination" required
                         placeholder="Destination:">
 
-                    <input type="number" id="adults_form1" name="adults_form1" placeholder="No. of Adults:" required>
+                    <input type="number" id="adults_form1" name="adults" placeholder="No. of Adults:" required>
 
-                    <input type="number" id="children_form1" name="children_form1" placeholder="No. of Children:"
+                    <input type="number" id="children_form1" name="children" placeholder="No. of Children:"
                         required>
                     <br>
                     <input type="submit" value="Submit">
@@ -948,35 +948,13 @@
                     </button></a>
             </div>
             <div class="columns testimonial">
+                {% for test in testimonials%}
                 <div class="test">
-                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
-                    <p><span>Anitah K</span> Business Woman - Canada</p>
-                    <p>Fabulous drive experience from the Jadevine driver, Excellently he knew well, all the road
-                        hampers and corners,..we went to the rock restaurant to have lunch and it was so nice, The food
-                        was delicious and the restaurant is on the ocean,.. so beautiful and we had a good view of the
-                        sunset at paje beach,.. we enjoyed the holiday in Zanzibar.</p>
+                    <img src="{{test.image.url}}" alt="{{test.name}}">
+                    <p><span>{{test.name}}</span> {{test.title}} - {{test.country}}</p>
+                    <p>{{test.testimonial}}</p>
                 </div>
-                <div class="test">
-                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
-                    <p><span>Mohammad Al-Ahmed</span> Freelancer - Egypt</p>
-                    <p>This is the best company I can recommend a member of family/friend to use in case of tours in
-                        Africa specifically through east African countries (Uganda and Tanzania/Zanzibar) travel & tours
-                        because they give the basic and oriented
-                        and quality customer services with Complicity driven by passion. Thanks Jadevinetravelteam
-                        because I enjoyed the safaris in Serengeti National park where I later travelled to Zanzibar for
-                        the Dolphin swim.</p>
-                </div>
-                <div class="test">
-                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
-                    <p><span>Nicolas</span> Declarant - France</p>
-                    <p>Vraiment avec jadevine on m'a fait un bon service et j'ai decouvert tant de choses ,comme.. La
-                        plongee avec le dolphin , la couche du soleil a kendwa , the rock restaurant ( c'est un beau
-                        restaurant ui se dans un ile qui se trouve a Zanzibar , j'ai fait aussi le tour de la ville
-                        historique de la place qu'on appel STONE TOWN, j'ai fait aussi jozan et forest ( ici on vois le
-                        petit singe et on joue avec eux en leurs donnant de banane ) vraiment je nous invite a tout le
-                        monde qui irons a Zanzibar de consulter jadevine travel !!! Vraiment j'ai passée une bonne
-                        vacance grace a jadevine travel !! Je ne vous oublierais jamais....!!!!! </p>
-                </div>
+                {% endfor %}
             </div>
 
             <!-- Our partners -->
