@@ -1,26 +1,39 @@
 {% extends "jv/base.html" %}
 {% load static %}
 {% block content %}
-  <body class="w3-animate-opacity">
-     <style type="text/css">
-   .container {
-        display: flex;
-        justify-content: space-between;
+
+<body class="w3-animate-opacity">
+  <style type="text/css">
+    body {
+      background-image: 
+        url('https://jadevinetravel.com/pictures/bgpictures/bground.jpeg')
+      
+
+      ;
     }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
     .column {
-        flex: 1;
+      flex: 1;
     }
+
     .column.left {
-        text-align: left;
+      text-align: left;
     }
+
     .column.right {
-        text-align: right;
+      text-align: right;
     }
-     .acenter {
-        text-align: center;
+
+    .acenter {
+      text-align: center;
     }
- 
-  /* .fixed-con {
+
+    /* .fixed-con {
     z-index: 9724790009779558!important;
     background-color: #f7f8fc;
     position: fixed;
@@ -43,184 +56,219 @@
     width:80px;
     height:80px;
   }*/
-  .fixed-con {
-  z-index: 9724790009779558!important;
-  background-color:#FFA500; /* Matching background color */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-}
+    .fixed-con {
+      z-index: 9724790009779558 !important;
+      background-color: #FFA500;
+      /* Matching background color */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+    }
 
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
-  z-index: 9724790009779!important;
-  top: 0;
-  left: unset;
-  right: -5px;
-  display: none!important;
-  border-radius: 10%;
-  border: 1px solid #FFA500; /* Matching border color */
-}
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+      z-index: 9724790009779 !important;
+      top: 0;
+      left: unset;
+      right: -5px;
+      display: none !important;
+      border-radius: 10%;
+      border: 1px solid #FFA500;
+      /* Matching border color */
+    }
 
-.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
-  width: 80px;
-  height: 80px;
-}
+    .VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+      width: 80px;
+      height: 80px;
+    }
 
-  /*hide google translate link | logo | banner-frame */
-  .goog-logo-link,.gskiptranslate,.goog-te-gadget span,.goog-te-banner-frame,#goog-gt-tt, .goog-te-balloon-frame,div#goog-gt-{
-    display: none!important;
-  }
-  .goog-te-gadget {
-    color: transparent!important;
-    font-size:0px;
-  }
+    /*hide google translate link | logo | banner-frame */
+    .goog-logo-link,
+    .gskiptranslate,
+    .goog-te-gadget span,
+    .goog-te-banner-frame,
+    #goog-gt-tt,
+    .goog-te-balloon-frame,
+    div#goog-gt- {
+      display: none !important;
+    }
 
-  .goog-text-highlight {
-    background: none !important;
-    box-shadow: none !important;
-  }
-   
- /*google translate Dropdown */
- 
- #google_translate_element select{
- /*background:#f6edfd;*/
- color:#387ADF;
- border: none;
- border-radius:3px;
- padding:6px 8px;
- }
-  .goog-te-banner-frame{
- display:none !important;
+    .goog-te-gadget {
+      color: transparent !important;
+      font-size: 0px;
+    }
 
- }
- .goog-te-banner-frame {
-    margin-bottom: 20px; /* Adjust the margin as needed */
-}
-.div-left {
-    float:right;
-}
-.goog-te-combo {
-    width: 30%; /* Adjust the width as needed */
-}
-.goog-te-combo option[value="lang"] {
-    /* Style the "lang" option as desired */
-    font-weight: bold; /* Example style */
-    /* Add any other desired styles */
-}
- </style> 
+    .goog-text-highlight {
+      background: none !important;
+      box-shadow: none !important;
+    }
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
+    /*google translate Dropdown */
 
-new google.translate.TranslateElement({
+    #google_translate_element select {
+      /*background:#f6edfd;*/
+      color: #387ADF;
+      border: none;
+      border-radius: 3px;
+      padding: 6px 8px;
+    }
 
-pageLanguage: 'en',
+    .goog-te-banner-frame {
+      display: none !important;
 
-autoDisplay: 'true',
- includedLanguages:'it,fr,da,de,es,sw',
+    }
 
-layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    .goog-te-banner-frame {
+      margin-bottom: 20px;
+      /* Adjust the margin as needed */
+    }
 
-}, 'google_translate_element');
+    .div-left {
+      float: right;
+    }
 
-}
-</script>
+    .goog-te-combo {
+      width: 30%;
+      /* Adjust the width as needed */
+    }
 
-<script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>   
+    .goog-te-combo option[value="lang"] {
+      /* Style the "lang" option as desired */
+      font-weight: bold;
+      /* Example style */
+      /* Add any other desired styles */
+    }
+  </style>
 
-        
-       
-{%include "jv/navbar.html"%}
-   
-    
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+
+      new google.translate.TranslateElement({
+
+        pageLanguage: 'en',
+
+        autoDisplay: 'true',
+        includedLanguages: 'it,fr,da,de,es,sw',
+
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+
+      }, 'google_translate_element');
+
+    }
+  </script>
+
+  <script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>
 
 
-    <div id="container">
-      <div class="main-block">
-        <div class="destinations">
-          <div class="popular">
-            <h3>About Us</h3>
-          </div>
-          <div class="services txtAbout">
-            <p>Jadevine Travel &amp; Tours company was established with a greater good purpose towards it&#39;s esteemed customers, and Year after Year has been expanding its business throughout the tourism sector in Zanzibar-Tanzania.<br />
-&nbsp;<br />
-We work in partnership with both large and small tour operators around the World in order to create portforms of accommodation units that satisfy the needs of each market segment. The knowledge and accumulated experience of both local and international markets made the company the largest incoming Tour agency in Zanzibar &nbsp;and a highly reputable, professional and organized travel &amp; tours enterprise.<br />
-&nbsp;<br />
-We organize Safari tours(Main-land tours) and Excursions in small and large groups &amp; other services include Airport representations.etc which are available to all holidaymakers in Zanzibar-Tanzania.</p>
 
-<p>&nbsp;</p>
+  {%include "jv/navbar.html"%}
 
-<p><strong>OUR TEAM:</strong></p>
 
-<p>Our team is one of the most valuable resources.&nbsp; Our experience, knowledge and commitment constitute a major factor in the company&rsquo;s success.<br />
-&nbsp;<br />
-Our culture is self orientated towards customer satisfaction as each of us partakes pride in creating lasting memories for holiday tourists at the island of Zanzibar, while putting their safety as one of our top priorities.<br />
-&nbsp;<br />
-Training is a regular business activity amongst workers &amp; Management, particularly in technological advancements and communication systems, in order to ensure the continuity in communication, accounting and book keeping systems between us and our clients.</p>
 
-<p>&nbsp;</p>
 
-<p>&nbsp;<strong>MISSION, GOALS &amp; VISION</strong></p>
+  <div id="container">
+    <div class="main-block">
+      <div class="destinations">
+        <div class="popular">
+          <h3>About Us</h3>
+        </div>
+        <div class="services txtAbout">
+          <p>Jadevine Travel &amp; Tours company was established with a greater good purpose towards it&#39;s esteemed
+            customers, and Year after Year has been expanding its business throughout the tourism sector in
+            Zanzibar-Tanzania.<br />
+            &nbsp;<br />
+            We work in partnership with both large and small tour operators around the World in order to create
+            portforms of accommodation units that satisfy the needs of each market segment. The knowledge and
+            accumulated experience of both local and international markets made the company the largest incoming Tour
+            agency in Zanzibar &nbsp;and a highly reputable, professional and organized travel &amp; tours
+            enterprise.<br />
+            &nbsp;<br />
+            We organize Safari tours(Main-land tours) and Excursions in small and large groups &amp; other services
+            include Airport representations.etc which are available to all holidaymakers in Zanzibar-Tanzania.</p>
 
-<p>&nbsp;</p>
+          <p>&nbsp;</p>
 
-<p><strong>Mission</strong>:<br />
-To ensure satisfaction and safety of our customers.<br />
-To ensure that we do not merely just show new places to our fellow customers but actually extend our knowledge of different ethnic cultures to our visitors in Zanzibar-Tanzania.</p>
+          <p><strong>OUR TEAM:</strong></p>
 
-<p>&nbsp;</p>
+          <p>Our team is one of the most valuable resources.&nbsp; Our experience, knowledge and commitment constitute a
+            major factor in the company&rsquo;s success.<br />
+            &nbsp;<br />
+            Our culture is self orientated towards customer satisfaction as each of us partakes pride in creating
+            lasting memories for holiday tourists at the island of Zanzibar, while putting their safety as one of our
+            top priorities.<br />
+            &nbsp;<br />
+            Training is a regular business activity amongst workers &amp; Management, particularly in technological
+            advancements and communication systems, in order to ensure the continuity in communication, accounting and
+            book keeping systems between us and our clients.</p>
 
-<p><strong>Goals</strong>:<br />
-To develop consistent and long-term relationships with our clients and suppliers also making them happy and satisfied is paramount.</p>
+          <p>&nbsp;</p>
 
-<p><br />
-&nbsp;<strong>Vision</strong>:<br />
-To promote and facilitate sustainable growth of the tourism sector in Zanzibar-Tanzania, Kenya, Uganda and around the world.</p>
+          <p>&nbsp;<strong>MISSION, GOALS &amp; VISION</strong></p>
 
-<p>We also have a reputation of supporting our international partners in Uganda and Kenya with the best quality in service tariff and availability. Our partners have been enjoying our efficiency and effectiveness in serving our clients.<br />
-We respond instantly in critical situations and conditions.</p>
+          <p>&nbsp;</p>
 
-<p>&nbsp;</p>
+          <p><strong>Mission</strong>:<br />
+            To ensure satisfaction and safety of our customers.<br />
+            To ensure that we do not merely just show new places to our fellow customers but actually extend our
+            knowledge of different ethnic cultures to our visitors in Zanzibar-Tanzania.</p>
 
-<p><strong>We&nbsp;offer the following services below</strong>:&nbsp;<br />
-*Hotel Accommodation &amp;&nbsp;Confrence Hall&nbsp;Bookings.<br />
-*Flight Tickets&nbsp;Both international &amp;&nbsp;Domestic.</p>
+          <p>&nbsp;</p>
 
-<p>*All Ground Transfer Shuttles&nbsp;<br />
-* Ferry port &amp; Airport Pickups&nbsp;<br />
-* Excursion Tours &amp; Genuine Safaris&nbsp;<br />
-* Water Sport&nbsp;Adventures.<br />
-* Zanzibar MICE Etc. &copy;️2022</p>
+          <p><strong>Goals</strong>:<br />
+            To develop consistent and long-term relationships with our clients and suppliers also making them happy and
+            satisfied is paramount.</p>
 
-<p>&nbsp;</p>
+          <p><br />
+            &nbsp;<strong>Vision</strong>:<br />
+            To promote and facilitate sustainable growth of the tourism sector in Zanzibar-Tanzania, Kenya, Uganda and
+            around the world.</p>
 
-<p>Address: Amani-Welezo Street, Zanzibar<br />
-Contact us: <a href="tel:+255772842571">+255</a>683956372</p>
-          </div>
+          <p>We also have a reputation of supporting our international partners in Uganda and Kenya with the best
+            quality in service tariff and availability. Our partners have been enjoying our efficiency and effectiveness
+            in serving our clients.<br />
+            We respond instantly in critical situations and conditions.</p>
+
+          <p>&nbsp;</p>
+
+          <p><strong>We&nbsp;offer the following services below</strong>:&nbsp;<br />
+            *Hotel Accommodation &amp;&nbsp;Confrence Hall&nbsp;Bookings.<br />
+            *Flight Tickets&nbsp;Both international &amp;&nbsp;Domestic.</p>
+
+          <p>*All Ground Transfer Shuttles&nbsp;<br />
+            * Ferry port &amp; Airport Pickups&nbsp;<br />
+            * Excursion Tours &amp; Genuine Safaris&nbsp;<br />
+            * Water Sport&nbsp;Adventures.<br />
+            * Zanzibar MICE Etc. &copy;️2022</p>
+
+          <p>&nbsp;</p>
+
+          <p>Address: Amani-Welezo Street, Zanzibar<br />
+            Contact us: <a href="tel:+255772842571">+255</a>683956372</p>
         </div>
       </div>
     </div>
-    <footer>
-  Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
-  <button><i class="fas fa-arrow-up"></i></button>
-</footer>
-    <script type="text/javascript">
+  </div>
+  <footer>
+    Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
+    <button><i class="fas fa-arrow-up"></i></button>
+  </footer>
+  <script type="text/javascript">
     //Start of Tawk.to Script
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/5dc47cfad96992700fc66186/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/5dc47cfad96992700fc66186/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
     })();
     //End of Tawk.to Script
-    </script>
-  </body>
-  <script src="jQuery/jq.js" charset="utf-8"></script>
+  </script>
+</body>
+<script src="jQuery/jq.js" charset="utf-8"></script>
+
 </html>
 {%endblock%}
