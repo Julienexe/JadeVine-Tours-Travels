@@ -13,4 +13,6 @@ urlpatterns = [
     path("gallery/",views.gallery,name='gallery'),
     path('createTestimonial/', views.create_testimonial, name='createTestimonial'),
     path('createInquiry/', views.create_inquiry, name='inquiry'),
+    path("contact",views.contact_us,name="contact"),
+    path("category/<int:category_id>",views.category,name="category"),
 ]

@@ -168,70 +168,26 @@
         <h3>Our Services</h3>
       </div>
       <table>
-        <tr id="serv11">
+        {% for category in categories %}
+        <tr id="{{category.id}}">
           <td>
-            <img src="https://jadevinetravel.com/pictures/services/11.jpg" alt="Stone Town City Tour"
-              onclick="imageViewer('viewerImg','pictures/services/11.jpg','Stone Town City Tour')">
-            <div onclick="openLink('popular_places.php?categ=11')">
-              <h4>Stone Town City Tour</h4>
-              <span>Stone town is an outstanding private guided walking tour, we can arrange the pickup from your hotel
-                and return.</span>
+            <img src="{{category.imageUrl}}" alt="{{category.name}}"
+              onclick="imageViewer('viewerImg','{{category.imageUrl}}','{{category.name}}')">
+            <div onclick="openLink(`{% url 'jv:category' category.id %}`)">
+              <h4>{{category.name}}</h4>
+              <span>{{category.description}}</span>
             </div>
           </td>
         </tr>
-        <tr id="serv2">
-          <td>
-            <img src="https://jadevinetravel.com/pictures/services/2.jpeg" alt="HOTELS, LODGES &amp; VILLAS"
-              onclick="imageViewer('viewerImg','pictures/services/2.jpeg','HOTELS, LODGES &amp;amp; VILLAS')">
-            <div onclick="openLink('popular_places.php?categ=2')">
-              <h4>HOTELS, LODGES &amp; VILLAS</h4>
-              <span>Book for your accommodation with us. There&#039;s a wealth of Hotels, Lodges and Villas in Zanzibar
-                with fine hospitality to suit a range of budgets. Most Hotels occupy historical or restored buildings
-                with a short walking distance of the main attractions, And all have the mod cons. Many have
-                indoors/outdoor pools and an Ocean view. Most Hotels are dotted along the archipelago&#039;s coastline
-                especially in the north and east side of the island of Zanzibar. Many are part of the luxury beach
-                Hotels, Lodges and villas offering everything any one need to have such as a Serene and indulgent
-                environment to stay.</span>
-            </div>
-          </td>
-        </tr>
-        <tr id="serv4">
-          <td>
-            <img src="https://jadevinetravel.com/pictures/services/4.jpeg" alt="FLIGHTS &amp; SAFARIS"
-              onclick="imageViewer('viewerImg','pictures/services/4.jpeg','FLIGHTS &amp;amp; SAFARIS')">
-            <div onclick="openLink('popular_places.php?categ=4')">
-              <h4>FLIGHTS &amp; SAFARIS</h4>
-              <span>Book an air ticket with us for all fast and domestic safari park Tours in Tanzania. Take a flight
-                from Zanzibar Island to Serengeti, Selous and Ruaha National parks to do a Safari. The most commonly
-                done Tours and incorporating flights, you can rely on to do a combination of Parks like Serengeti
-                National park, Ngorongoro National park, Selous Game Reserve, Mikumi National park and Ruaha National
-                park in the southern part of Tanzania all Combined together in a nick of time.</span>
-            </div>
-          </td>
-        </tr>
-        <tr id="serv9">
-          <td>
-            <img src="https://jadevinetravel.com/pictures/services/9.jpeg" alt="TOURS &amp; TRANSFER SHUTTLES"
-              onclick="imageViewer('viewerImg','pictures/services/9.jpeg','TOURS &amp;amp; TRANSFER SHUTTLES')">
-            <div onclick="openLink('popular_places.php?categ=9')">
-              <h4>TOURS &amp; TRANSFER SHUTTLES</h4>
-              <span>All pickups, are done on the spot to take you to every corner in Zanzibar island by buses, VIP
-                saloon Vehicles and more others tour trucks on the ground. All shuttles are subjected to strong quality
-                customer services. We provide for both individual and group any time and any where all with the help of
-                our professional and ethical drivers to transport our clients to their destinations in both Tanzania and
-                Zanzibar during the safaris and to hotels and from airports with an excellent performance records,
-                traveling with comfort is our goal. We care about your experience every where you go.</span>
-            </div>
-          </td>
-        </tr>
+        {% endfor %}
       </table>
       <!--<div class="pagination">
-            <a href="#first"><button type="button" name="button"><i class="fas fa-arrow-left"></i></button></a>
-            <a href="#next"><button type="button" name="button" class="act">4</button></a>
-            <a href="#last"><button type="button" name="button">5</button></a>
-            <a href="#last"><button type="button" name="button">6</button></a>
-            <a href="#first"><button type="button" name="button"><i class="fas fa-arrow-right"></i></button></a>
-          </div>-->
+        <a href="#first"><button type="button" name="button"><i class="fas fa-arrow-left"></i></button></a>
+        <a href="#next"><button type="button" name="button" class="act">4</button></a>
+        <a href="#last"><button type="button" name="button">5</button></a>
+        <a href="#last"><button type="button" name="button">6</button></a>
+        <a href="#first"><button type="button" name="button"><i class="fas fa-arrow-right"></i></button></a>
+      </div>-->
     </div>
 
     <!--//////////////////////////// Picture viewer -------------------->
@@ -243,12 +199,16 @@
         <span id="vCaption"></span>
         <button type="button" class="btnHide" onclick="closeForm('viewerImg')"><i class="fas fa-times-circle"></i>
           CLOSE</button>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-<footer>
-  Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
+  <hr>
+  <hr>
+  <hr>
+  <hr>
+  <footer>
+    Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
   <button><i class="fas fa-arrow-up"></i></button>
 </footer>
 

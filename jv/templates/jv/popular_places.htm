@@ -1,26 +1,62 @@
 {% extends "jv/base.html" %}
 {% load static %}
 {% block content %}
+
 <body class="w3-animate-opacity">
   <style type="text/css">
-     .container {
-        display: flex;
-        justify-content: space-between;
+    @media (max-width: 499px) {
+      .card img {
+        width: 100%;
+        height: 200px;
+        display: block;
+        float: none;
+        margin: auto;
+      }
     }
+
+    @media (min-width:500px) {
+      .card img {
+        height: 120px;
+      }
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
     .column {
-        flex: 1;
+      flex: 1;
     }
+
     .column.left {
-        text-align: left;
+      text-align: left;
     }
+
     .column.right {
-        text-align: right;
+      text-align: right;
     }
-     .acenter {
-        text-align: center;
+
+    .acenter {
+      text-align: center;
     }
- 
-  /* .fixed-con {
+
+    span.price {
+      width: auto;
+      height: auto;
+      padding: 3px;
+      padding-left: 5px;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #ffffff;
+      color: #2196F3;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    /* .fixed-con {
     z-index: 9724790009779558!important;
     background-color: #f7f8fc;
     position: fixed;
@@ -43,95 +79,116 @@
     width:80px;
     height:80px;
   }*/
-  .fixed-con {
-  z-index: 9724790009779558!important;
-  background-color:#FFA500; /* Matching background color */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-}
+    .fixed-con {
+      z-index: 9724790009779558 !important;
+      background-color: #FFA500;
+      /* Matching background color */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+    }
 
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
-  z-index: 9724790009779!important;
-  top: 0;
-  left: unset;
-  right: -5px;
-  display: none!important;
-  border-radius: 10%;
-  border: 1px solid #FFA500; /* Matching border color */
-}
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+      z-index: 9724790009779 !important;
+      top: 0;
+      left: unset;
+      right: -5px;
+      display: none !important;
+      border-radius: 10%;
+      border: 1px solid #FFA500;
+      /* Matching border color */
+    }
 
-.VIpgJd-ZVi9od-aZ2wEe-OiiCO {
-  width: 80px;
-  height: 80px;
-}
+    .VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+      width: 80px;
+      height: 80px;
+    }
 
-  /*hide google translate link | logo | banner-frame */
-  .goog-logo-link,.gskiptranslate,.goog-te-gadget span,.goog-te-banner-frame,#goog-gt-tt, .goog-te-balloon-frame,div#goog-gt-{
-    display: none!important;
-  }
-  .goog-te-gadget {
-    color: transparent!important;
-    font-size:0px;
-  }
+    /*hide google translate link | logo | banner-frame */
+    .goog-logo-link,
+    .gskiptranslate,
+    .goog-te-gadget span,
+    .goog-te-banner-frame,
+    #goog-gt-tt,
+    .goog-te-balloon-frame,
+    div#goog-gt- {
+      display: none !important;
+    }
 
-  .goog-text-highlight {
-    background: none !important;
-    box-shadow: none !important;
-  }
-   
- /*google translate Dropdown */
- 
- #google_translate_element select{
- /*background:#f6edfd;*/
- color:#387ADF;
- border: none;
- border-radius:3px;
- padding:6px 8px;
- }
-  .goog-te-banner-frame{
- display:none !important;
+    .goog-te-gadget {
+      color: transparent !important;
+      font-size: 0px;
+    }
 
- }
- .goog-te-banner-frame {
-    margin-bottom: 20px; /* Adjust the margin as needed */
-}
-.div-left {
-    float:right;
-}
-.goog-te-combo {
-    width: 30%; /* Adjust the width as needed */
-}
-.goog-te-combo option[value="lang"] {
-    /* Style the "lang" option as desired */
-    font-weight: bold; /* Example style */
-    /* Add any other desired styles */
-}
-  </style> 
+    .goog-text-highlight {
+      background: none !important;
+      box-shadow: none !important;
+    }
+
+    /*google translate Dropdown */
+
+    #google_translate_element select {
+      /*background:#f6edfd;*/
+      color: #387ADF;
+      border: none;
+      border-radius: 3px;
+      padding: 6px 8px;
+    }
+
+    .goog-te-banner-frame {
+      display: none !important;
+
+    }
+
+    .goog-te-banner-frame {
+      margin-bottom: 20px;
+      /* Adjust the margin as needed */
+    }
+
+    .div-left {
+      float: right;
+    }
+
+    .goog-te-combo {
+      width: 30%;
+      /* Adjust the width as needed */
+    }
+
+    .goog-te-combo option[value="lang"] {
+      /* Style the "lang" option as desired */
+      font-weight: bold;
+      /* Example style */
+      /* Add any other desired styles */
+    }
+  </style>
 
   <script type="text/javascript">
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            autoDisplay: 'true',
-            includedLanguages: 'it,fr,da,de,es,sw',
-            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-        }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: 'true',
+        includedLanguages: 'it,fr,da,de,es,sw',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+      }, 'google_translate_element');
     }
   </script>
-<script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>   
+  <script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>
 
   {% include "jv/navbar.html" %}
-    
+
   <div id="container">
     <div class="main-block">
       <div class="destinations">
         <div class="search w3-card-2">
           <form id="schPlace" action="https://jadevinetravel.com/popular_places_89.htm" method="post">
+            {% if category %}
+            <h3>Search {{category}} ..</h3>
+            {% else %}
             <h3>Search Popular places..</h3>
+            {% endif %}
             <div class="form">
               <input type="search" id="schQryP" value="" placeholder="Search..." autofocus>
               <input type="hidden" id="plcCateg" value="no">
@@ -141,11 +198,32 @@
           </form>
         </div>
         <div class="popular">
+          {% if category %}
+          <h3>{{category}}</h3>
+          {% else %}
           <h3>Popular places</h3>
+          {% endif %}
         </div>
-        <table id="placesTable">
-          <!-- Rows will be populated here by JavaScript -->
-        </table>
+        {% for place in places %}
+        <a href="http://" target="_blank" rel="noopener noreferrer">
+
+          <div class="card mb-2 mt-2 text-start" style="height: fit-content;">
+            <div class="row g-0">
+              <div class="col-md-2">
+                <img src="{{place.imageUrl}}" class="float-start img-fluid rounded-start" width="100%" alt="...">
+                <span class="price">{{place.price}}</span>
+              </div>
+              <div class="col-md-10">
+                <div class="card-body">
+                  <h5 class="card-title">{{place.name}}</h5>
+                  <p class="card-text">{{ place.description|truncatechars:200 }}</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        {%endfor%}
       </div>
     </div>
   </div>
@@ -157,51 +235,31 @@
 
   <script type="text/javascript">
     // Image viewer
-    function imageViewer(a,b,c) {
-      $("#"+a).fadeIn('fast');
-      $("#imgView").attr("src",b);
+    function imageViewer(a, b, c) {
+      $("#" + a).fadeIn('fast');
+      $("#imgView").attr("src", b);
       $("#vCaption").text(he.decode(c));
     }
 
     // Close modal box/image viewer
     function closeForm(modal) {
-      $("#"+modal).fadeOut(500);
+      $("#" + modal).fadeOut(500);
     }
 
     // Start of Tawk.to Script
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/5dc47cfad96992700fc66186/default';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/5dc47cfad96992700fc66186/default';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
     })();
     // End of Tawk.to Script
 
-    // Populate the table with data from the server
-    $(document).ready(function() {
-      var places = '{{ places|safe }}';  // Assuming 'places' is passed from Django
-      var table = $('#placesTable');
 
-      $.each(places, function(index, Place) {
-        var row = $('<tr></tr>');
-        var cell = $('<td></td>');
-        var link = $('<a></a>').attr('href', 'popular_places.htm');
-        var img = $('<img>').attr('src', Place.imageUrl);
-        var price = $('<span class="price"></span>').text('$' + Place.price);
-        var div = $('<div></div>');
-        var h4 = $('<h4></h4>').text(Place.name);
-        var span = $('<span></span>').html('<p>' + Place.description + '</p>');
 
-        div.append(h4).append(span);
-        link.append(img).append(price).append(div);
-        cell.append(link);
-        row.append(cell);
-        table.append(row);
-      });
-    });
   </script>
 </body>
 {% endblock %}

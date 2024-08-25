@@ -77,7 +77,7 @@ $("#contactUsForm").submit(function(e){
   } else {
     $.ajax({
         type: 'POST',
-        url: 'save_contact.php',
+        url: '/contact/',
         data: new FormData(this),
         dataType: 'json',
         contentType: false,

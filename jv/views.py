@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 #from .forms import TestimonialForm
 from .models import *
+
 def home(request):
     return render(request,"jv/index.html")
 def gallery(request):
@@ -14,12 +15,17 @@ def about(request):
 def contact(request):
     return render(request,"jv/contact.htm")
 def services(request):
-    return render(request,"jv/services.htm")
+    categories = Category.objects.all()
+    return render(request,"jv/services.htm",{"categories":categories})
 def popular_places(request):
     places = Place.objects.all()
-    print(places)
-    context = {'places':places}
-    return render(request,"jv/popular_places.htm",context)
+    
+    return render(request, 'jv/popular_places.htm', {'places': places})
+
+def category(request, category_id):
+    category = Category.objects.get(id=category_id)
+    places = Place.objects.filter(category=category)
+    return render(request, 'jv/popular_places.htm', {'category': category, 'places': places})
 
 
 def home(request):
@@ -103,5 +109,14 @@ def create_inquiry(request):
     
         
     return home(request)
+
+@csrf_exempt
+def contact_us(request):
+    #to be populated later
+    response_data = {
+                'status': 1,
+                'message': 'Message submitted successfully!',
+            }
+    return JsonResponse(response_data)
     
 

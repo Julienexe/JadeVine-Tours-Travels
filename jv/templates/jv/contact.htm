@@ -167,7 +167,8 @@ layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
             <div class="div w3-card-2">
               <h4>Fill out this form</h4>
             </div>
-            <form action="contact.htm" method="post" id="contactUsForm">
+            <form id="contactUsForm">
+              {% csrf_token %}
               <span class="sms" style="display:none;"></span>
               <input type="text" name="fullName" value="" placeholder="Full name" required>
               <input list="countryFrom" placeholder="Your country" name="country" required>
