@@ -3,7 +3,6 @@
 {% block content %}
 <div id="map"></div>
 <script>
-    // JavaScript to initialize the map
     var map = L.map('map').setView([-6.1652, 39.2026], 13); // Coordinates for Zanzibar
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -351,7 +350,7 @@
         </div>
         <div class="columns">
             {% for category in categories %}
-            <div class="box x1 w3-card-2" title="" onclick="openLink('popular_places.php?categ=2')">
+            <div class="box x1 w3-card-2" title="" onclick="openLink(`{% url 'jv:category' category.id %}`)">
                 {% if category.name == "FLIGHTS & SAFARIS" %}
                 <div class="">
                     <!-- airplane -->
@@ -863,8 +862,7 @@
 
                 <form action="{% url 'jv:inquiry' %}" method="POST">
                     {% csrf_token %}
-                    <input type="text" id="full_name_form1" name="name" required
-                        placeholder="Your Full Name:">
+                    <input type="text" id="full_name_form1" name="name" required placeholder="Your Full Name:">
 
                     <input type="email" id="email_form1" name="email" required placeholder="Email:" required>
 
@@ -883,15 +881,12 @@
                         required>
 
                     <label for="return_date_form1">Return Date:</label>
-                    <input type="date" id="return_date_form1" name="return_date" placeholder="Return Date:"
-                        required>
-                    <input type="text" id="destination_form1" name="destination" required
-                        placeholder="Destination:">
+                    <input type="date" id="return_date_form1" name="return_date" placeholder="Return Date:" required>
+                    <input type="text" id="destination_form1" name="destination" required placeholder="Destination:">
 
                     <input type="number" id="adults_form1" name="adults" placeholder="No. of Adults:" required>
 
-                    <input type="number" id="children_form1" name="children" placeholder="No. of Children:"
-                        required>
+                    <input type="number" id="children_form1" name="children" placeholder="No. of Children:" required>
                     <br>
                     <input type="submit" value="Submit">
                 </form>
@@ -948,6 +943,7 @@
                     </button></a>
             </div>
             <div class="columns testimonial">
+                {% if testimonials %}
                 {% for test in testimonials%}
                 <div class="test">
                     <img src="{{test.image.url}}" alt="{{test.name}}">
@@ -955,124 +951,155 @@
                     <p>{{test.testimonial}}</p>
                 </div>
                 {% endfor %}
+                {% else %}
+                <div class="test">
+                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
+                    <p><span>Anitah K</span> Business Woman - Canada</p>
+                    <p>Fabulous drive experience from the Jadevine driver, Excellently he knew well, all the road
+                        hampers and corners,..we went to the rock restaurant to have lunch and it was so nice, The food
+                        was delicious and the restaurant is on the ocean,.. so beautiful and we had a good view of the
+                        sunset at paje beach,.. we enjoyed the holiday in Zanzibar.</p>
+                </div>
+                <div class="test">
+                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
+                    <p><span>Mohammad Al-Ahmed</span> Freelancer - Egypt</p>
+                    <p>This is the best company I can recommend a member of family/friend to use in case of tours in
+                        Africa specifically through east African countries (Uganda and Tanzania/Zanzibar) travel & tours
+                        because they give the basic and oriented
+                        and quality customer services with Complicity driven by passion. Thanks Jadevinetravelteam
+                        because I enjoyed the safaris in Serengeti National park where I later travelled to Zanzibar for
+                        the Dolphin swim.</p>
+                </div>
+                <div class="test">
+                    <img src="https://jadevinetravel.com/pictures/man_avatar.png" alt="picture">
+                    <p><span>Nicolas</span> Declarant - France</p>
+                    <p>Vraiment avec jadevine on m'a fait un bon service et j'ai decouvert tant de choses ,comme.. La
+                        plongee avec le dolphin , la couche du soleil a kendwa , the rock restaurant ( c'est un beau
+                        restaurant ui se dans un ile qui se trouve a Zanzibar , j'ai fait aussi le tour de la ville
+                        historique de la place qu'on appel STONE TOWN, j'ai fait aussi jozan et forest ( ici on vois le
+                        petit singe et on joue avec eux en leurs donnant de banane ) vraiment je nous invite a tout le
+                        monde qui irons a Zanzibar de consulter jadevine travel !!! Vraiment j'ai passée une bonne
+                        vacance grace a jadevine travel !! Je ne vous oublierais jamais....!!!!! </p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Our partners -->
+        <div class="popular">
+            <h3>Proud Member Of </h3>
+        </div>
+        <div class="columns gallery">
+            <div class="box">
+                <img src="https://jadevinetravel.com/pictures/partiners/WhatsApp%20Image%202024-01-29%20at%2010.24.25.jpeg"
+                    alt="ZATI" style="width:100%;height:100%;object-position:center">
+                <span class="caption" style="padding-top:70px">ZATI</span>
+            </div>
+            <div class="box">
+                <img src="https://jadevinetravel.com/pictures/partiners/WhatsApp%20Image%202024-01-29%20at%2010.24.26%20(1).jpeg"
+                    alt="ZATO" style="width:100%;height:100%;object-position:center">
+                <span class="caption" style="padding-top:70px">ZATO</span>
             </div>
 
-            <!-- Our partners -->
-            <div class="popular">
-                <h3>Proud Member Of </h3>
-            </div>
-            <div class="columns gallery">
-                <div class="box">
-                    <img src="https://jadevinetravel.com/pictures/partiners/WhatsApp%20Image%202024-01-29%20at%2010.24.25.jpeg"
-                        alt="ZATI" style="width:100%;height:100%;object-position:center">
-                    <span class="caption" style="padding-top:70px">ZATI</span>
-                </div>
-                <div class="box">
-                    <img src="https://jadevinetravel.com/pictures/partiners/WhatsApp%20Image%202024-01-29%20at%2010.24.26%20(1).jpeg"
-                        alt="ZATO" style="width:100%;height:100%;object-position:center">
-                    <span class="caption" style="padding-top:70px">ZATO</span>
-                </div>
+        </div>
 
-            </div>
+        <!-- payment -->
+        <div class="popular">
+            <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
+            <h3>Book Your Adventure with Ease: Secure Payment and Reservations Await! <span
+                    style="color:#FFA500; font-weight: bold; ">Click below to begin your journey</span></h3>
 
-            <!-- payment -->
-            <div class="popular">
-                <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
-                <h3>Book Your Adventure with Ease: Secure Payment and Reservations Await! <span
-                        style="color:#FFA500; font-weight: bold; ">Click below to begin your journey</span></h3>
-
+        </div>
+        <div class="columns cards">
+            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                <img src="https://jadevinetravel.com/pictures/mastercard.png" alt="Master card">
+                <!--<span class="caption">Master card</span>-->
             </div>
-            <div class="columns cards">
-                <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                    <img src="https://jadevinetravel.com/pictures/mastercard.png" alt="Master card">
-                    <!--<span class="caption">Master card</span>-->
-                </div>
-                <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                    <img src="https://jadevinetravel.com/pictures/visa.jpg" alt="Visa card">
-                </div>
-                <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                    <img src="https://jadevinetravel.com/pictures/amex.png" alt="Amex card">
-                </div>
+            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                <img src="https://jadevinetravel.com/pictures/visa.jpg" alt="Visa card">
             </div>
-            <!-- Social media links -->
-            <div class="socialmedia">
-                <p>Follow us on social media for latest updates & offers</p>
-                <a href="https://www.facebook.com/Jadevine-TravelTours-110647714759139/" target="_blank"><svg
-                        height="50" width="50" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                        stroke="#ffffff">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
+            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                <img src="https://jadevinetravel.com/pictures/amex.png" alt="Amex card">
+            </div>
+        </div>
+        <!-- Social media links -->
+        <div class="socialmedia">
+            <p>Follow us on social media for latest updates & offers</p>
+            <a href="https://www.facebook.com/Jadevine-TravelTours-110647714759139/" target="_blank"><svg height="50"
+                    width="50" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z">
+                        </path>
+                    </g>
+                </svg></a>
+            <a href="https://instagram.com/jadevine_travel" target="_blank"><svg viewBox="0 0 24 24" height="50"
+                    width="50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                            fill="#ffffff"></path>
+                        <path
+                            d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                            fill="#ffffff"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+                            fill="#ffffff"></path>
+                    </g>
+                </svg></a>
+            <a href="https://twitter.com/jadevine_travel/status/1576432222399528962?s=20" target="_blank"><svg
+                    xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256"
+                    style="fill:#ffffff;">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.12,5.12)">
                             <path
-                                d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z">
+                                d="M5.91992,6l14.66211,21.375l-14.35156,16.625h3.17969l12.57617,-14.57812l10,14.57813h12.01367l-15.31836,-22.33008l13.51758,-15.66992h-3.16992l-11.75391,13.61719l-9.3418,-13.61719zM9.7168,8h7.16406l23.32227,34h-7.16406z">
                             </path>
                         </g>
-                    </svg></a>
-                <a href="https://instagram.com/jadevine_travel" target="_blank"><svg viewBox="0 0 24 24" height="50"
-                        width="50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-                                fill="#ffffff"></path>
-                            <path
-                                d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
-                                fill="#ffffff"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
-                                fill="#ffffff"></path>
-                        </g>
-                    </svg></a>
-                <a href="https://twitter.com/jadevine_travel/status/1576432222399528962?s=20" target="_blank"><svg
-                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256"
-                        style="fill:#ffffff;">
-                        <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                            font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                            style="mix-blend-mode: normal">
-                            <g transform="scale(5.12,5.12)">
-                                <path
-                                    d="M5.91992,6l14.66211,21.375l-14.35156,16.625h3.17969l12.57617,-14.57812l10,14.57813h12.01367l-15.31836,-22.33008l13.51758,-15.66992h-3.16992l-11.75391,13.61719l-9.3418,-13.61719zM9.7168,8h7.16406l23.32227,34h-7.16406z">
-                                </path>
-                            </g>
-                        </g>
-                    </svg></a>
-                <a href="skype:https://join.skype.com/BqmV3fkcFD5F?call" target="_blank"><svg height="50" width="50"
-                        viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <title>skype [#ffffff]</title>
-                            <desc>Created with Sketch.</desc>
-                            <defs> </defs>
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Dribbble-Light-Preview" transform="translate(-220.000000, -7439.000000)"
-                                    fill="#ffffff">
-                                    <g id="icons" transform="translate(56.000000, 160.000000)">
-                                        <path
-                                            d="M175.89681,7295.36998 C179.825962,7294.55179 180.342823,7290.96907 178.817578,7289.31175 C178.086879,7288.50353 176.992351,7288.05506 174.390821,7287.42722 C173.204069,7287.15116 170.957247,7286.63394 171.78929,7285.40814 C172.062922,7284.95868 172.748016,7284.6896 173.660122,7284.64476 C176.803849,7284.43249 176.146119,7287.84777 178.315919,7286.84322 C179.319236,7286.34991 179.228026,7284.73445 178.132485,7283.79168 C175.732631,7281.84237 168.868523,7281.86529 168.868523,7286.12568 C168.868523,7290.27146 174.829645,7289.35062 176.352863,7291.01691 C177.141329,7291.98459 176.298137,7293.54623 173.796938,7293.4406 C170.95522,7293.23331 171.709228,7290.56845 169.964064,7290.56845 C168.640496,7290.56845 168.184443,7291.64575 168.868523,7293.03698 C170.052234,7295.45369 173.381423,7295.90116 175.942415,7295.36998 L175.89681,7295.36998 L175.89681,7295.36998 Z M177.129167,7298.82513 C175.778236,7298.38365 175.845124,7298.41155 174.618848,7298.46636 C169.787723,7298.69159 166.054167,7295.66497 164.853227,7291.55606 C164.353595,7289.71437 164.918088,7288.08994 164.351568,7286.30506 C162.607418,7281.63408 167.70812,7277.50225 171.834896,7279.5283 C172.200752,7279.70868 172.428778,7279.75253 173.843557,7279.75253 C175.12152,7279.75253 175.623178,7279.79738 176.261653,7279.97776 C179.136815,7280.6953 181.464714,7282.53499 182.696058,7285.09322 C183.472362,7286.66383 183.745993,7288.28029 183.563572,7290.11899 C183.472362,7291.1076 183.472362,7291.19729 183.700388,7291.78029 C185.124288,7295.89418 181.228579,7299.88948 177.173759,7298.82613 L177.129167,7298.82613 L177.129167,7298.82513 Z"
-                                            id="skype-[#ffffff]"> </path>
-                                    </g>
+                    </g>
+                </svg></a>
+            <a href="skype:https://join.skype.com/BqmV3fkcFD5F?call" target="_blank"><svg height="50" width="50"
+                    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <title>skype [#ffffff]</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs> </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-220.000000, -7439.000000)"
+                                fill="#ffffff">
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path
+                                        d="M175.89681,7295.36998 C179.825962,7294.55179 180.342823,7290.96907 178.817578,7289.31175 C178.086879,7288.50353 176.992351,7288.05506 174.390821,7287.42722 C173.204069,7287.15116 170.957247,7286.63394 171.78929,7285.40814 C172.062922,7284.95868 172.748016,7284.6896 173.660122,7284.64476 C176.803849,7284.43249 176.146119,7287.84777 178.315919,7286.84322 C179.319236,7286.34991 179.228026,7284.73445 178.132485,7283.79168 C175.732631,7281.84237 168.868523,7281.86529 168.868523,7286.12568 C168.868523,7290.27146 174.829645,7289.35062 176.352863,7291.01691 C177.141329,7291.98459 176.298137,7293.54623 173.796938,7293.4406 C170.95522,7293.23331 171.709228,7290.56845 169.964064,7290.56845 C168.640496,7290.56845 168.184443,7291.64575 168.868523,7293.03698 C170.052234,7295.45369 173.381423,7295.90116 175.942415,7295.36998 L175.89681,7295.36998 L175.89681,7295.36998 Z M177.129167,7298.82513 C175.778236,7298.38365 175.845124,7298.41155 174.618848,7298.46636 C169.787723,7298.69159 166.054167,7295.66497 164.853227,7291.55606 C164.353595,7289.71437 164.918088,7288.08994 164.351568,7286.30506 C162.607418,7281.63408 167.70812,7277.50225 171.834896,7279.5283 C172.200752,7279.70868 172.428778,7279.75253 173.843557,7279.75253 C175.12152,7279.75253 175.623178,7279.79738 176.261653,7279.97776 C179.136815,7280.6953 181.464714,7282.53499 182.696058,7285.09322 C183.472362,7286.66383 183.745993,7288.28029 183.563572,7290.11899 C183.472362,7291.1076 183.472362,7291.19729 183.700388,7291.78029 C185.124288,7295.89418 181.228579,7299.88948 177.173759,7298.82613 L177.129167,7298.82613 L177.129167,7298.82513 Z"
+                                        id="skype-[#ffffff]"> </path>
                                 </g>
                             </g>
                         </g>
-                    </svg></a>
-                <a href="https://api.whatsapp.com/send?phone=+255683956372" target="_blank"><svg height="50" width="50"
-                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
-                                fill="#ffffff"></path>
-                        </g>
-                    </svg></a>
-            </div>
-            <!-- End of social media -->
+                    </g>
+                </svg></a>
+            <a href="https://api.whatsapp.com/send?phone=+255683956372" target="_blank"><svg height="50" width="50"
+                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+                            fill="#ffffff"></path>
+                    </g>
+                </svg></a>
+        </div>
+        <!-- End of social media -->
 
-            <!--  <div id="calendar"></div>
+        <!--  <div id="calendar"></div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const calendar = new VanillaCalendar('#calendar');
@@ -1080,8 +1107,8 @@
     });
   </script>-->
 
-        </div>
     </div>
+</div>
 </div>
 <footer>
     Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
