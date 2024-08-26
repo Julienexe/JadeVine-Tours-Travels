@@ -15,4 +15,8 @@ urlpatterns = [
     path('createInquiry/', views.create_inquiry, name='inquiry'),
     path("contact",views.contact_us,name="contact"),
     path("category/<int:category_id>",views.category,name="category"),
+    path("place/<int:place_id>",views.place,name="place"),
+    path('search/', views.search_cat,name='search'),
+    path('search-place/',views.search_place,name='search-place')
+    
 ]
