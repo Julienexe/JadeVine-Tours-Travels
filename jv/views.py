@@ -2,19 +2,20 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files import File as DjangoFile
 from django.shortcuts import render
+from django.db.models import Q
+from django.http.response import HttpResponse
 
 #from .forms import TestimonialForm
 from .models import *
 
-def home(request):
-    return render(request,"jv/index.html")
+
 def gallery(request):
     return render(request,"jv/gallery.htm")
 def about(request):
     return render(request,"jv/about.htm")
 def contact(request):
     return render(request,"jv/contact.htm")
-def services(request):
+def services(request): 
     categories = Category.objects.all()
     return render(request,"jv/services.htm",{"categories":categories})
 def popular_places(request):
@@ -24,8 +25,9 @@ def popular_places(request):
 
 def category(request, category_id):
     category = Category.objects.get(id=category_id)
-    places = Place.objects.filter(category=category)
-    return render(request, 'jv/popular_places.htm', {'category': category, 'places': places})
+    places = Place.objects.filter(category=category) 
+    jade = places if places else Place.objects.all()
+    return render(request, 'jv/popular_places.htm', {'category': category, 'places': jade})
 
 
 def home(request):
@@ -120,3 +122,66 @@ def contact_us(request):
     return JsonResponse(response_data)
     
 
+def place(request,place_id):
+    place = Place.objects.get(id=place_id)
+    return render(request,"jv/hesk.htm",{'place':place})
+
+@csrf_exempt
+def search_cat(request):
+    if request.method == 'POST':
+        item = request.POST.get("category","").strip()
+        if item:
+            category = Category.objects.filter(Q(name__icontains=item))
+        else:
+            category = Category.objects.all()
+        html = ''
+        for cat in category:
+            html+= f'''
+            <tr>
+            <td>
+            <img src={str(cat.imageUrl)} alt={cat.name} onclick=imageViewer('viewerImg','{cat.imageUrl}','{cat.name}') ></img> 
+            <div onclick=openlink('/category/{cat.id}')>
+            <h4>{cat.name}</h4>
+            <span>{cat.description}</span>
+            </div>
+            </td>
+            </tr>'''
+        html = ''.join(html.split('\n'))
+        response_data = {
+            'data':html
+        }
+        return JsonResponse(response_data)
+
+@csrf_exempt    
+def search_place(request):
+    if request.method == 'POST':
+        item = request.POST.get("place","").strip()
+        if item:
+            places = Place.objects.filter(Q(name__icontains=item)|Q(category__name__icontains=item))
+        else:
+            places = Place.objects.all()
+        html = ''
+        for place in places:
+            html+= f'''<a href=/place/{place.id} >
+            
+            <div class=card mb-2 mt-2 text-start style=height: fit-content;>
+              <div class=row g-0>
+                <div class=col-md-2>
+                  <img src={place.imageUrl} class=float-start img-fluid rounded-start width=100% alt={place.name}>
+                  <span class=price>{place.price}</span>
+                </div>
+                <div class=col-md-10>
+                  <div class=card-body>
+                    <h5 class=card-title>{place.name}</h5>
+                    <p class=card-text>{ place.description[:200]}</p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>'''
+        html = ''.join(html.split('\n'))
+        
+        return JsonResponse(html,safe=False)
+
+        
