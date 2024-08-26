@@ -2,6 +2,7 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=150)
+    #image = models.ImageField(upload_to="Categories/",null= True,blank=True)
     imageUrl = models.CharField(max_length=250)
     description = models.TextField(default="Description", null=True)
 
