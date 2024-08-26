@@ -409,8 +409,8 @@
         <div class="columns col">
 
             {% for place in places %}
-            <div class="box x1 w3-card-2" onclick="openLink('popular_places.php?place_id=28')">
-                <img src="{{place.imageUrl}}" alt="BARAZA RESORT & SPA  ">
+            <div class="box x1 w3-card-2" onclick="openLink(`{% url 'jv:place' place.id %}`)">
+                <img src="{{place.imageUrl}}" alt="{{place.name}} ">
                 <h3>{{place.name}} </h3>
                 <!--<p></p>-->
                 <span class="price">{{place.price}}</span>
