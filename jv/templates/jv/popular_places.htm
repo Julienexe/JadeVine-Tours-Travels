@@ -204,26 +204,28 @@
           <h3>Popular places</h3>
           {% endif %}
         </div>
-        {% for place in places %}
-        <a href="http://" target="_blank" rel="noopener noreferrer">
-
-          <div class="card mb-2 mt-2 text-start" style="height: fit-content;">
-            <div class="row g-0">
-              <div class="col-md-2">
-                <img src="{{place.imageUrl}}" class="float-start img-fluid rounded-start" width="100%" alt="...">
-                <span class="price">{{place.price}}</span>
-              </div>
-              <div class="col-md-10">
-                <div class="card-body">
-                  <h5 class="card-title">{{place.name}}</h5>
-                  <p class="card-text">{{ place.description|truncatechars:200 }}</p>
-                  
+        <div id="table"> 
+          {% for place in places %}
+          <a href="{% url 'jv:place' place.id %}" >
+            
+            <div class="card mb-2 mt-2 text-start" style="height: fit-content;">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img src="{{place.imageUrl}}" class="float-start img-fluid rounded-start" width="100%" alt="...">
+                  <span class="price">{{place.price}}</span>
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-title">{{place.name}}</h5>
+                    <p class="card-text">{{ place.description|truncatechars:200 }}</p>
+                    
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
-        {%endfor%}
+          </a>
+          {%endfor%}
+        </div>
       </div>
     </div>
   </div>
