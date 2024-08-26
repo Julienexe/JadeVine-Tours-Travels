@@ -5,9 +5,9 @@ $(document).ready(function(){
     $("#searchService .btnSub").css("display","none");
     $("#searchService .loading").fadeIn('fast');
     var srValue = ($("#schQryS").val()=='')?" ":$("#schQryS").val();
-    var qry = "service="+srValue;
+    var qry = "category="+srValue;
     var request = new XMLHttpRequest();
-    request.open("POST","search.php",true);
+    request.open("POST","/search/",true);
     request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     request.onreadystatechange = function() {
       if (request.readyState !== 4 || request.status !== 200) return;
@@ -25,14 +25,14 @@ $("#schQryP").keyup(function(){
   $("#schPlace .btnSub").css("display","none");
   $("#schPlace .loading").fadeIn('fast');
   var srValue = ($("#schQryP").val()=='')?" ":$("#schQryP").val();
-  var srCateg = $("#plcCateg").val();
-  var qry = "place="+srValue+"&categ="+srCateg;
+  //var srCateg = $("#plcCateg").val();
+  var qry = "place="+srValue;
   var request = new XMLHttpRequest();
-  request.open("POST","search.php",true);
+  request.open("POST","/search-place/",true);
   request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   request.onreadystatechange = function() {
     if (request.readyState !== 4 || request.status !== 200) return;
-    $(".main-block .destinations table").html(request.responseText);
+    $(".main-block .destinations #table").html(request.responseText.substring(1));
     $("#schPlace .btnSub").fadeIn('fast');
     $("#schPlace .loading").css("display","none");
   }
@@ -48,7 +48,7 @@ $("#searchGall").keyup(function(){
   var srValue = ($("#searchGall").val()=='')?" ":$("#searchGall").val();
   var qry = "gallery="+srValue;
   var request = new XMLHttpRequest();
-  request.open("POST","search.php",true);
+  request.open("POST","/",true);
   request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
   request.onreadystatechange = function() {
     if (request.readyState !== 4 || request.status !== 200) return;
