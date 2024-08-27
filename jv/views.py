@@ -9,7 +9,7 @@ from django.http.response import HttpResponse
 from .models import *
 
 
-def gallery(request):
+def gallery(request): 
     return render(request,"jv/gallery.htm")
 def about(request):
     return render(request,"jv/about.htm")
@@ -124,7 +124,8 @@ def contact_us(request):
 
 def place(request,place_id):
     place = Place.objects.get(id=place_id)
-    return render(request,"jv/hesk.htm",{'place':place})
+    images = Place_Image.objects.filter(place=place)
+    return render(request,"jv/hesk.htm",{'place':place,'images':images})
 
 @csrf_exempt
 def search_cat(request):
