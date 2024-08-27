@@ -51,3 +51,12 @@ class Inquiry(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+class Place_Image(models.Model):
+    place = models.ForeignKey(Place,on_delete=models.CASCADE, related_name="images")
+    image = models.ImageField(upload_to="places", null=True)
+    image_url = models.CharField(max_length=250, null=True)
+    caption = models.CharField(max_length=100, null=True)
+
+    def __str__(self) -> str:
+        return self.place.name
