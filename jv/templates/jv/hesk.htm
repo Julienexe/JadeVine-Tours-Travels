@@ -1,47 +1,202 @@
 {% extends "jv/base.html" %}
 {% load static %}
 {% block content %}
+<style type="text/css">
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .column.left {
+    text-align: left;
+  }
+
+  .column.right {
+    text-align: right;
+  }
+
+  .acenter {
+    text-align: center;
+  }
+
+  /* .fixed-con {
+   z-index: 9724790009779558!important;
+   background-color: #f7f8fc;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   overflow-y: auto;
+ }
+ .VIpgJd-ZVi9od-aZ2wEe-wOHMyf{
+  z-index: 9724790009779!important;
+  top:0;
+  left:unset;
+  right:-5px;
+  display:none!important;
+  border-radius:50%;
+  border:2px solid gold;
+ }
+ .VIpgJd-ZVi9od-aZ2wEe-OiiCO{
+   width:80px;
+   height:80px;
+ }*/
+  .fixed-con {
+    z-index: 9724790009779558 !important;
+    background-color: #FFA500;
+    /* Matching background color */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+  }
+
+  .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+    z-index: 9724790009779 !important;
+    top: 0;
+    left: unset;
+    right: -5px;
+    display: none !important;
+    border-radius: 10%;
+    border: 1px solid #FFA500;
+    /* Matching border color */
+  }
+
+  .VIpgJd-ZVi9od-aZ2wEe-OiiCO {
+    width: 80px;
+    height: 80px;
+  }
+
+  /*hide google translate link | logo | banner-frame */
+  .goog-logo-link,
+  .gskiptranslate,
+  .goog-te-gadget span,
+  .goog-te-banner-frame,
+  #goog-gt-tt,
+  .goog-te-balloon-frame,
+  div#goog-gt- {
+    display: none !important;
+  }
+
+  .goog-te-gadget {
+    color: transparent !important;
+    font-size: 0px;
+  }
+
+  .goog-text-highlight {
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  /*google translate Dropdown */
+
+  #google_translate_element select {
+    /*background:#f6edfd;*/
+    color: #387ADF;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 8px;
+  }
+
+  .goog-te-banner-frame {
+    display: none !important;
+
+  }
+
+  .goog-te-banner-frame {
+    margin-bottom: 20px;
+    /* Adjust the margin as needed */
+  }
+
+  .div-left {
+    float: right;
+  }
+
+  .goog-te-combo {
+    width: 30%;
+    /* Adjust the width as needed */
+  }
+
+  .goog-te-combo option[value="lang"] {
+    /* Style the "lang" option as desired */
+    font-weight: bold;
+    /* Example style */
+    /* Add any other desired styles */
+  }
+</style>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+
+    new google.translate.TranslateElement({
+
+      pageLanguage: 'en',
+
+      autoDisplay: 'true',
+      includedLanguages: 'it,fr,da,de,es,sw',
+
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+
+    }, 'google_translate_element');
+
+  }
+</script>
+
+<script type="text/javascript"
+  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+{% include 'jv/navbar.html' %}
 
 <div id="container">
-    <div class="main-block">
-      <div class="destinations">
-        <div class="popular">
-          <h3>{{place.name}}</h3>
+  <div class="main-block">
+    <div class="destinations">
+      <div class="popular">
+        <h3>{{place.name}}</h3>
+      </div>
+      <div class="services txtAbout" style="color: black;">
+        {% for image in images %}
+        <div class="divpic">
+          <img src="{{image.image_url}}" id="pic23"
+            onclick="imageViewer('viewerImg','{{image.image_url}}','{{place.name}}')">
+          <span class="cap" id="cap23">{{image.caption}}</span>
         </div>
-        <div class="services txtAbout" style="color: black;">
-          <div class="divpic">
-            <img src="{{place.imageUrl}}" id="pic23"
-              onclick="imageViewer('viewerImg','{{place.imageUrl}}','{{place.name}}')">
-            <span class="cap" id="cap23">{{place.name}}</span>
-          </div>
-          <div class="divText">
-            <span class="price"><br><b>Prices:</b> {{place.price}}<br><br></span>
-            <p>{{place.description}}</p>
-            <a href="https://payments.pesapal.com/jadevinetravelandtours/" class="book-now-button">Book Now</a>
-          </div>
+        {% endfor %}
+        <div class="divText mb-5">
+          <span class="price"><br><b>Prices:</b> {{place.price}}<br><br></span>
+          <p>{{place.description}}</p>
+          <a href="https://payments.pesapal.com/jadevinetravelandtours/" class="book-now-button">Book Now</a>
         </div>
-        <div class="btns" style="margin-bottom:16px">
-          <button type="button" onclick="window.history.back();"><i class="fas fa-arrow-left"></i> Return</button>
-        </div>
+      </div>
+      <div class="btns" style="margin-bottom:16px">
+        <button type="button" onclick="window.history.back();"><i class="fas fa-arrow-left"></i> Return</button>
+      </div>
 
-        <!--//////////////////////////// Picture viewer -------------------->
-        <div class="modal" id="viewerImg">
-          <span class="close" onclick="closeForm('viewerImg')">&times;</span>
-          <form class="modal-content">
-            <div class="formhead"><i class="fas fa-camera"></i> [JDVT] Take Your Dream Vacation</div>
-            <img src="{{place.imageUrl}}" alt="" id="imgView">
-            <span id="vCaption"></span>
-            <button type="button" class="btnHide" onclick="closeForm('viewerImg')"><i class="fas fa-times-circle"></i>
-              CLOSE</button>
-          </form>
-        </div>
+      <!--//////////////////////////// Picture viewer -------------------->
+      <div class="modal" id="viewerImg">
+        <span class="close" onclick="closeForm('viewerImg')">&times;</span>
+        <form class="modal-content">
+          <div class="formhead"><i class="fas fa-camera"></i> [JDVT] Take Your Dream Vacation</div>
+          <img src="{{place.imageUrl}}" alt="" id="imgView">
+          <span id="vCaption"></span>
+          <button type="button" class="btnHide" onclick="closeForm('viewerImg')"><i class="fas fa-times-circle"></i>
+            CLOSE</button>
+        </form>
       </div>
     </div>
   </div>
-  <footer>
-    Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
-    <button><i class="fas fa-arrow-up"></i></button>
-  </footer>
+</div>
+
+
+<footer >
+  Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
+  <button><i class="fas fa-arrow-up"></i></button>
+</footer>
 <script type="text/javascript">
   //Image viewer
   function imageViewer(a, b, c) {
