@@ -1,0 +1,697 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<script>
+var v_cache = "100921_1112";
+</script>
+<script>
+var v_cache_fotos = "281118_1035";
+</script>
+
+
+<head>
+
+<link rel="preconnect" href="https://cdn-eu.dynamicyield.com/">
+<link rel="preconnect" href="https://st-eu.dynamicyield.com/">
+<link rel="preconnect" href="https://rcom-eu.dynamicyield.com/">
+<link rel="dns-prefetch" href="https://cdn-eu.dynamicyield.com/">
+<link rel="dns-prefetch" href="https://st-eu.dynamicyield.com/">
+<link rel="dns-prefetch" href="https://rcom-eu.dynamicyield.com/">
+<script>
+var typeDY= "OTHER";
+var data=[];
+var lang='';
+var urlDY = window.location.href;
+var valores= window.location.search;
+const urlParams = new URLSearchParams(valores);
+if (/\/[a-z][a-z]\/home\.jsp.*/.test(urlDY))  typeDY = "HOMEPAGE";
+if (/\/[a-z][a-z]\/hotel\/[a-zA-Z\-]+\/[a-zA-Z\-]+\/(hotel|clubhotel)[a-zA-Z\-]+\/(|index\.jsp)/.test(urlDY))  typeDY = "PRODUCT";
+if (/\/[a-z][a-z]\/hotel\/[a-zA-Z\-]+\/[a-zA-Z\-]+\/index\.jsp/.test(urlDY)) typeDY = "OTHER";
+if (/\/[a-z][a-z]\/hotel\/index\.jsp.*/.test(urlDY))   typeDY = "PRODUCT";
+if (/\/[a-z][a-z]\/rooms\.jsp.*/.test(urlDY)) { 
+     typeDY = "CATEGORY";
+     var search = urlParams.get('search');
+     var data_json = JSON.parse(search);
+     data.push(data_json['paisDestino.pais']);
+     data.push(data_json['paisDestino.destino_name']);
+}
+if (/\/[a-z][a-z]\/checkout.*/.test(urlDY)) {
+     typeDY = "CART";
+     var valorar= urlParams.get('valorar');
+     var data_json = JSON.parse(valorar);
+     console.log("IdHotel_ISO_Pais = " + data_json['idRiuHotel'] + '_' + "UG" );
+     data.push(data_json['idRiuHotel'] + '_' + "UG");
+}
+switch ("en") {
+  case 'es':
+    lang='es_ES';
+    break;
+  case 'en':
+    lang='en_GB';
+    break;
+  case 'de':
+    lang='de_DE';
+    break;
+  case 'it':
+    lang='it_IT';
+    break;
+  case 'pt':
+    lang='pt_PT';
+    break;
+  case 'nl':
+    lang='nl_NL';
+    break;
+  case 'ru':
+    lang='ru_RU';
+    break;
+  case 'zh':
+    lang='zh_CN';
+    break;
+  case 'fr':
+    lang='fr_FR';
+    break;  
+  default:
+    case 'en':
+    lang='en_GB';
+    break;
+}
+window.DY = window.DY || {}; 
+DY.recommendationContext = { type: typeDY, data: data,  lng:lang };
+</script>
+<script type="text/javascript" src="https://cdn-eu.dynamicyield.com/api/9878390/api_dynamic.js"></script>
+<script type="text/javascript" src="https://cdn-eu.dynamicyield.com/api/9878390/api_static.js"></script>
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="837875533734-e4mafef6epo3ltbdvgdtmv3k2gs4d9mk.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js?onload=renderButton"></script>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://unpkg.com/jwt-decode/build/jwt-decode.js" async defer></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+
+
+<script>
+		load_js=function() {
+		  var urlDY = window.location.href;
+		  if (!((/\/[a-z][a-z]\/hotel\/[a-zA-Z\-]+\/[a-zA-Z\-]+\/(hotel|clubhotel)[a-zA-Z\-]+\/(|index\.jsp)/.test(urlDY)) || (/\/[a-z][a-z]\/hotel\/[a-zA-Z\-]+\/[a-zA-Z\-]+\/index\.jsp/.test(urlDY)) || (/\/[a-z][a-z]\/hotel\/index\.jsp.*/.test(urlDY)))){
+			var head= document.getElementsByTagName('head')[0];
+			var script= document.createElement('script');
+			script.src= '/js/RIU.tealeaf-SaaS-prod.min.js';
+			head.appendChild(script);
+		  }
+		};
+		load_js();
+	</script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="google" content="notranslate" />
+
+<script>
+      // ESTA LINEA HAY QUE ELIMINARLA. Forma parte de un workaround para evitar un error debido al codigo de un widget de RIU, al menos en integracion.
+      var nativeEscape = escape;
+    </script>
+<script>
+        console.log("Init Facebook API");
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '916169449702224',
+                xfbml: true,
+                version: 'v18.0'
+            });
+        };
+    </script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js"></script>
+
+<!--[if lt IE 7]> <html class="lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9"> <![endif]-->
+<!--[if gt IE 7]> 
+  <link rel="stylesheet" type="text/css" href="/en/_CSS/ie_style_fcs.css" />
+ <![endif]-->
+
+
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.riu.com/fcs_images/riu2017/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.riu.com/fcs_images/riu2017/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.riu.com/fcs_images/riu2017/favicon-16x16.png">
+<META NAME="TITLE" CONTENT="Hoteles Para Niños | Hoteles Para Familias | Hoteles Familiares" />
+<title>Hoteles Para Niños | Hoteles Para Familias | Hoteles Familiares</title>
+<META NAME="DESCRIPTION" CONTENT="Los hoteles familiares de Riu Hotels se encuentran en primera línea de playa, dónde además de ofrecer actividades y deportes acuáticos, tienen un mundo infinito de diversión. Hoteles para niños pensados exclusivamente para que todos los miembros de la familia puedan disfrutar de una experiencia única." />
+<META NAME="KEYWORDS" CONTENT="hoteles para niños,hoteles para familias,hoteles familiares,hoteles para familias playa,hoteles para familias numerosas,hoteles tematicos para niños,hoteles para niños instalaciones infantiles,hoteles familiares playa" />
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<META http-equiv="content-language" content="en" />
+<META NAME="Language" CONTENT="en" />
+<meta name="author" content>
+
+<link href="https://www.riu.com/en/_CSS/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="https://www.riu.com/en/_CSS/riu2017/riucom_general.css?v=100921_1112" rel="stylesheet">
+<link href="https://www.riu.com/en/_CSS/riu2017/riucom_landings.css?v=100921_1112" rel="stylesheet">
+
+<!--[if lt IE 9]>
+    <script src="/en/_JS/riu2017/html5shiv.min.js?v=100921_1112"></script>
+    <script src="/en/_JS/riu2017/respond.min.js?v=100921_1112"></script>
+    <![endif]-->
+</head>
+
+<body role="document" class="page-content landing-generic">
+<section class="header" id="header" style="background-image: url(/en/binaris/riuland%20collage_tcm55-134582.jpg);">
+<div class id="containerHeader">
+
+
+<div class="header-menu" ng-controller="ctrlSession">
+<div class="container">
+<div class="navbar-header">
+<h2 class="logo-wrap">
+<a class="navbar-brand logo" href="https://www.riu.com/en/home.jsp">Riu Hotels &amp; Resorts</a> <span>In the world's best destinations</span>
+</h2>
+</div>
+<div id="navbar-visible" class="menu">
+
+<ul class="nav navbar-nav">
+<li class="menu-principal"><a href="https://www.riu.com/en/home.jsp" title="Reservations"><span class="ico ico-book"></span><span class="text">Reservations</span></a></li>
+<li class="menu-principal"><a href="https://www.riu.com/en/hotel/index.jsp" title="Hotels"><span class="ico ico-hotel"></span><span class="text">Hotels</span></a></li>
+<li class="menu-principal"><a href="https://www.riu.com/en/riu-class/index.jsp" title="Riu Class"><span class="ico ico-riuclass"></span><span class="text">Riu Class</span></a></li>
+<li class>
+<a href="https://www.riu.com/riu-party" title="Riu Party">
+<span class="ico ico-hotel"></span><span class="text">Riu Party</span>
+</a>
+</li>
+
+</ul>
+
+</div>
+<div id="navbar" class="menu-lateral">
+<div class="menu-lateral_rc-info">
+<login-sidebar-rc></login-sidebar-rc>
+</div>
+
+<ul class="nav navbar-nav">
+<li class="menu-principal"><a href="https://www.riu.com/en/home.jsp" title="Reservations"><span class="ico ico-book"></span><span class="text">Reservations</span></a></li>
+<li class="menu-principal"><a href="https://www.riu.com/en/hotel/index.jsp" title="Hotels"><span class="ico ico-hotel"></span><span class="text">Hotels</span></a></li>
+<li class="menu-principal"><a href="https://www.riu.com/en/riu-class/index.jsp" title="Riu Class"><span class="ico ico-riuclass"></span><span class="text">Riu Class</span></a></li>
+<li class>
+<a href="https://www.riu.com/riu-party" title="Riu Party">
+<span class="ico ico-hotel"></span><span class="text">Riu Party</span>
+</a>
+</li>
+
+</ul>
+
+</div>
+</div>
+</div>
+<script>
+        Date.firstDayOfWeek = 1;
+        Date.format = "dd/MM/yyyy".toLowerCase();
+</script>
+
+
+
+
+</div>
+</section>
+<script type="text/ng-template" id="tmpfoto">
+
+</script>
+<script type="text/ng-template" id="tmpvideo">
+
+</script>
+<script type="text/ng-template" id="tmptexto">
+
+	<section id="text">
+		<div class="container">
+
+			<div class="section-title">
+				<p>HOTELS FOR CHILDREN: A WORLD OF FUN  <precio-desde etiqueta="From" ocultar="no"></precio-desde></p>
+			</div>
+
+			<p><p>Riu Hotels’ <strong>family hotels</strong> are located on the beach front and, as well as water activities and sports, offer a whole world of fun. <strong>Hotels for children</strong> designed and planned so that everyone in the family can <a target="_blank" title="Unique Experience" href="http://www.riu.com/en/posts/videos-youtube/unique-experience.jsp">enjoy a unique experience</a>.</p></p>
+		</div>
+	</section>
+
+	<script>
+	$( document ).ready(function() {
+	$('landing-texto').find("a[href*='/consultar-disponibilidad/']").attr('href', 'javascript:mostrarSelectorMix()');
+	$('landing-texto').find("a[href*='/en/home.jsp']").attr('href', 'javascript:mostrarSelectorMix()');
+	});
+	</script>
+</script>
+<script type="text/ng-template" id="tmpsubtexto">
+
+	<section id="text" class="padding-top-0" >
+		<div class="container">
+			<div class="section-subtitle">
+				<p>RIULAND: RUN, JUMP, DANCE AND SMILE WITH CALÚ</p>
+			</div>
+			<p><p>Come and meet Calú, a friendly sea turtle born on one of RIU’s wonderful beaches. After meeting the hotel entertainers and their young guests, Calú fell in love with this <strong>world of activities and fun</strong>. Calú invites families to visit and experience the <strong>RiuLand</strong> entertainment program, where children come first.</p>
+<p>It is the wide range of activities that make the <strong>Hotels</strong> stand out. Most of them have facilities such as swimming pools with slides, water games and competitions, outdoor recreational areas, play areas inside the hotel and even Calú’s dance routine. A <strong>full program of children’s entertainment</strong> every day, with fun for all the family.</p>
+<p><br /></p>
+<p class="text-center" style="margin:2em 0;"><a href="http://www.riu.com/consultar-disponibilidad/" class="btn btn-primary btn-lg text-uppercase">BOOK NOW</a></p></p>
+		</div>
+	</section>
+
+	<script>
+	$( document ).ready(function() {
+	$('landing-subtexto').find("a[href*='/consultar-disponibilidad/']").attr('href', 'javascript:mostrarSelectorMix()');
+	$('landing-subtexto').find("a[href*='/en/home.jsp']").attr('href', 'javascript:mostrarSelectorMix()');
+	});
+	</script>
+</script>
+<script type="text/ng-template" id="tmplistavideos">
+
+</script>
+<offers-landing ng-cloak ocultarpromocode="No" orden="pais-destino" validarpromocion uri actividades servicios="Families," lh ld oferta promocode ocultarbuscador></offers-landing>
+<section id="descubre-riuclass" class="grey">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="foto-riuclass col-sm-6">
+<img src="https://www.riu.com/en/binaris/443x294-banner-RC_tcm55-203335.jpg" alt="JOIN RIU CLASS AND ENJOY EXCLUSIVE BENEFITS" />
+</div>
+<div class="col-sm-6 info-riuclass">
+<h4>JOIN RIU CLASS AND ENJOY EXCLUSIVE BENEFITS</h4>
+<a "https://www.riu.com/en/posts/hotels/href" title="JOIN RIU CLASS AND ENJOY EXCLUSIVE BENEFITS" class target="_blank">
+</a>
+<p>With RIU Class, we like to pamper all our customers to the utmost. If you join us, you'll be able to take advantage of special offers, <strong>accumulate redeemable points</strong>, earn extra points in several of our hotels, and enjoy exclusive benefits like <strong>Free WiFi connection for an extra device</strong> and <strong>free airport transportation</strong> at selected destinations.* Join us and begin enjoying your benefits!</p>
+<a class="btn btn-primary" target="_blank" title="Darse de Alta" href="https://www.riu.com/en/riu-class/alta/alta.jsp?utm_rc=landing">REGISTER</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script type="text/ng-template" id="tmplistahoteles">
+HOTELS FOR CHILDREN
+</script>
+<link href="https://www.riu.com/en/_CSS/riu2017/riucom_fonts.css?v=100921_1112" rel="stylesheet">
+<script src="https://www.riu.com/en/_JS/riu2017/jquery.min.js?v=100921_1112"></script>
+<script src="https://www.riu.com/en/_JS/riu2017/lodash.min.js?v=100921_1112"></script>
+
+
+<script src="https://www.riu.com/en/_JS/riu2017/bootstrap.min.js?v=100921_1112"></script>
+<script type="text/javascript" src="https://www.riu.com/en/_JS/riu2017/general.js?v=100921_1112"></script>
+<script type="text/javascript" src="https://www.riu.com/en/_JS/riu2017/moment.js?v=100921_1112"></script>
+<script type="text/javascript" src="https://www.riu.com/en/_JS/riu2017/daterangepicker.js?v=100921_1112"></script>
+<link rel="stylesheet" type="text/css" href="https://www.riu.com/en/_CSS/riu2017/daterangepicker.css?v=100921_1112" />
+
+
+
+
+<script>
+var v_cache = "100921_1112";
+</script>
+<script>
+var v_cache_fotos = "281118_1035";
+</script>
+
+<script type="text/javascript" src="https://www.riu.com/en/_JS/riu2017/fuse.min.js?v=100921_1112"></script>
+<link rel="stylesheet" media="screen" type="text/css" charset="utf-8" href="https://www.riu.com/en/_CSS/riu2017/riu-app-angular.css?v=100921_1112">
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/angular.min.js?v=100921_1112"></script>
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/angular-local-storage.min.js?v=100921_1112"></script>
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/angular-filter.min.js?v=100921_1112"></script>
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/angular-sanitize.min.js?v=100921_1112"></script>
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/angular-cookies.min.js?v=100921_1112"></script>
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/angular-animate.min.js?v=100921_1112"></script>
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/ng-map.min.js?v=100921_1112"></script>
+
+
+
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/ui-bootstrap-tpls-2.1.2.min.js?v=100921_1112"></script>
+<script src="https://www.riu.com/en/_JS/angular-1.5.8/format.min.js?v=100921_1112"></script>
+
+<script type="text/javascript" src="https://www.riu.com/en/_JS/angular-1.5.8/min/riu.comun.min.js?v=100921_1112"></script>
+<script type="text/javascript" src="https://www.riu.com/en/_JS/angular-1.5.8/min/riuclass.comun.min.js?v=100921_1112"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" href="https://www.riu.com/en/_CSS/min/riu.ngdialog.min.css?v=100921_1112" media="all">
+
+<script type="text/javascript" src="https://www.riu.com/en/_JS/angular-1.5.8/ngDialog.min.js?v=100921_1112"></script>
+<script type="text/javascript" src="https://www.riu.com/en/_JS/angular-1.5.8/ng-table.min.js?v=100921_1112"></script>
+
+
+<script>
+    angular.element(document).ready(function() {
+      angular.bootstrap(document, ['riuApp']);
+    });
+	var config_rc = [];
+	config_rc["extracto_puntos.format"] = "#.##0";
+  </script>
+
+
+
+
+
+<script>
+var v_cache = "100921_1112";
+</script>
+<script>
+var v_cache_fotos = "281118_1035";
+</script>
+
+<script src="https://www.riu.com/en/_JS/riu2017/jquery.magnific-popup.min.js?v=100921_1112"></script>
+<link rel="stylesheet" type="text/css" href="https://www.riu.com/en/_CSS/riu2017/magnific-popup.css?v=100921_1112" />
+<script type="text/javascript" src="https://www.riu.com/en/_JS/angular-1.5.8/min/riu.landing-ofertas.min.js?v=100921_1112"></script>
+
+
+<section id="riu-app-notification" class="hidden">
+<div class="container-fluid">
+<div class="riu-app-notification-wrap">
+<div class="riu-app-notification-close"><svg height="10.845" viewbox="0 0 10.848 10.845" width="10.848" xmlns="http://www.w3.org/2000/svg"><path d="M17.994,16.711l3.874-3.874a.908.908,0,0,0-1.284-1.284L16.71,15.427l-3.874-3.874a.908.908,0,1,0-1.284,1.284l3.874,3.874-3.874,3.874a.908.908,0,0,0,1.284,1.284l3.874-3.874,3.874,3.874a.908.908,0,0,0,1.284-1.284Z" transform="translate(-11.285 -11.289)"></path></svg></div>
+<div class="riu-app-notification-content">
+<div class="logo-riu"><svg height="20.949" viewbox="0 0 50.847 20.949" width="50.847" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-774 -1087.83)"><path d="M57.726,133.211c-.73-1.277-1.289-2.163-1.7-2.773a6.3,6.3,0,0,0,4.248-5.981c0-5.062-4.15-6.7-8.2-6.7H43v20.609h4.242v-7.423H49.3c.328,0,.648,0,.97.014a2.483,2.483,0,0,1,1.983,1.269c.65,1.074,1,1.8,1.975,3.435,1.074,1.781,2.159,3.041,4.068,3.041a2.744,2.744,0,0,0,2.735-2.337A6.587,6.587,0,0,1,57.726,133.211Zm-5.2-5.6H47.246V121.45h5.272c1.941,0,3.335,1.06,3.335,3.091a3.027,3.027,0,0,1-3.335,3.067Zm13.56-9.846v20.608h4.242V120.906c-.006-3.285-4.248-3.149-4.248-3.149Zm23.528,0v11.6c0,3.183-1.034,5.4-4.438,5.4s-4.358-2.229-4.358-5.406v-8.458c0-3.285-4.242-3.149-4.242-3.149v11.909c0,5.242,2.435,9.03,8.591,9.03s8.682-4.182,8.682-9.03V117.756Z" fill="#e4002b" transform="translate(731 970.074)"></path></g></svg></div>
+<div class="text-riu">
+<h2>APP Riu Hotels & Resorts</h2>
+<span class="rating"><svg height="9.774" viewbox="0 0 53.98 9.774" width="53.98" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-1468 -815.778)"><path d="M5.9.331,4.678,2.8l-2.725.4a.6.6,0,0,0-.33,1.019L3.594,6.138,3.128,8.853a.6.6,0,0,0,.866.629L6.431,8.2,8.87,9.481a.6.6,0,0,0,.866-.629L9.269,6.138,11.24,4.217A.6.6,0,0,0,10.91,3.2L8.185,2.8,6.967.331A.6.6,0,0,0,5.9.331Z" transform="translate(1466.559 816.001)"></path><path d="M5.9.331,4.678,2.8l-2.725.4a.6.6,0,0,0-.33,1.019L3.594,6.138,3.128,8.853a.6.6,0,0,0,.866.629L6.431,8.2,8.87,9.481a.6.6,0,0,0,.866-.629L9.269,6.138,11.24,4.217A.6.6,0,0,0,10.91,3.2L8.185,2.8,6.967.331A.6.6,0,0,0,5.9.331Z" transform="translate(1477.559 816.001)"></path><path d="M5.9.331,4.678,2.8l-2.725.4a.6.6,0,0,0-.33,1.019L3.594,6.138,3.128,8.853a.6.6,0,0,0,.866.629L6.431,8.2,8.87,9.481a.6.6,0,0,0,.866-.629L9.269,6.138,11.24,4.217A.6.6,0,0,0,10.91,3.2L8.185,2.8,6.967.331A.6.6,0,0,0,5.9.331Z" transform="translate(1488.559 816.001)"></path><path d="M5.9.331,4.678,2.8l-2.725.4a.6.6,0,0,0-.33,1.019L3.594,6.138,3.128,8.853a.6.6,0,0,0,.866.629L6.431,8.2,8.87,9.481a.6.6,0,0,0,.866-.629L9.269,6.138,11.24,4.217A.6.6,0,0,0,10.91,3.2L8.185,2.8,6.967.331A.6.6,0,0,0,5.9.331Z" transform="translate(1499.559 816.001)"></path><path d="M5.9.331,4.678,2.8l-2.725.4a.6.6,0,0,0-.33,1.019L3.594,6.138,3.128,8.853a.6.6,0,0,0,.866.629L6.431,8.2,8.87,9.481a.6.6,0,0,0,.866-.629L9.269,6.138,11.24,4.217A.6.6,0,0,0,10.91,3.2L8.185,2.8,6.967.331A.6.6,0,0,0,5.9.331Z" fill="#cecece" transform="translate(1510.559 816.001)"></path><path d="M6.549,0A.6.6,0,0,0,6,.34L4.754,2.868l-2.789.4a.611.611,0,0,0-.338,1.042L3.645,6.281,3.167,9.059a.611.611,0,0,0,.886.643l2.5-1.31Z" transform="translate(1510.418 815.778)"></path></g></svg> </span>
+</div>
+</div>
+<a class="button-download" href="https://riu.page.link/?link=https://www.riu.com/?apn=com.riu&ibi=Riu&isi=725472344&efr=1&utm_medium=web&utm_source=Riu&utm_campaign=app" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.827 477.827" style="enable-background:new 0 0 477.827 477.827;" xml:space="preserve"> <g> <g> <path d="M441.537,160.625c1.489-7.981,2.243-16.082,2.253-24.201C443.699,61.019,382.498-0.035,307.093,0.056    c-57.402,0.069-108.63,36.034-128.194,89.999c-35.029-13.944-74.73,3.148-88.675,38.177c-1.207,3.032-2.195,6.146-2.956,9.319    c-55.932,8.365-94.492,60.488-86.127,116.42c7.502,50.163,50.596,87.275,101.316,87.254h85.333    c9.426,0,17.067-7.641,17.067-17.067c0-9.426-7.641-17.067-17.067-17.067h-85.333c-37.703,0-68.267-30.564-68.267-68.267    s30.564-68.267,68.267-68.267c9.426,0,17.067-7.641,17.067-17.067c0.031-18.851,15.338-34.108,34.189-34.077    c8.915,0.015,17.471,3.517,23.837,9.757c6.713,6.616,17.519,6.537,24.135-0.176c2.484-2.521,4.123-5.751,4.69-9.245    c9.264-55.733,61.954-93.403,117.687-84.139c55.733,9.264,93.403,61.954,84.139,117.687c-0.552,3.323-1.269,6.617-2.146,9.869    c-1.962,7.124,0.883,14.701,7.049,18.773c31.416,20.845,39.985,63.212,19.139,94.628c-12.617,19.015-33.9,30.468-56.72,30.522    h-51.2c-9.426,0-17.067,7.641-17.067,17.067c0,9.426,7.641,17.067,17.067,17.067h51.2    c56.554-0.053,102.357-45.943,102.303-102.497C477.798,208.625,464.526,180.06,441.537,160.625z" /> </g> </g> <g> <g> <path d="M353.07,363.292c-6.614-6.387-17.099-6.387-23.712,0l-56.235,56.201V170.558c0-9.426-7.641-17.067-17.067-17.067    c-9.426,0-17.067,7.641-17.067,17.067v248.934l-56.201-56.201c-6.78-6.548-17.584-6.36-24.132,0.419    c-6.388,6.614-6.388,17.099,0,23.713l85.333,85.333c6.656,6.673,17.463,6.687,24.136,0.03c0.01-0.01,0.02-0.02,0.031-0.03    l85.333-85.333C360.038,380.644,359.85,369.84,353.07,363.292z" /> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+</a>
+</div>
+</div>
+</section>
+<div class="banner-apps-wrap">
+<h3 class="banner-apps-title">Download our new app!</h3>
+<div class="banner-apps-buttons">
+<div class="buttons-download">
+<a class="button-download" href="https://apps.apple.com/es/app/riu-hotels-and-resorts/id725472344?&utm_medium=web&utm_source=Riu&utm_campaign=app" target="_blank">
+<img alt="IOS APP" src="https://www.riu.com/fcs_images/riu2017/btn-download-ios.png" />
+</a>
+<a class="button-download" href="https://play.google.com/store/apps/details?id=com.riu&hl=es_419?&utm_medium=web&utm_source=Riu&utm_campaign=app" target="_blank">
+<img alt="Android APP" src="https://www.riu.com/fcs_images/riu2017/btn-download-playstore.png" />
+</a>
+</div>
+</div>
+</div>
+
+<newsletter-footer geoip="UG" classID></newsletter-footer>
+<a href="riuland-hotels-for-children.htm#0" class="riu-top"><i class="icn-left-arrow-carrousel"></i></a>
+<div ng-controller="ctrlFooter">
+<footer>
+<div class="top-footer">
+<div class="container">
+<div class="col-sm-3 col-footer">
+<h4 class="title">ABOUT RIU</h4>
+<ul class="navbar-nav">
+<li><a href="https://www.riu.com/en/about/historia.jsp">About RIU</a></li>
+<li><a href="https://www.riu.com/en/posts/videos-youtube/unique-experience.jsp">Unique Experience</a></li>
+<li><a href="https://www.riu.com/en/proudly-committed.jsp">Proudly Committed</a></li>
+<li><a href="https://www.riu.com/en/folletos_digitales/riumagazine.jsp">Riu Magazine</a></li>
+<li><a href="https://www.riu.com/en/news">Communication</a></li>
+<li><a href="https://www.riu.com/pdf/politica-compliance-en.pdf">Compliance Policy</a></li>
+<li><a href="https://www.riu.com/pdf/CodigoEticoRIUHotelsResortsEN.pdf">Code of Ethics</a></li>
+<li><a href="https://www.riu.com/en/fraud-prevention.jsp">Fraud prevention</a></li>
+<li><a href="https://www.riu.com/en/whistleblower-channel.jsp">Whistleblowing channel</a></li>
+</ul>
+</div>
+<div class="col-sm-3 col-footer">
+<h4 class="title">SERVICES</h4>
+<ul class="navbar-nav">
+<li><a href="https://www.riu.com/en/eliteclub-by-RIU.jsp">Elite Club</a></li>
+<li><a href="https://www.riu.com/riu-party">RIU PARTY</a></li>
+<li><a href="https://www.riu.com/es/riu-class/index.jsp">RIU Class</a></li>
+<li><a href="https://www.riu.com/riupro">RIU Pro</a></li>
+<li><a href="http://www.riupartnerclub.com">RIU PartnerClub</a></li>
+<li><a href="https://www.riu-shop.de">RIU Shop</a></li>
+<li><a href="https://riubrandcenter.com/">Professionals</a></li>
+<li><a href="https://www.riu.com/en/entertainment/index.jsp">RIU Entertainment Jobs</a></li>
+<li><a href="https://www.riu.com/en/ayuda/index.jsp">FAQ's</a></li>
+<li><a href="https://www.riu.com/en/forms/form_contactar.jsp">Contact</a></li>
+</ul>
+</div>
+<div class="col-sm-3 col-footer">
+<h4 class="title">RESERVATIONS</h4>
+<ul class="navbar-nav">
+<li><a href="https://www.riu.com">Reservations</a></li>
+<li><a href="https://www.riu.com/en/posts/corporate-code.jsp">Corporate Code</a></li>
+<li><a href="https://www.riu.com/en/weddings">RIU Weddings</a></li>
+<li><a href="https://www.riu.com/en/grupos/index.jsp">Meetings & events</a></li>
+</ul>
+</div>
+<div class="col-sm-3 col-footer">
+<h4 class="title">HOTELS AND DESTINATIONS</h4>
+<ul class="navbar-nav">
+<li><a href="https://www.riu.com/en/posts/hotels/new-riu-hotels-resorts.jsp">New Openings</a></li>
+<li><a href="https://www.riu.com/en/posts/hotels/theme-restaurant.jsp">Gastronomy</a></li>
+<li><a href="https://www.riu.com/en/posts/hotels/riu-plaza-meetings-events.jsp">City Meetings</a></li>
+<li><a href="riuland-hotels-for-children.htm">Entertainment for children</a></li>
+<li><a href="https://www.riu.com/en/posts/top-ranking/top-10-spa-hotels.jsp">RIU Wellness & Spa</a></li>
+<li><a href="https://www.riu.com/en/posts/hotels/golf-hotels.jsp">RIU Hotels & Golf</a></li>
+<li><a href="https://www.riu.com/en/posts/top-ranking/top-5-destination-for-bike.jsp">RIU Hotels & Cycling</a></li>
+<li><a href="https://www.riu.com/en/hotel/usa/chicago/index.jsp">NEW DESTINATION: Chicago</a></li>
+<li><a href="https://www.riu.com/en/hotel/senegal/pointe-sarene/index.jsp">NEW DESTINATION: Senegal</a></li>
+<li><a href="https://www.riu.com/en/hotel/united-kingdom/london/index.jsp">NEW DESTINATION: London</a></li>
+<li><a href="https://bit.ly/HotelRIUPlazaEspaña">Immersive experience: Hotel Riu Plaza España</a></li>
+</ul>
+</div>
+</div>
+
+<div class="container">
+<div style="text-align: left;padding: 0px 15px 0px 8px;">
+<img src="https://www.riu.com/fcs_images/riu2017/logo-aenor.png" style="width: 80px;">
+</div>
+</div>
+</div>
+<div class="bottom-footer">
+<div class="container">
+
+<div class="col-sm-12 reclamacion-pt">
+<div class="text-right">
+<a href="https://www.livroreclamacoes.pt/inicio" target="_blank"><img src="https://www.riu.com/fcs_images/riu2017/LivroEletronico.png"></a>
+</div>
+</div>
+
+<div class="col-sm-7">
+<img src="https://www.riu.com/fcs_images/riu2017/logo-footer.png" alt="Riu Hotels & Resorts">
+<p class="texto-footer" ng-bind-html="'© Reservation Shop S.L.U - I-AV-0000886.1· NIF B35978311· #telefono_pais#'|replace:'#telefono_pais#':'<span class=\'target_t2c-phones\'>00 34 871 966296</span>'"></p>
+<p class="enlaces-politica">
+<a alt="Privacy Statement" href="javascript:void(0);" ng-click="showPoliticas()">Privacy Statement</a>
+<a alt="Terms and conditions" href="javascript:void(0);" ng-click="showTerminos()">Terms and conditions</a>
+<a alt="Cookies policy" href="javascript:void(0);" ng-click="goPolCookies()">Cookies policy</a>
+</p>
+</div>
+<div class="col-sm-5">
+<ul class="nav navbar-nav social-links">
+<li>
+<a target="_blank" class="ico-ios" href="https://itunes.apple.com/en/app/riu-hotels/id725472344?mt=8" id="ico-ios" href="https://itunes.apple.com/en/app/riu-hotels/id725472344?mt=8" title="Apple Store"></a>
+</li>
+<li>
+<a target="_blank" class="ico-android" href="https://play.google.com/store/apps/details?id=com.riu" id="ico-android" href="https://play.google.com/store/apps/details?id=com.riu" title="Play Store"></a>
+</li>
+<li>
+<a target="_blank" class="ico-blog" href="https://www.riu.com/blog/en/" id="ico-blog" href="http://www.riu.com/blog/en/" title="RIU Blog"></a>
+</li>
+<li>
+<a target="_blank" class="ico-face" href="https://www.facebook.com/Riuhoteles" id="ico-face" href="https://www.facebook.com/Riuhoteles" title="RIU in Facebook"></a>
+</li>
+<li>
+<a target="_blank" class="ico-inst" href="https://instagram.com/riuhotels" id="ico-inst" href="https://instagram.com/riuhotels" title="RIU in Instagram"></a>
+</li>
+<li>
+<a target="_blank" class="ico-tuit" href="https://twitter.com/RiuHoteles" id="ico-tuit" href="https://twitter.com/RiuHoteles" title="RIU in Twitter"></a>
+</li>
+<li>
+<a target="_blank" class="ico-flick" href="https://www.flickr.com/photos/riuhotels/" id="ico-flick" href="https://www.flickr.com/photos/riuhotels/" title="RIU in Flickr"></a>
+</li>
+<li>
+<a target="_blank" class="ico-you" href="https://www.youtube.com/c/riuhotels" id="ico-you" href="https://www.youtube.com/c/riuhotels" title="RIU in Youtube"></a>
+</li>
+<li>
+<a target="_blank" class="ico-pint" href="https://pinterest.com/riuhotels" id="ico-pint" href="https://pinterest.com/riuhotels" title="RIU in Pinterest"></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<div class="top-bar">
+<button type="button" class="navbar-toggle collapsed" aria-expanded="false" aria-controls="navbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<h2 class="logo-wrap">
+<a class="navbar-brand logo" href="https://www.riu.com/en/home.jsp">RIU Hotels & Resorts</a> <span>In the world's best destinations</span>
+</h2>
+<div class="container">
+<ul class="nav">
+
+<li class="noticias">
+<a href="https://www.riu.com/checkin-online">
+<i class="icn-exclamation"></i> Check-in </a>
+</li>
+<li class="dropdown" onclick="closePopUpMenu()">
+
+<login-localizador></login-localizador>
+</li>
+<li class="dropdown phones trigger_t2c-phones">
+<a class="dropdown-toggle icn-phone-call" role="button" aria-haspopup="true" aria-expanded="false">
+<span>00 34 871 966296</span>
+<span class="caret"></span>
+</a>
+<div class="dropdown-menu">
+<ul class="phones-list">
+<li class="dropdown-header">UGANDA - <span class="target_t2c-phones">00 34 871 966296 </span>
+</li>
+<li><span class="country">Germany</span><span class="phoneCountry f-r">0 800 723 4360</span></li><li><span class="country">Argentina</span><span class="phoneCountry f-r">0 800 444 2021</span></li><li><span class="country">Australia</span><span class="phoneCountry f-r">1 800 669 201</span></li><li><span class="country">Austria</span><span class="phoneCountry f-r">0 800 802 960</span></li><li><span class="country">Belgium</span><span class="phoneCountry f-r">0 800 54127</span></li><li><span class="country">Brazil</span><span class="phoneCountry f-r">0 800 892 3280</span></li><li><span class="country">Canada</span><span class="phoneCountry f-r">1 866 845 3765</span></li><li><span class="country">Chile</span><span class="phoneCountry f-r">0 800 914 268</span></li><li><span class="country">Colombia</span><span class="phoneCountry f-r">01 800 752 2201</span></li><li><span class="country">Costa Rica</span><span class="phoneCountry f-r">506 2681 2350</span></li><li><span class="country">USA</span><span class="phoneCountry f-r">1 888 RIU 4990</span></li><li><span class="country">Ecuador</span><span class="phoneCountry f-r">01 800 000 039</span></li><li><span class="country">United Arab Emirates</span><span class="phoneCountry f-r">0 42310998</span></li><li><span class="country">Spain</span><span class="phoneCountry f-r">871 930 290</span></li><li><span class="country">France</span><span class="phoneCountry f-r">0800 73 69 95</span></li><li><span class="country">Guatemala</span><span class="phoneCountry f-r">1 800 835 0350</span></li><li><span class="country">Netherlands</span><span class="phoneCountry f-r">0800 230 06 47</span></li><li><span class="country">India</span><span class="phoneCountry f-r">000 800 050 2004</span></li><li><span class="country">United Kingdom</span><span class="phoneCountry f-r">0 800 086 8982</span></li><li><span class="country">Ireland</span><span class="phoneCountry f-r">1 800 777 777</span></li><li><span class="country">Italy</span><span class="phoneCountry f-r">800 976 304</span></li><li><span class="country">Jamaica</span><span class="phoneCountry f-r">1 876 940 8019</span></li><li><span class="country">Luxembourg</span><span class="phoneCountry f-r">800 26 517</span></li><li><span class="country">Morocco</span><span class="phoneCountry f-r">0 528 38 48 60</span></li><li><span class="country">Mauritius</span><span class="phoneCountry f-r">230 650 4209</span></li><li><span class="country">Mexico</span><span class="phoneCountry f-r">800 225 5748</span></li><li><span class="country">Panama</span><span class="phoneCountry f-r">507 282 0460</span></li><li><span class="country">Paraguay</span><span class="phoneCountry f-r">009 800 521 0023</span></li><li><span class="country">Peru</span><span class="phoneCountry f-r">0 800 54881</span></li><li><span class="country">Poland</span><span class="phoneCountry f-r">800 088 827</span></li><li><span class="country">Portugal</span><span class="phoneCountry f-r">808 780 809</span></li><li><span class="country">Dominican Republic</span><span class="phoneCountry f-r">809 731 6823</span></li><li><span class="country">Reunion</span><span class="phoneCountry f-r">02 62 66 80 42</span></li><li><span class="country">Russia</span><span class="phoneCountry f-r">8 800 100 6350</span></li><li><span class="country">Senegal</span><span class="phoneCountry f-r">+221 33 989 09 79</span></li><li><span class="country">Sri Lanka</span><span class="phoneCountry f-r">0 112 11 20 00</span></li><li><span class="country">South Africa</span><span class="phoneCountry f-r">800 981 824</span></li><li><span class="country">Switzerland</span><span class="phoneCountry f-r">0 800 723 436</span></li><li><span class="country">Uruguay</span><span class="phoneCountry f-r">0 004 0521 0121</span></li><li><span class="country">Venezuela</span><span class="phoneCountry f-r">0 800 100 4916</span></li>
+<li class="otrostel"><span class="country">Other countries America</span><span class="phoneCountry f-r">00 52 33 3880 7577</span></li><li class="otrostel"><span class="country">Rest of the world</span><span class="phoneCountry f-r">00 34 871 966296</span></li>
+</ul>
+
+<div id="fast-call" class="fast-call">
+<a href="tel:00 34 871 966296" class="fast-call-button target_href_t2c-phones">
+<button type="button" class="btn btn-primary">
+<p>Call to</p>
+<span class="target_t2c-phones">00 34 871 966296</span>
+</button>
+</a>
+<div class="dropdown">
+<a class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Other telephones<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><span class="country">Germany</span><span class="phoneCountry f-r">0 800 723 4360</span></li><li><span class="country">Argentina</span><span class="phoneCountry f-r">0 800 444 2021</span></li><li><span class="country">Australia</span><span class="phoneCountry f-r">1 800 669 201</span></li><li><span class="country">Austria</span><span class="phoneCountry f-r">0 800 802 960</span></li><li><span class="country">Belgium</span><span class="phoneCountry f-r">0 800 54127</span></li><li><span class="country">Brazil</span><span class="phoneCountry f-r">0 800 892 3280</span></li><li><span class="country">Canada</span><span class="phoneCountry f-r">1 866 845 3765</span></li><li><span class="country">Chile</span><span class="phoneCountry f-r">0 800 914 268</span></li><li><span class="country">Colombia</span><span class="phoneCountry f-r">01 800 752 2201</span></li><li><span class="country">Costa Rica</span><span class="phoneCountry f-r">506 2681 2350</span></li><li><span class="country">USA</span><span class="phoneCountry f-r">1 888 RIU 4990</span></li><li><span class="country">Ecuador</span><span class="phoneCountry f-r">01 800 000 039</span></li><li><span class="country">United Arab Emirates</span><span class="phoneCountry f-r">0 42310998</span></li><li><span class="country">Spain</span><span class="phoneCountry f-r">871 930 290</span></li><li><span class="country">France</span><span class="phoneCountry f-r">0800 73 69 95</span></li><li><span class="country">Guatemala</span><span class="phoneCountry f-r">1 800 835 0350</span></li><li><span class="country">Netherlands</span><span class="phoneCountry f-r">0800 230 06 47</span></li><li><span class="country">India</span><span class="phoneCountry f-r">000 800 050 2004</span></li><li><span class="country">United Kingdom</span><span class="phoneCountry f-r">0 800 086 8982</span></li><li><span class="country">Ireland</span><span class="phoneCountry f-r">1 800 777 777</span></li><li><span class="country">Italy</span><span class="phoneCountry f-r">800 976 304</span></li><li><span class="country">Jamaica</span><span class="phoneCountry f-r">1 876 940 8019</span></li><li><span class="country">Luxembourg</span><span class="phoneCountry f-r">800 26 517</span></li><li><span class="country">Morocco</span><span class="phoneCountry f-r">0 528 38 48 60</span></li><li><span class="country">Mauritius</span><span class="phoneCountry f-r">230 650 4209</span></li><li><span class="country">Mexico</span><span class="phoneCountry f-r">800 225 5748</span></li><li><span class="country">Panama</span><span class="phoneCountry f-r">507 282 0460</span></li><li><span class="country">Paraguay</span><span class="phoneCountry f-r">009 800 521 0023</span></li><li><span class="country">Peru</span><span class="phoneCountry f-r">0 800 54881</span></li><li><span class="country">Poland</span><span class="phoneCountry f-r">800 088 827</span></li><li><span class="country">Portugal</span><span class="phoneCountry f-r">808 780 809</span></li><li><span class="country">Dominican Republic</span><span class="phoneCountry f-r">809 731 6823</span></li><li><span class="country">Reunion</span><span class="phoneCountry f-r">02 62 66 80 42</span></li><li><span class="country">Russia</span><span class="phoneCountry f-r">8 800 100 6350</span></li><li><span class="country">Senegal</span><span class="phoneCountry f-r">+221 33 989 09 79</span></li><li><span class="country">Sri Lanka</span><span class="phoneCountry f-r">0 112 11 20 00</span></li><li><span class="country">South Africa</span><span class="phoneCountry f-r">800 981 824</span></li><li><span class="country">Switzerland</span><span class="phoneCountry f-r">0 800 723 436</span></li><li><span class="country">Uruguay</span><span class="phoneCountry f-r">0 004 0521 0121</span></li><li><span class="country">Venezuela</span><span class="phoneCountry f-r">0 800 100 4916</span></li>
+<li class="otrostel"><span class="country">Other countries America</span><span class="phoneCountry f-r">00 52 33 3880 7577</span></li><li class="otrostel"><span class="country">Rest of the world</span><span class="phoneCountry f-r">00 34 871 966296</span></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="dropdown languages">
+<a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Languages <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li class="dropdown-header">Languages</li>
+<li><a href="javascript:void(0)" onclick="changePublication('de');">Deutsch</a></li>
+<li><a href="javascript:void(0)" onclick="changePublication('es');">Español</a></li>
+<li><a href="javascript:void(0)" onclick="changePublication('en');">English</a></li>
+<li><a href="javascript:void(0)" onclick="changePublication('fr');">Français</a></li>
+<li><a href="javascript:void(0)" onclick="changePublication('it');">Italiano</a></li>
+<li><a href="javascript:void(0)" onclick="changePublication('nl');">Nederlands</a></li>
+<li><a href="javascript:void(0)" onclick="changePublication('pt');">Português</a></li>
+<li><a href="javascript:void(0)" onclick="changePublication('ru');">Русский</a></li>
+<li><a href="javascript:void(0)" onclick="changePublication('zh');">中文</a></li>
+</ul>
+</li>
+<li class="dropdown login">
+<login-header-rc></login-header-rc>
+
+</li>
+</ul>
+</div>
+</div>
+<div class="menu-backdrop fade"></div>
+<div class="ngdialog ngdialog-theme-loading ng-scope hide" style="z-index: 9999;" role="alertdialog">
+<div class="ngdialog-overlay"></div>
+<div class="ngdialog-content" role="document">
+<div class="spinner">
+<div class="rect1"></div>
+<div class="rect2"></div>
+<div class="rect3"></div>
+<div class="rect4"></div>
+<div class="rect5"></div>
+</div>
+</div>
+</div>
+<script type="text/ng-template" id="popupProductoActivo">
+  <div class="modal-body">
+    <div class="wrap-body-modal">
+      <div class="left-side">
+        <div class="container-image">
+          <div class="qr">
+            <img src="https://www.riu.com/fcs_images/riu2017/qr-code-apps.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="container-info">
+          <span class="conoce" ng-if="title">We look forward to seeing you at</span>
+          <h2  ng-if="title">{{::title}}</h2>
+          <h3>Download <strong>the new app</strong> and use it to:</h3>
+          <div class="desc">
+            <ul class="d-md-block"><li><strong>Check in online</strong> and avoid waiting in queues when you arrive at the hotel</li><li><strong>Check the activity schedules</strong> and the restaurant menus, and you can even book a table at most of them!</li><li>Access your <strong>Riu Class account</strong> or become a member now to enjoy exclusive benefits</li><li><strong>Ask reception for any service</strong> you need: minibar refills, an extra towel etc. </li></ul>
+            <ul class="d-block"><li><strong>Check in online</strong></li><li><strong>Book a table</strong> at most of the restaurants</li><li>Access your <strong>Riu Class account</strong> or become a member now</li><li><strong>Ask reception for any service</strong> you need: minibar refills, an extra towel etc.</li></ul>
+          </div>
+          <div class="cta-wrap">
+            <a href="riuland-hotels-for-children.htm" class="btn btn-primary btn-rounded">Download the app</a>
+            <span class="small">Available on iOS and Android</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+<script type="text/javascript">
+function closePopUpMenu(){
+  var elementClose = document.querySelector(".close-sidebar-wrap");
+  var elementButton = elementClose.firstElementChild;
+  elementButton.click();
+}
+function changePublication( id ) {
+var jsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+$.ajax({
+  url: "/changePublication.do?pub=" + id
+}).done(function() {
+   location.href = "/"+id+"/";
+});
+}
+	$(document).ready(function(){
+		$('#search-form').removeClass('hidden');
+		arrCookies = []
+ 		var readCookie = document.cookie.split(';');
+		if(readCookie.length != 0){
+			for (i=0; i<readCookie.length; i++) {
+				arrCookies[i] = {key:readCookie[i].substr(0,readCookie[i].indexOf('=')).trim(), value: readCookie[i].substr(readCookie[i].indexOf('=')+1)};
+			}
+    		}
+   		if(arrCookies.filter((e)=>e.key == "OptanonConsent") && arrCookies.filter((e)=>e.key == "OptanonConsent").length > 0){
+      			document.cookie = "OptanonConsentEncode="+encodeURIComponent(arrCookies.filter((e)=>e.key == "OptanonConsent")[0].value.replace('(', '&#40;').replace(')', '&#41;'))+'; path=/';
+   		}
+	});
+</script>
+
+<trackings template="LANDING_OFERTAS" country="UG"></trackings>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KHT889');</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9VFPZD');</script>
+
+<google-tm country="UG" template="LANDING_OFERTAS"></google-tm>
+<script>
+	var config_rc = [];
+	config_rc["extracto_puntos.format"] = "#.##0";
+	config_rc["error.login_incorrecto"] = "Incorrect username or password.";
+	</script>
+
+<tag-comander template="LANDING_OFERTAS" idrc country="UG"></tag-comander>
+<historico href="https://jadevinetravel.com/popular_places.php"></historico>
+
+
+<script type="text/javascript" src="https://www.riu.com/es/_JS/cohorts_riu.js?v=3"></script>
+<!--[if lte IE 7]>                                                            
+<script type="text/javascript" src="/es/_JS/json2.js"></script>
+<![endif]-->
+<script>
+var dataLayer  = dataLayer || [];
+</script>
+
+
+
+<script type="text/javascript">
+					
+	</script>
+</body>
+</html>
