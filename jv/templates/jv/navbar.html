@@ -3,19 +3,14 @@
 
     <div class="wrapper">
 
-        <a href="index.htm">
+        <a href="{%url 'jv:home'%}">
             <img src="{% static 'pictures/logo.png'%}" alt="logo" id="logo">
             <div class="headname">
                 Jadevine Travel & Tours
             </div>
         </a>
 
-        <svg fill="#ffff" xmlns="http://www.w3.org/2000/svg" id="menubars" x="0px" y="0px" width="30" height="30"
-            viewBox="0 0 30 30">
-            <path
-                d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z">
-            </path>
-        </svg>
+        <i class="fa-solid fa-bars" id="menubars" style="color: #ffffff;"></i>
 
         <nav>
 
@@ -32,7 +27,20 @@
         </nav>
     </div>
 </header>
+<div class="menu w3-card-2" id="navbar">
+    
+    <div class="h-devider"></div>
+     <ul>
+                <li><a href="{%url 'jv:home'%}" class="lin-home">Home</a></li>
+                <li><a href="{%url 'jv:services'%}" class="lin-services">Services</a></li>
+                <li><a href="{%url 'jv:popular_places'%}" class="lin-popular">Popular places</a></li>
+                <li><a href="{%url 'jv:gallery'%}" class="lin-gallery">Tours & Excursion</a></li>
+                <li><a href="{%url 'jv:popular_places'%}" class="lin-search">Search</a></li>
+                <li><a href="{%url 'jv:about'%}" class="lin-about">About</a></li>
+                <li><a href="{%url 'jv:contact'%}" class="lin-contact">Contact</a></li>
 
+            </ul>
+  </div>
 
 
 <div class="h-devider"></div>
