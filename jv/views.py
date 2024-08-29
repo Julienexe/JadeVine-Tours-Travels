@@ -148,8 +148,11 @@ def search_cat(request):
             </td>
             </tr>'''
         html = ''.join(html.split('\n'))
+
         response_data = {
             'data':html
+        } if category else {
+            'data':'<tr><td>No category found</td></tr>'
         }
         return JsonResponse(response_data)
 
