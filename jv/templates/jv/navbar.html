@@ -1,4 +1,22 @@
 {%load static%}
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+
+        new google.translate.TranslateElement({
+
+            pageLanguage: 'en',
+
+            autoDisplay: 'true',
+            includedLanguages: 'it,fr,da,de,es,sw,pt-PT,ro,pl',
+
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+
+        }, 'google_translate_element');
+
+    }
+</script>
+
+<script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>
 <header class="w3-card-4">
 
     <div class="wrapper">
@@ -48,7 +66,7 @@
 <div class="box x1 w3-card-2" id="google_translate_element"
     style="color:#387ADF; font-weight: bold;margin-TOP:-19px;margin-BOTTOM:-19px;">
 
-    <p style="color:#387ADF;margin-left: 10px; width:30%">Change language</p>
+    <p style="color:transparent;margin-left: 10px; width:30%">Change language</p>
     <span>
         <div class="socialmedia div-left" style="margin-bottom: -3px; margin-top :5px; font-size:x-large;">
             <a href="tel:+255-683956372"><svg viewBox="0 0 24 24" height="24" width="24" fill="#387ADF"

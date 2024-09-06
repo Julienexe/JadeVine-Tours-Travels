@@ -114,12 +114,7 @@ def create_inquiry(request):
 
 @csrf_exempt
 def contact_us(request):
-    #to be populated later
-    response_data = {
-                'status': 1,
-                'message': 'Message submitted successfully!',
-            }
-    return JsonResponse(response_data)
+    return render(request,"jv/contact.htm")
     
 
 def place(request,place_id):
