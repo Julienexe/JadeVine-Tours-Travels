@@ -442,7 +442,7 @@
                     <img src="index.htm" alt="" style="opacity:0">
                     <span class="last">View more <svg viewBox="0 0 24 24" height="24" width="24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-                            
+
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -471,7 +471,7 @@
                 </button>
             </form>
         </div>
-        
+
 
         <!--//////////////////////////// Testimonial form -------------------->
         <div class="modal" id="testimonialForm">
@@ -821,28 +821,36 @@
         <div class="columns cards centered-div">
 
 
-            
-            <div class="container2 " >
+
+            <div class="container2 ">
 
                 <form action="{% url 'jv:inquiry' %}" method="POST">
                     {% csrf_token %}
                     <input type="text" id="full_name_form1" name="name" required placeholder="Your Full Name:">
 
                     <input type="email" id="email_form1" name="email" required placeholder="Email:" required>
-                    
+
                     <p class="text-start fs-6 text-muted">Type:</p>
-                    <div class="form-check form-check-inline d-flex flex-row justify-content-between flex-wrap">
-                        <input class="form-check-input" type="radio" name="type" id="acc" value="Accommodation">
-                        <label class="form-check-label" for="acc">Accommodation</label>
-                        <input class="form-check-input" type="radio" name="type" id="Rent a car" value="Rent a car">
-                        <label class="form-check-label" for="Rent a car">Rent a car</label>
-                        <input class="form-check-input" type="radio" name="type" id="Cruise" value="Cruise">
-                        <label class="form-check-label" for="Cruise">Cruise</label>
-                        <input class="form-check-input" type="radio" name="type" id="Tour" value="Tour">
-                        <label class="form-check-label" for="Tour">Tour</label>
+                    <div class=" d-flex flex-row justify-content-between flex-md-wrap">
+                        <div class="d-flex flex-row justify-content-between">
+                            <input class="form-check-input" type="radio" name="type" id="acc" value="Accommodation">
+                            <label class="form-check-label" for="acc">Accommodation</label>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between">
+                            <input class="form-check-input" type="radio" name="type" id="Rent a car" value="Rent a car">
+                            <label class="form-check-label" for="Rent a car">Rent a car</label>
+                        </div>
+                        <!-- <div class="d-flex flex-row justify-content-between">
+                            <input class="form-check-input" type="radio" name="type" id="Cruise" value="Cruise">
+                            <label class="form-check-label" for="Cruise">Cruise</label>
+                        </div> -->
+                        <div class="d-flex flex-row justify-content-between">
+                            <input class="form-check-input" type="radio" name="type" id="Tour" value="Tour">
+                            <label class="form-check-label" for="Tour">Tour</label>
+                        </div>
                     </div>
-                    
-                    
+
+
                     <input type="text" id="other_form1" name="other" placeholder="Other (if applicable):">
 
 
@@ -861,24 +869,27 @@
                     <input type="submit" value="Submit">
                 </form>
                 <!-- payment -->
-        <div class="popular mt-5">
-            <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
-            <h3>Book Your Adventure with Ease: Secure Payment and Reservations Await! <span
-                    style="color:#FFA500; font-weight: bold; ">Click below to begin your journey</span></h3>
+                <div class="popular mt-5">
+                    <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
+                    <h3>Book Your Adventure with Ease: Secure Payment and Reservations Await! <span
+                            style="color:#FFA500; font-weight: bold; ">Click below to begin your journey</span></h3>
 
-        </div>
-        <div class="columns cards">
-            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                <img src="https://jadevinetravel.com/pictures/mastercard.png" alt="Master card">
-                <!--<span class="caption">Master card</span>-->
-            </div>
-            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                <img src="https://jadevinetravel.com/pictures/visa.jpg" alt="Visa card">
-            </div>
-            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                <img src="https://jadevinetravel.com/pictures/amex.png" alt="Amex card">
-            </div>
-        </div>
+                </div>
+                <div class="columns cards">
+                    <div class="box"
+                        onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                        <img src="https://jadevinetravel.com/pictures/mastercard.png" alt="Master card">
+                        <!--<span class="caption">Master card</span>-->
+                    </div>
+                    <div class="box"
+                        onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                        <img src="https://jadevinetravel.com/pictures/visa.jpg" alt="Visa card">
+                    </div>
+                    <div class="box"
+                        onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                        <img src="https://jadevinetravel.com/pictures/amex.png" alt="Amex card">
+                    </div>
+                </div>
 
 
             </div>
@@ -995,7 +1006,7 @@
 
         </div>
 
-        
+
         <!--  <div id="calendar"></div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
