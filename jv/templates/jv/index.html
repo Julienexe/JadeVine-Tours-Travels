@@ -829,14 +829,20 @@
                     <input type="text" id="full_name_form1" name="name" required placeholder="Your Full Name:">
 
                     <input type="email" id="email_form1" name="email" required placeholder="Email:" required>
-
-                    <label for="type_form1">Type:</label>
-                    <select id="type_form1" name="type" required>
-                        <option value="General">General</option>
-                        <option value="Booking">Booking</option>
-                        <option value="Feedback">Feedback</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    
+                    <p class="text-start fs-6 text-muted">Type:</p>
+                    <div class="form-check form-check-inline d-flex flex-row justify-content-between flex-wrap">
+                        <input class="form-check-input" type="radio" name="type" id="acc" value="Accommodation">
+                        <label class="form-check-label" for="acc">Accommodation</label>
+                        <input class="form-check-input" type="radio" name="type" id="Rent a car" value="Rent a car">
+                        <label class="form-check-label" for="Rent a car">Rent a car</label>
+                        <input class="form-check-input" type="radio" name="type" id="Cruise" value="Cruise">
+                        <label class="form-check-label" for="Cruise">Cruise</label>
+                        <input class="form-check-input" type="radio" name="type" id="Tour" value="Tour">
+                        <label class="form-check-label" for="Tour">Tour</label>
+                    </div>
+                    
+                    
                     <input type="text" id="other_form1" name="other" placeholder="Other (if applicable):">
 
 
