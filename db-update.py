@@ -19,22 +19,22 @@ category_data = json.load(category_file)
 #uncomment code bits as required
 
 #category updates
-# for category in category_data:
-#     new_category = Category()
-#     new_category.name = category["name"]
-#     new_category.imageUrl = category["img"]
-#     new_category.description = category["description"]
-#     new_category.save()
+for category in category_data:
+    new_category = Category()
+    new_category.name = category["name"]
+    new_category.imageUrl = category["img"]
+    new_category.description = category["description"]
+    new_category.save()
 
 #place updates
-# for place in place_data:
-#     new_place = Place()
-#     new_place.name = place["title"]
-#     new_place.description = place["description"]
-#     new_place.price = place["price"]
-#     new_place.imageUrl = place["image"]
-#     new_place.category = Category.objects.get(id= 1)
-#     new_place.save()
+for place in place_data:
+    new_place = Place()
+    new_place.name = place["title"]
+    new_place.description = place["description"]
+    new_place.price = place["price"]
+    new_place.imageUrl = place["image"]
+    new_place.category = Category.objects.get(id= 1)
+    new_place.save()
 
 #picture updates
 for picture in pictures:

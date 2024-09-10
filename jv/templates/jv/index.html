@@ -146,24 +146,7 @@
     }
 </style>
 
-<script type="text/javascript">
-    function googleTranslateElementInit() {
 
-        new google.translate.TranslateElement({
-
-            pageLanguage: 'en',
-
-            autoDisplay: 'true',
-            includedLanguages: 'it,fr,da,de,es,sw',
-
-            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-
-        }, 'google_translate_element');
-
-    }
-</script>
-
-<script type="text/javascript" src="{% static 'translate.google.com/translate_a/element.js'%}"></script>
 
 {%include "jv/navbar.html"%}
 
@@ -459,7 +442,7 @@
                     <img src="index.htm" alt="" style="opacity:0">
                     <span class="last">View more <svg viewBox="0 0 24 24" height="24" width="24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-                            
+
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -838,28 +821,8 @@
         <div class="columns cards centered-div">
 
 
-            <button onclick="toggleForm()" class="styled-button">
-                <div style="display: flex; flex-direction: row; justify-content: center;align-items: center;">
-                    <svg height="20" width="20" version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
-                        xml:space="preserve" fill="#387ADF">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <g>
-                                <path fill="#ffffff"
-                                    d="M43.416,35.812c-0.448-0.322-0.55-0.947-0.228-1.396c0.321-0.448,0.947-0.55,1.396-0.228L64,48.168V15.475 L32.597,38.803C32.419,38.935,32.21,39,32,39s-0.419-0.065-0.597-0.197L0,15.475v32.693l19.416-13.979 c0.449-0.321,1.073-0.22,1.396,0.228c0.322,0.448,0.221,1.073-0.228,1.396L0,50.632V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4 v-1.368L43.416,35.812z">
-                                </path>
-                                <path fill="#ffffff"
-                                    d="M32,36.754l32-23.771V12c0-2.211-1.789-4-4-4H4c-2.211,0-4,1.789-4,4v0.982L32,36.754z">
-                                </path>
-                            </g>
-                        </g>
-                    </svg><span>Make An
-                        Inqury</span>
-                </div>
-            </button>
-            <div class="container2 " id="myForm">
+
+            <div class="container2 ">
 
                 <form action="{% url 'jv:inquiry' %}" method="POST">
                     {% csrf_token %}
@@ -867,13 +830,27 @@
 
                     <input type="email" id="email_form1" name="email" required placeholder="Email:" required>
 
-                    <label for="type_form1">Type:</label>
-                    <select id="type_form1" name="type" required>
-                        <option value="General">General</option>
-                        <option value="Booking">Booking</option>
-                        <option value="Feedback">Feedback</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <p class="text-start fs-6 text-muted">Type:</p>
+                    <div class=" d-flex flex-row justify-content-between flex-md-wrap">
+                        <div class="d-flex flex-row justify-content-between">
+                            <input class="form-check-input" type="radio" name="type" id="acc" value="Accommodation">
+                            <label class="form-check-label" for="acc">Accommodation</label>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between">
+                            <input class="form-check-input" type="radio" name="type" id="Rent a car" value="Rent a car">
+                            <label class="form-check-label" for="Rent a car">Rent a car</label>
+                        </div>
+                        <!-- <div class="d-flex flex-row justify-content-between">
+                            <input class="form-check-input" type="radio" name="type" id="Cruise" value="Cruise">
+                            <label class="form-check-label" for="Cruise">Cruise</label>
+                        </div> -->
+                        <div class="d-flex flex-row justify-content-between">
+                            <input class="form-check-input" type="radio" name="type" id="Tour" value="Tour">
+                            <label class="form-check-label" for="Tour">Tour</label>
+                        </div>
+                    </div>
+
+
                     <input type="text" id="other_form1" name="other" placeholder="Other (if applicable):">
 
 
@@ -891,7 +868,32 @@
                     <br>
                     <input type="submit" value="Submit">
                 </form>
+                <!-- payment -->
+                <div class="popular mt-5">
+                    <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
+                    <h3>Book Your Adventure with Ease: Secure Payment and Reservations Await! <span
+                            style="color:#FFA500; font-weight: bold; ">Click below to begin your journey</span></h3>
+
+                </div>
+                <div class="columns cards">
+                    <div class="box"
+                        onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                        <img src="https://jadevinetravel.com/pictures/mastercard.png" alt="Master card">
+                        <!--<span class="caption">Master card</span>-->
+                    </div>
+                    <div class="box"
+                        onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                        <img src="https://jadevinetravel.com/pictures/visa.jpg" alt="Visa card">
+                    </div>
+                    <div class="box"
+                        onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
+                        <img src="https://jadevinetravel.com/pictures/amex.png" alt="Amex card">
+                    </div>
+                </div>
+
+
             </div>
+
 
             <!-- Testimonials -->
             <div class="popular fdback">
@@ -1004,110 +1006,6 @@
 
         </div>
 
-        <!-- payment -->
-        <div class="popular">
-            <!--<h3>Online payment through <div class="pay"><span class="sp1">Pesa</span><span class="sp2">pal</span></div> accepted cards</h3>-->
-            <h3>Book Your Adventure with Ease: Secure Payment and Reservations Await! <span
-                    style="color:#FFA500; font-weight: bold; ">Click below to begin your journey</span></h3>
-
-        </div>
-        <div class="columns cards">
-            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                <img src="https://jadevinetravel.com/pictures/mastercard.png" alt="Master card">
-                <!--<span class="caption">Master card</span>-->
-            </div>
-            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                <img src="https://jadevinetravel.com/pictures/visa.jpg" alt="Visa card">
-            </div>
-            <div class="box" onclick="window.open('https://payments.pesapal.com/jadevinetravelandtours/','_blank')">
-                <img src="https://jadevinetravel.com/pictures/amex.png" alt="Amex card">
-            </div>
-        </div>
-        <!-- Social media links -->
-        <div class="socialmedia">
-            <p>Follow us on social media for latest updates & offers</p>
-            <a href="https://www.facebook.com/jadevinetours" target="_blank"><svg height="50"
-                    width="50" fill="#ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path
-                            d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z">
-                        </path>
-                    </g>
-                </svg></a>
-            <a href="https://www.instagram.com/jadevine_travel?igsh=c2V2OGNkdGkxZmFi" target="_blank"><svg viewBox="0 0 24 24" height="50"
-                    width="50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-                            fill="#ffffff"></path>
-                        <path
-                            d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
-                            fill="#ffffff"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
-                            fill="#ffffff"></path>
-                    </g>
-                </svg></a>
-            <a href="https://x.com/jadevine_travel?t=NmtZm-DzJCuiSzyvAO53Og&s=08" target="_blank"><svg
-                    xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256"
-                    style="fill:#ffffff;">
-                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                        style="mix-blend-mode: normal">
-                        <g transform="scale(5.12,5.12)">
-                            <path
-                                d="M5.91992,6l14.66211,21.375l-14.35156,16.625h3.17969l12.57617,-14.57812l10,14.57813h12.01367l-15.31836,-22.33008l13.51758,-15.66992h-3.16992l-11.75391,13.61719l-9.3418,-13.61719zM9.7168,8h7.16406l23.32227,34h-7.16406z">
-                            </path>
-                        </g>
-                    </g>
-                </svg></a>
-           
-            <a href="https://api.whatsapp.com/send?phone=+255683956372" target="_blank"><svg height="50" width="50"
-                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
-                            fill="#ffffff"></path>
-                    </g>
-                </svg></a>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-                <hr>
-        </div>
-        <!-- End of social media -->
 
         <!--  <div id="calendar"></div>
   <script>
@@ -1119,7 +1017,7 @@
 
     </div>
 </div>
-</div>
+
 
 <footer>
     Jadevine Travel & Tours Co. Ltd<br>&copy; 2024 All rights reserved
