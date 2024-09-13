@@ -87,9 +87,10 @@ WSGI_APPLICATION = 'jadeVine.wsgi.application'
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
+    #'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default=os.environ.get("DB_URL"), 
+        default="postgresql://jp:cI9TmqHN7ntS2GQD4gMKl7C1Mt7LhYPw@dpg-crde9gd2ng1s73ftf74g-a.oregon-postgres.render.com/jv", 
         conn_max_age=600
     )
 }
@@ -112,6 +113,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'https://jadevine-tours-travels.onrender.com/','https://jadevine-e4a0a60d-8390-4066-9bca.cranecloud.io/'
+    ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://jadevine-tours-travels.onrender.com/','https://jadevine-e4a0a60d-8390-4066-9bca.cranecloud.io/'
+
+]
 
 
 # Internationalization
