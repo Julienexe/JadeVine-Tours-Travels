@@ -114,11 +114,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://jadevine-tours-travels.onrender.com/','https://jadevine-e4a0a60d-8390-4066-9bca.cranecloud.io/'
+    'https://jadevine-tours-travels.onrender.com','https://jadevine-e4a0a60d-8390-4066-9bca.cranecloud.io'
     ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://jadevine-tours-travels.onrender.com/','https://jadevine-e4a0a60d-8390-4066-9bca.cranecloud.io/'
+    'https://jadevine-tours-travels.onrender.com','https://jadevine-e4a0a60d-8390-4066-9bca.cranecloud.io'
 
 ]
 
