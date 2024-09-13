@@ -7,7 +7,7 @@ from jv.models import *
 #open the files
 places = open("popular_places_87.json", "r")
 category_file = open("categories.json", "r")
-picture_file = open("pictures.json", "r")
+picture_file = open("pictures2.json", "r")
 
 #load the data from the files
 pictures = json.load(picture_file)
@@ -18,23 +18,23 @@ category_data = json.load(category_file)
 ##update the database with the new data
 #uncomment code bits as required
 
-#category updates
-for category in category_data:
-    new_category = Category()
-    new_category.name = category["name"]
-    new_category.imageUrl = category["img"]
-    new_category.description = category["description"]
-    new_category.save()
+# #category updates
+# for category in category_data:
+#     new_category = Category()
+#     new_category.name = category["name"]
+#     new_category.imageUrl = category["img"]
+#     new_category.description = category["description"]
+#     new_category.save()
 
-#place updates
-for place in place_data:
-    new_place = Place()
-    new_place.name = place["title"]
-    new_place.description = place["description"]
-    new_place.price = place["price"]
-    new_place.imageUrl = place["image"]
-    new_place.category = Category.objects.get(id= 1)
-    new_place.save()
+# #place updates
+# for place in place_data:
+#     new_place = Place()
+#     new_place.name = place["title"]
+#     new_place.description = place["description"]
+#     new_place.price = place["price"]
+#     new_place.imageUrl = place["image"]
+#     new_place.category = Category.objects.get(id= 1)
+#     new_place.save()
 
 #picture updates
 for picture in pictures:

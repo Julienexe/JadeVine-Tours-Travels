@@ -3,13 +3,13 @@
 services:
   web:
     build: .
+    image: julienzip/jadevine
     command: python serve.py
     volumes:
       - .:/code
     ports:
       - "8080:8080"
     environment:
-      - DATABASE_URL=${DB_URL}
       - SECRET_KEY=${SECRET_KEY}
       - DEBUG=${DEBUG}
     env_file:
