@@ -90,7 +90,7 @@ DATABASES = {
     #'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default="postgresql://jp:cI9TmqHN7ntS2GQD4gMKl7C1Mt7LhYPw@dpg-crde9gd2ng1s73ftf74g-a.oregon-postgres.render.com/jv", 
+        default=os.environ.get("DB_URL"), 
         conn_max_age=600
     )
 }
@@ -122,6 +122,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
