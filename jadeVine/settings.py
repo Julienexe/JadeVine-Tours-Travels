@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'whitenoise.runserver_nostatic',
     'fontawesomefree',
+    "corsheaders",
 
     #myapps
     'jv',
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -90,7 +91,7 @@ DATABASES = {
     #'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default="postgresql://jp:cI9TmqHN7ntS2GQD4gMKl7C1Mt7LhYPw@dpg-crde9gd2ng1s73ftf74g-a.oregon-postgres.render.com/jv", 
+        default=os.environ.get("DB_URL"), 
         conn_max_age=600
     )
 }
@@ -113,15 +114,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-    'https://jadevine-tours-travels.onrender.com','https://jadevine-e4a0a60d-8390-4066-9bca.cranecloud.io'
+    'https://home.jadevinetravel.com','https://jadevine-921455c9-bc3c-4757-bfa0.cranecloud.io'
     ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://jadevine-tours-travels.onrender.com','https://jadevine-e4a0a60d-8390-4066-9bca.cranecloud.io'
+    'https://home.jadevinetravel.com','https://jadevine-921455c9-bc3c-4757-bfa0.cranecloud.io'
 
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
