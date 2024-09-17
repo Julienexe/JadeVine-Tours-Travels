@@ -108,6 +108,7 @@ def create_inquiry(request):
             no_of_adults = no_of_adults,
             no_of_children = no_of_children
         )
+        inquiry.save()
     
         
     return home(request)
